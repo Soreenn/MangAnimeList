@@ -2,8 +2,6 @@
 
 namespace MangAnimeList
 {
-    public class Anime
-    {
         public class AnimeData
         {
             public License license { get; set; }
@@ -36,6 +34,5 @@ namespace MangAnimeList
         {
             public string season { get; set; }
             public int? year { get; set; }
-        }
     }
 }

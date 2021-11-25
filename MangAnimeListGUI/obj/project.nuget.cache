@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PI+GzLL9+qS3HRhoomGr7Y0rt7r85K52E1hKNmuQj53oHJ6fdsAAHRBOUgo8ivHYd3XAKwhoWgsekjIaZVRjNg==",
+  "dgSpecHash": "2KjvBG1K2CDYitjdx//A1xPCq+pm2ptGyiCrArX3TESOLFL7YNKe+ZZMNVtnzfCQ2NCD12vEIxMQKjlKqbcePw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
