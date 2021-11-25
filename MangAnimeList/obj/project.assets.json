@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
       "projectName": "MangAnimeList",
-      "projectPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList.csproj",
+      "projectPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
       "packagesPath": "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriel.MACHADO-PERE\\AppData\\Roaming\\NuGet\\NuGet.Config",
