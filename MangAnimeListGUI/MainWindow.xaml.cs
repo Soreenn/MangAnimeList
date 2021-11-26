@@ -37,7 +37,7 @@ namespace MangAnimeListGUI
             var AnimeImage3 = "";
             var AnimeImage4 = "";
 
-            var path = @"C:\Users\Gabriel.MACHADO-PERE\Downloads\anime-offline-database.json";
+            var path = @"..\..\..\..\Data\anime-offline-database.json";
             string jsonFile = File.ReadAllText(path);
 
             var obj = JsonConvert.DeserializeObject<AnimeData>(jsonFile);
