@@ -40,9 +40,11 @@ url = 'https://graphql.anilist.co'
 while id < 40000:
   variables['id'] = id
   response = requests.post(url, json={'query': query, 'variables': variables}).json
-  print(id)
-  with open('list.json', 'a') as f:
-    json.dump(response(), f)
+  datas = response()
+  if not "errors" in datas:
+    print(id)
+    with open('list.json', 'a') as f:
+      json.dump(response(), f)
+    time.sleep(0.5)
   id += 1
-  time.sleep(3)
   
