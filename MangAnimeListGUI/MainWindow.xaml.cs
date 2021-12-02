@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 using MangAnimeList;
 using Newtonsoft.Json;
 
@@ -26,6 +27,7 @@ namespace MangAnimeListGUI
         public MainWindow()
         {
             InitializeComponent();
+            Controller controller = new Controller();
 
             var rndAnimeNumber = new Random();
             var rndAnimeImage1 = rndAnimeNumber.Next(32836);
@@ -37,27 +39,27 @@ namespace MangAnimeListGUI
             var AnimeImage3 = "";
             var AnimeImage4 = "";
 
-            var path = @"..\..\..\..\Data\anime-offline-database.json";
-            string jsonFile = File.ReadAllText(path);
+            var pathAnime = @"..\..\..\..\Data\anime-offline-database.json";
+            string jsonFileAnime = File.ReadAllText(pathAnime);
 
-            var obj = JsonConvert.DeserializeObject<AnimeData>(jsonFile);
-            for (int i = 0 ; i < obj.data.Count(); i++)
+            var anime = JsonConvert.DeserializeObject<AnimeData>(jsonFileAnime);
+            for (int i = 0 ; i < anime.data.Count(); i++)
             {
                 if(i == rndAnimeImage1)
                 {
-                    AnimeImage1 = obj.data[i].picture;
+                    AnimeImage1 = anime.data[i].picture;
                 }
                 if (i == rndAnimeImage2)
                 {
-                    AnimeImage2 = obj.data[i].picture;
+                    AnimeImage2 = anime.data[i].picture;
                 }
                 if (i == rndAnimeImage3)
                 {
-                    AnimeImage3 = obj.data[i].picture;
+                    AnimeImage3 = anime.data[i].picture;
                 }
                 if (i == rndAnimeImage4)
                 {
-                    AnimeImage4 = obj.data[i].picture;
+                    AnimeImage4 = anime.data[i].picture;
                 }
             }
 
@@ -84,6 +86,65 @@ namespace MangAnimeListGUI
             AnimeImage4Set.UriSource = new Uri(AnimeImage4, UriKind.Absolute);
             AnimeImage4Set.EndInit();
             rndAnime4.ImageSource = AnimeImage4Set;
+
+            var rndMangaNumber = new Random();
+            var rndMangaImage1 = rndMangaNumber.Next(32836);
+            var rndMangaImage2 = rndMangaNumber.Next(32836);
+            var rndMangaImage3 = rndMangaNumber.Next(32836);
+            var rndMangaImage4 = rndMangaNumber.Next(32836);
+            var MangaImage1 = "";
+            var MangaImage2 = "";
+            var MangaImage3 = "";
+            var MangaImage4 = "";
+
+
+
+            Trace.WriteLine(jsonFileManga);
+
+            /*var manga = JsonConvert.DeserializeObject<Manga>(jsonFileManga);
+            for (int i = 0; i < manga.data.Count(); i++)
+            {
+                if (i == rndMangaImage1)
+                {
+                    MangaImage1 = manga.data[i].Media.coverImage.extraLarge;
+                }
+                if (i == rndMangaImage2)
+                {
+                    MangaImage2 = manga.data[i].Media.coverImage.extraLarge;
+                }
+                if (i == rndMangaImage3)
+                {
+                    MangaImage3 = manga.data[i].Media.coverImage.extraLarge;
+                }
+                if (i == rndMangaImage4)
+                {
+                    MangaImage4 = manga.data[i].Media.coverImage.extraLarge;
+                }
+            }
+
+            BitmapImage MangaImage1Set = new BitmapImage();
+            MangaImage1Set.BeginInit();
+            MangaImage1Set.UriSource = new Uri(MangaImage1, UriKind.Absolute);
+            MangaImage1Set.EndInit();
+            rndManga1.ImageSource = MangaImage1Set;
+
+            BitmapImage MangaImage2Set = new BitmapImage();
+            MangaImage2Set.BeginInit();
+            MangaImage2Set.UriSource = new Uri(MangaImage2, UriKind.Absolute);
+            MangaImage2Set.EndInit();
+            rndManga2.ImageSource = MangaImage2Set;
+
+            BitmapImage MangaImage3Set = new BitmapImage();
+            MangaImage3Set.BeginInit();
+            MangaImage3Set.UriSource = new Uri(MangaImage3, UriKind.Absolute);
+            MangaImage3Set.EndInit();
+            rndManga3.ImageSource = MangaImage3Set;
+
+            BitmapImage MangaImage4Set = new BitmapImage();
+            MangaImage4Set.BeginInit();
+            MangaImage4Set.UriSource = new Uri(MangaImage4, UriKind.Absolute);
+            MangaImage4Set.EndInit();
+            rndManga4.ImageSource = MangaImage4Set; //*/
         }
     }
 }

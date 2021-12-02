@@ -39,22 +39,22 @@
         </Grid.RowDefinitions>
         <Border Height="auto" Width="auto" CornerRadius="10,10,10,10" Grid.Column="2" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
+                <ImageBrush x:Name="rndManga1" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
             </Border.Background>
         </Border>
         <Border Height="auto" Width="auto" CornerRadius="10,10,10,10" Grid.Column="4" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
+                <ImageBrush x:Name="rndManga2" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
             </Border.Background>
         </Border>
         <Border Height="auto" Width="auto" CornerRadius="10,10,10,10" Grid.Column="6" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
+                <ImageBrush x:Name="rndManga3" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
             </Border.Background>
         </Border>
         <Border Height="auto" Width="auto" CornerRadius="10,10,10,10" Grid.Column="8" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
+                <ImageBrush x:Name="rndManga4" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
             </Border.Background>
         </Border>
 
