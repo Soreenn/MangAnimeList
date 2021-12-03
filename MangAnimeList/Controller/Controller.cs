@@ -20,17 +20,17 @@ namespace MangAnimeList
         {
             var pathAnime = @"..\..\..\..\Data\anime-offline-database.json";
             string jsonFileAnime = File.ReadAllText(pathAnime);
-            dynamic fileManga = JsonConvert.DeserializeObject(jsonFileAnime);
+            dynamic fileAnime = JsonConvert.DeserializeObject(jsonFileAnime);
             List<Anime> animes = new List<Anime>();
-            foreach (dynamic media in fileManga.data)
+            foreach (dynamic media in fileAnime.data)
             {
                 List<string> titles = new List<string>();
-                foreach (string title in media.title)
+                foreach (char title in media.title.Value)
                 {
-                    titles.Add(title);
+                    titles.Add(title.ToString());
                 }
 
-                foreach (string title in media.synonyms.Value)
+                foreach (string title in media.synonyms)
                 {
                     titles.Add(title);
                 }
@@ -38,11 +38,11 @@ namespace MangAnimeList
                 List<string> tags = new List<string>();
                 foreach (var tag in media.tags)
                 {
-                    tags.Add(tag);
+                    tags.Add(tag.Value);
                 }
 
 
-                Anime anime = new Anime(titles, media.status, (int)media.animeSeason.year, tags, media.picture);
+                Anime anime = new Anime(titles, media.status.Value, (int)media.animeSeason.year.Value, tags, media.picture.Value);
                 anime.episodes = media.episodes;
                 anime.type = media.type;
                 animes.Add(anime);

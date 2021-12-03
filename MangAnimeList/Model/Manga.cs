@@ -6,19 +6,42 @@ using System.Threading.Tasks;
 
 namespace MangAnimeList
 {
-    public class Manga
+    public class Manga : Media
     {
-        public int id { get; set; }
-        public string title { get; set; }
-        public string romajiTitle { get; set; }
-        public int? averageScore { get; set; }
-        public int? volumes { get; set; }
-        public int? chapters { get; set; }
-        public string status { get; set; }
-        public DateTime startDate { get; set; }
-        public List<string> tags { get; set; }
-        public string coverImage { get; set; }
-        public string bannerImage { get; set; }
+        public Manga(List<string> title, string status, int releaseYear, List<string> tags, string cover) : base(title, status, releaseYear, tags, cover)
+        {
+
+        }
+
+        public int id
+        {
+            get;
+            set;
+        }
+
+        public int? averageScore
+        {
+            get;
+            set;
+        }
+
+        public int? volumes
+        {
+            get;
+            set;
+        }
+
+        public int? chapters
+        {
+            get;
+            set;
+        }
+
+        public string bannerImage
+        {
+            get;
+            set;
+        }
     }
 
 }

@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangAnimeList.Model
+namespace MangAnimeList
 {
-    class Media
+    public class Media
     {
-        private string _title;
+        private List<string> _title;
         private string _status;
-        private int _startYear;
+        private int _releaseYear;
         private List<string> _tags;
         private string _cover;
 
-        public Media(string title, string status, int startYear, string cover)
+        public Media(List<string> title ,string status, int releaseYear, List<string> tags, string cover)
         {
-            _title = title;
+            _title = title.ToList();
+            _tags = tags.ToList();
             _status = status;
-            _startYear = startYear;
-            _tags = new List<string>();
+            _releaseYear = releaseYear;
             _cover = cover;
         }
 
-        public string Title
+        public List<string> Title
         {
             get { return _title; }
         }
@@ -35,7 +35,7 @@ namespace MangAnimeList.Model
 
         public int StartYear
         {
-            get { return _startYear; }
+            get { return _releaseYear; }
         }
 
         public List<string> Tags

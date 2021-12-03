@@ -13453,7 +13453,7 @@
                 "chapters":34,
                 "status":"FINISHED",
                 "startDate":{
-                    "year":null,
+                    "year": 2000,
                     "month":null,
                     "day":null
                 },
