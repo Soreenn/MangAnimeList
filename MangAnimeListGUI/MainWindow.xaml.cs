@@ -28,99 +28,31 @@ namespace MangAnimeListGUI
         {
             InitializeComponent();
             Controller controller = new Controller();
-
-            var rndAnimeNumber = new Random();
-            var rndAnimeImage1 = rndAnimeNumber.Next(32836);
-            var rndAnimeImage2 = rndAnimeNumber.Next(32836);
-            var rndAnimeImage3 = rndAnimeNumber.Next(32836);
-            var rndAnimeImage4 = rndAnimeNumber.Next(32836);
-            var AnimeImage1 = "";
-            var AnimeImage2 = "";
-            var AnimeImage3 = "";
-            var AnimeImage4 = "";
-
-            var pathAnime = @"..\..\..\..\Data\anime-offline-database.json";
-            string jsonFileAnime = File.ReadAllText(pathAnime);
-
-            var anime = JsonConvert.DeserializeObject<AnimeData>(jsonFileAnime);
-            for (int i = 0 ; i < anime.data.Count(); i++)
-            {
-                if(i == rndAnimeImage1)
-                {
-                    AnimeImage1 = anime.data[i].picture;
-                }
-                if (i == rndAnimeImage2)
-                {
-                    AnimeImage2 = anime.data[i].picture;
-                }
-                if (i == rndAnimeImage3)
-                {
-                    AnimeImage3 = anime.data[i].picture;
-                }
-                if (i == rndAnimeImage4)
-                {
-                    AnimeImage4 = anime.data[i].picture;
-                }
-            }
-
-            BitmapImage AnimeImage1Set = new BitmapImage();
-            AnimeImage1Set.BeginInit();
-            AnimeImage1Set.UriSource = new Uri(AnimeImage1, UriKind.Absolute);
-            AnimeImage1Set.EndInit();
-            rndAnime1.ImageSource = AnimeImage1Set;
-
-            BitmapImage AnimeImage2Set = new BitmapImage();
-            AnimeImage2Set.BeginInit();
-            AnimeImage2Set.UriSource = new Uri(AnimeImage2, UriKind.Absolute);
-            AnimeImage2Set.EndInit();
-            rndAnime2.ImageSource = AnimeImage2Set;
-
-            BitmapImage AnimeImage3Set = new BitmapImage();
-            AnimeImage3Set.BeginInit();
-            AnimeImage3Set.UriSource = new Uri(AnimeImage3, UriKind.Absolute);
-            AnimeImage3Set.EndInit();
-            rndAnime3.ImageSource = AnimeImage3Set;
-
-            BitmapImage AnimeImage4Set = new BitmapImage();
-            AnimeImage4Set.BeginInit();
-            AnimeImage4Set.UriSource = new Uri(AnimeImage4, UriKind.Absolute);
-            AnimeImage4Set.EndInit();
-            rndAnime4.ImageSource = AnimeImage4Set;
+            List<Manga> mangas =  controller.InitializeMangaList();
+            List<Anime> animes = controller.InitializeAnimeList();
 
             var rndMangaNumber = new Random();
-            var rndMangaImage1 = rndMangaNumber.Next(32836);
-            var rndMangaImage2 = rndMangaNumber.Next(32836);
-            var rndMangaImage3 = rndMangaNumber.Next(32836);
-            var rndMangaImage4 = rndMangaNumber.Next(32836);
-            var MangaImage1 = "";
-            var MangaImage2 = "";
-            var MangaImage3 = "";
-            var MangaImage4 = "";
+            var rndMangaImage1 = rndMangaNumber.Next(mangas.Count());
+            var rndMangaImage2 = rndMangaNumber.Next(mangas.Count());
+            var rndMangaImage3 = rndMangaNumber.Next(mangas.Count());
+            var rndMangaImage4 = rndMangaNumber.Next(mangas.Count());
+            var MangaImage1 = mangas[rndMangaImage1].Cover;
+            var MangaImage2 = mangas[rndMangaImage2].Cover;
+            var MangaImage3 = mangas[rndMangaImage3].Cover;
+            var MangaImage4 = mangas[rndMangaImage4].Cover;
+
+            var rndAnimeNumber = new Random();
+            var rndAnimeImage1 = rndAnimeNumber.Next(mangas.Count());
+            var rndAnimeImage2 = rndAnimeNumber.Next(mangas.Count());
+            var rndAnimeImage3 = rndAnimeNumber.Next(mangas.Count());
+            var rndAnimeImage4 = rndAnimeNumber.Next(mangas.Count());
+            var AnimeImage1 = animes[rndAnimeImage1].Cover;
+            var AnimeImage2 = animes[rndAnimeImage2].Cover;
+            var AnimeImage3 = animes[rndAnimeImage3].Cover;
+            var AnimeImage4 = animes[rndAnimeImage4].Cover;
 
 
 
-            Trace.WriteLine(jsonFileManga);
-
-            /*var manga = JsonConvert.DeserializeObject<Manga>(jsonFileManga);
-            for (int i = 0; i < manga.data.Count(); i++)
-            {
-                if (i == rndMangaImage1)
-                {
-                    MangaImage1 = manga.data[i].Media.coverImage.extraLarge;
-                }
-                if (i == rndMangaImage2)
-                {
-                    MangaImage2 = manga.data[i].Media.coverImage.extraLarge;
-                }
-                if (i == rndMangaImage3)
-                {
-                    MangaImage3 = manga.data[i].Media.coverImage.extraLarge;
-                }
-                if (i == rndMangaImage4)
-                {
-                    MangaImage4 = manga.data[i].Media.coverImage.extraLarge;
-                }
-            }
 
             BitmapImage MangaImage1Set = new BitmapImage();
             MangaImage1Set.BeginInit();
@@ -144,7 +76,8 @@ namespace MangAnimeListGUI
             MangaImage4Set.BeginInit();
             MangaImage4Set.UriSource = new Uri(MangaImage4, UriKind.Absolute);
             MangaImage4Set.EndInit();
-            rndManga4.ImageSource = MangaImage4Set; //*/
+            rndManga4.ImageSource = MangaImage4Set;
+
         }
     }
 }
