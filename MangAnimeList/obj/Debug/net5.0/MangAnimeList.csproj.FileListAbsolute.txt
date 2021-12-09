@@ -34,3 +34,15 @@ C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.dll
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\ref\MangAnimeList.dll
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.pdb
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\MangAnimeList.deps.json
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\MangAnimeList.dll
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\ref\MangAnimeList.dll
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\MangAnimeList.pdb
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.csproj.AssemblyReference.cache
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.AssemblyInfoInputs.cache
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.AssemblyInfo.cs
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.csproj.CoreCompileInputs.cache
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.dll
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\ref\MangAnimeList.dll
+C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.pdb
