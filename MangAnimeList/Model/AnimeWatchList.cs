@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangAnimeList.Model
+namespace MangAnimeList
 {
-    class Class1
+    class AnimeWatchList
     {
     }
 }

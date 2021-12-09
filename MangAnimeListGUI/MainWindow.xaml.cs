@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using MangAnimeList;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace MangAnimeListGUI
 {
@@ -30,6 +31,7 @@ namespace MangAnimeListGUI
             Controller controller = new Controller();
             List<Manga> mangas =  controller.InitializeMangaList();
             List<Anime> animes = controller.InitializeAnimeList();
+            
 
             var rndMangaNumber = new Random();
             var rndMangaImage1 = rndMangaNumber.Next(mangas.Count());
@@ -98,7 +100,6 @@ namespace MangAnimeListGUI
             MangaImage4Set.UriSource = new Uri(MangaImage4, UriKind.Absolute);
             MangaImage4Set.EndInit();
             rndManga4.ImageSource = MangaImage4Set;
-
         }
     }
 }
