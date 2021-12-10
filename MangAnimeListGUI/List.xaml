@@ -15,32 +15,31 @@
             </SolidColorBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.2*"/>
-            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="3.7*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        
+
         <Viewbox Height="auto" Width="auto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
@@ -49,7 +48,15 @@
             </Label>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="1" Grid.Row="1" Grid.RowSpan="12">
+        <Viewbox Height="auto" Width="auto" Grid.Column="6" Grid.Row="0" Grid.ColumnSpan="5" HorizontalAlignment="Center">
+            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+                <Label.Content>
+                    Anime Progress
+                </Label.Content>
+            </Label>
+        </Viewbox>
+
+        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="1" Grid.Row="1" Grid.RowSpan="4">
             <Viewbox>
                 <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                     <Label.Content>
@@ -62,48 +69,44 @@
         <Viewbox Height="auto" Width="auto" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    In progress
+                    In Progress
                 </Label.Content>
             </Label>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="5" Grid.RowSpan="3">
 
-        <Viewbox Height="auto" Width="auto" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
-                <Label.Content>
-                    Anime
-                </Label.Content>
-            </Label>
+        </Border>
+
+        <Viewbox Height="auto" Width="auto" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="2,2,0,0" Panel.ZIndex="1">
+            <Image Source="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg"/>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="2"  Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
-
-        <Viewbox Height="auto" Width="auto" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
-                <Label.Content>
-                    Name
-                </Label.Content>
-            </Label>
-        </Viewbox>
-
-        <Border Height="auto" Width="auto" Grid.Column="5" Grid.Row="3" Margin="1px">
+        <Border Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="5" Margin="2,2,2,0" BorderThickness="0,0,0,1" BorderBrush="White">
             <Border.Background>
-                <ImageBrush x:Name="rndManga1" ImageSource="https://s4.anilist.co/file/anilistcdn/media/manga/banner/30042-4aSSSOxCNWgE.jpg" />
+                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/manga/banner/30042-4aSSSOxCNWgE.jpg"/>
             </Border.Background>
         </Border>
 
-        <Viewbox Height="auto" Width="auto" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+        <Border Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="5" BorderThickness="0,0,0,2" BorderBrush="White"/>
+
+        <Viewbox Height="auto" Width="auto" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+            <Label  FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    Manga
+                    Shingeki No Kyojin
                 </Label.Content>
             </Label>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="2"  Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
+        <Viewbox Height="auto" Width="auto" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+            <Label  FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+                <Label.Content>
+                    Episode 18
+                </Label.Content>
+            </Label>
+        </Viewbox>
 
-        <Viewbox Height="auto" Width="auto" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+        <Viewbox Height="auto" Width="auto" Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
                     Finished
@@ -111,27 +114,36 @@
             </Label>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        <Border BorderBrush="White" BorderThickness="3"  Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="5" Grid.RowSpan="3">
 
-        <Viewbox Height="auto" Width="auto" Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+        </Border>
+
+        <Viewbox Height="auto" Width="auto" Grid.Column="9" Grid.Row="2" HorizontalAlignment="Left" Margin="2,2,0,0" Panel.ZIndex="1">
+            <Image Source="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg"/>
+        </Viewbox>
+
+        <Border Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="5" Margin="2,2,2,0" BorderThickness="0,0,0,1" BorderBrush="White">
+            <Border.Background>
+                <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/media/manga/banner/30042-4aSSSOxCNWgE.jpg"/>
+            </Border.Background>
+        </Border>
+
+        <Border Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="5" BorderThickness="0,0,0,2" BorderBrush="White"/>
+
+        <Viewbox Height="auto" Width="auto" Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+            <Label  FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    Anime
+                    Dragon Ball Super
                 </Label.Content>
             </Label>
         </Viewbox>
 
-        <Border BorderBrush="White" BorderThickness="2"  Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
-
-        <Viewbox Height="auto" Width="auto" Grid.Column="4" Grid.Row="10" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+        <Viewbox Height="auto" Width="auto" Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+            <Label  FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    Manga
+                    Episode 122
                 </Label.Content>
             </Label>
         </Viewbox>
-
-        <Border BorderBrush="White" BorderThickness="2"  Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
-
     </Grid>
 </Window>
