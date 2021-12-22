@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj": {}
+    "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj": {
+    "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
         "projectName": "MangAnimeListGUI",
-        "projectPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
-        "packagesPath": "C:\\Users\\Axel.PITTET\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
+        "packagesPath": "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Axel.PITTET\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabriel.MACHADO-PERE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
-                "projectPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj"
+              "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
+                "projectPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj"
               }
             }
           }
@@ -71,17 +71,17 @@
         }
       }
     },
-    "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
+    "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
         "projectName": "MangAnimeList",
-        "projectPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
-        "packagesPath": "C:\\Users\\Axel.PITTET\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
+        "packagesPath": "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Axel.PITTET\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabriel.MACHADO-PERE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,6 +110,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Uno.UI": {
+              "target": "Package",
+              "version": "[4.0.11, )"
             }
           },
           "imports": [

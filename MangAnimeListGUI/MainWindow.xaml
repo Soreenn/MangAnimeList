@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
         Title="MangAnimeList"
-        Height="450"
-        Width="800"
+        Height="1080"
+        Width="1920"
         WindowStyle="SingleBorderWindow"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">
@@ -76,7 +77,7 @@
         </Border>
         <Border Height="auto" Width="auto" CornerRadius="10,10,10,10" Grid.Column="2" Grid.Row="5">
             <Border.Background>
-                <ImageBrush x:Name="rndAnime1" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
+                <ImageBrush  x:Name="rndAnime1" ImageSource="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg" />
             </Border.Background>
         </Border>
         

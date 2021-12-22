@@ -11,6 +11,11 @@ namespace MangAnimeList
 {
     public class Controller
     {
+        List<Manga> _mangaHomeList;
+        List<Anime> _animeHomeList;
+
+        static Random random = new Random();
+
         public Controller()
         {
 
@@ -56,30 +61,86 @@ namespace MangAnimeList
             string jsonFileManga = File.ReadAllText(pathManga);
             dynamic fileManga = JsonConvert.DeserializeObject(jsonFileManga);
             List<Manga> mangas = new List<Manga>();
-            foreach (dynamic media in fileManga.data)
+            foreach (dynamic media in fileManga)
             {
                 List<string> titles = new List<string>();
-                foreach (string title in media.Media.title)
+                foreach (string title in media.data.Media.title)
                 {
                     titles.Add(title);
                 }
 
                 List<string> tags = new List<string>();
-                foreach (var tag in media.Media.tags)
+                foreach (var tag in media.data.Media.tags)
                 {
                     tags.Add(tag.name.Value);
                 }
 
                 
-                Manga manga = new Manga(titles, media.Media.status.Value, (int)media.Media.startDate.year.Value, tags, media.Media.coverImage.extraLarge.Value);
-                manga.id = media.Media.id;
-                manga.averageScore = media.Media.averageScore;
-                manga.volumes = media.Media.volumes;
-                manga.chapters = media.Media.chapters;
-                manga.bannerImage = media.Media.bannerImage;
+                Manga manga = new Manga(titles, media.data.Media.status.Value, (int)media.data.Media.startDate.year.Value, tags, media.data.Media.coverImage.extraLarge.Value);
+                manga.id = media.data.Media.id;
+                manga.averageScore = media.data.Media.averageScore;
+                manga.volumes = media.data.Media.volumes;
+                manga.chapters = media.data.Media.chapters;
+                manga.bannerImage = media.data.Media.bannerImage;
                 mangas.Add(manga);
             }
             return mangas;
+        }
+
+        public void GenerateRandomHomeList()
+        {
+            List<Anime> randomAnimeList = new List<Anime>();
+            List<Manga> randomMangaList = new List<Manga>();
+
+            Anime animeShown1;
+            Anime animeShown2;
+            Anime animeShown3;
+            Anime animeShown4;
+
+            Manga mangaShown1;
+            Manga mangaShown2;
+            Manga mangaShown3;
+            Manga mangaShown4;
+
+            Controller controller = new Controller();
+            List<Manga> mangas = controller.InitializeMangaList();
+            List<Anime> animes = controller.InitializeAnimeList();
+
+            animeShown1 = animes[random.Next(animes.Count)];
+            animeShown2 = animes[random.Next(animes.Count)];
+            animeShown3 = animes[random.Next(animes.Count)];
+            animeShown4 = animes[random.Next(animes.Count)];
+
+            randomAnimeList.Add(animeShown1);
+            randomAnimeList.Add(animeShown2);
+            randomAnimeList.Add(animeShown3);
+            randomAnimeList.Add(animeShown4);
+
+            mangaShown1 = mangas[random.Next(mangas.Count)];
+            mangaShown2 = mangas[random.Next(mangas.Count)];
+            mangaShown3 = mangas[random.Next(mangas.Count)];
+            mangaShown4 = mangas[random.Next(mangas.Count)];
+
+
+            randomMangaList.Add(mangaShown1);
+            randomMangaList.Add(mangaShown2);
+            randomMangaList.Add(mangaShown3);
+            randomMangaList.Add(mangaShown4);
+
+
+            GetAnimeHomeList = randomAnimeList;
+            GetMangaHomeList = randomMangaList;
+        }
+
+        public List<Manga> GetMangaHomeList {
+            set { _mangaHomeList = value; }
+            get { return _mangaHomeList; }
+        }
+
+        public List<Anime> GetAnimeHomeList
+        {
+            set { _animeHomeList = value; }
+            get { return _animeHomeList; }
         }
     }
 }
