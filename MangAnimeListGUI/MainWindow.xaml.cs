@@ -100,6 +100,9 @@ namespace MangAnimeListGUI
             MangaImage4Set.UriSource = new Uri(MangaImage4, UriKind.Absolute);
             MangaImage4Set.EndInit();
             rndManga4.ImageSource = MangaImage4Set;
+
+            MangaDetails mangaDetails = new MangaDetails();
+            mangaDetails.ShowDialog();
         }
     }
 }
