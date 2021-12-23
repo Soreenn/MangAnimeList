@@ -17,6 +17,7 @@ using System.Diagnostics;
 using MangAnimeList;
 using Newtonsoft.Json;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace MangAnimeListGUI
 {
@@ -25,11 +26,10 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        Controller controller = new Controller();
         public MainWindow()
         {
             InitializeComponent();
-
-            Controller controller = new Controller();
             controller.GenerateRandomHomeList();
             List<Manga> mangas = controller.GetMangaHomeList;
             List<Anime> animes = controller.GetAnimeHomeList;
@@ -109,6 +109,25 @@ namespace MangAnimeListGUI
                 }
                 loopAnime++;
             }
+        }
+        private void DisplayManga(object sender, MouseEventArgs e)
+        {
+            string name = (((Border)e.Source)).Name;
+            string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
+            int index = Int32.Parse(numbers[2]) - 1;
+
+            MangaDetails window = new MangaDetails(index, controller);
+            window.ShowDialog();
+        }
+
+        private void DisplayAnime(object sender, MouseEventArgs e)
+        {
+            string name = (((Border)e.Source)).Name;
+            string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
+            int index = Int32.Parse(numbers[2]) - 5;
+
+            AnimeDetails window = new AnimeDetails(index, controller);
+            window.ShowDialog();
         }
     }
 }

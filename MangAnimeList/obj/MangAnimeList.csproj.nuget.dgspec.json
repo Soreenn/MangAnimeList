@@ -43,10 +43,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
-            },
-            "Uno.UI": {
-              "target": "Package",
-              "version": "[4.0.11, )"
             }
           },
           "imports": [

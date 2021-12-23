@@ -1,0 +1,114 @@
+﻿<Window x:Class="MangAnimeListGUI.MangaDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MangAnimeListGUI"
+        mc:Ignorable="d"
+        Title="Détail de l'oeuvre" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#282538">
+            </SolidColorBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2.3*"/>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="3.5*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.01*"/>
+            <RowDefinition Height="0.07*"/>
+            <RowDefinition Height="0.01*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="3" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush x:Name="Banner" />
+            </Border.Background>
+        </Border>
+        <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="4" Grid.RowSpan="6"  Grid.Row="1" Grid.ColumnSpan="3">
+            <Border.Background>
+                <ImageBrush x:Name="cover"/>
+            </Border.Background>
+        </Border>
+        <Viewbox Height="auto" Width="auto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+                <Label.Content>
+                    MangAnimeList
+                </Label.Content>
+            </Label>
+        </Viewbox>
+        <Border Grid.Column="8" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.RowSpan="4">
+            <ListBox x:Name="tagsBox">
+                
+            </ListBox>
+        </Border>
+        <Border Grid.Column="9" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">
+                <Label.Content>
+                    Synopsis
+                </Label.Content>
+            </Label>
+        </Border>
+        <Border Grid.Column="8" Grid.Row="3" BorderBrush="White" BorderThickness="4">
+            <Viewbox>
+            <Label Name="title" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Content="Titre"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="9" Grid.Row="3">
+            <Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
+                    <Label MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Native"/>
+                </StackPanel>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="4" Grid.RowSpan="8">
+            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
+                <Label.Content>
+                    Menu
+                </Label.Content>
+            </Label>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="7" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Viewbox>
+            <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="noteLabel" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="Note  :"/>
+                        <Label Name="note" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="100"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="volumesLabel" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="Volumes  :"/>
+                        <Label Name="volumes" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Name="chapterLabel" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="Chapitres  :"/>
+                        <Label Name="chapters" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Name="statusLabel" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Content="Statues  :"/>
+                        <Label Name="status" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" Content="Fini"/>
+                </StackPanel>
+            </StackPanel>
+            </Viewbox>
+        </Border>
+    </Grid>
+</Window>

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MangAnimeList;
+using System.Runtime.InteropServices;
 
 namespace MangAnimeList
 {
@@ -30,10 +31,7 @@ namespace MangAnimeList
             foreach (dynamic media in fileAnime.data)
             {
                 List<string> titles = new List<string>();
-                foreach (char title in media.title.Value)
-                {
-                    titles.Add(title.ToString());
-                }
+                titles.Add(media.title.Value);
 
                 foreach (string title in media.synonyms)
                 {

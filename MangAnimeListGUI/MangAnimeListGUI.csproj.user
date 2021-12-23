@@ -9,7 +9,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AnimeDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MangaDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AnimeDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MangaDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

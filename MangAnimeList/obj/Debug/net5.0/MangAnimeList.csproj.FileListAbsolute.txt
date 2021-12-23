@@ -15,6 +15,7 @@ C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\bin\D
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\ref\MangAnimeList.dll
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\bin\Debug\net5.0\MangAnimeList.pdb
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.csproj.AssemblyReference.cache
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.AssemblyInfoInputs.cache
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.AssemblyInfo.cs
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.csproj.CoreCompileInputs.cache
@@ -45,4 +46,3 @@ C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\ref\MangAnimeList.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.pdb
-C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
