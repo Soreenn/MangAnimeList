@@ -7,11 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="splashScreen.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MangAnimeList\MangAnimeList.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="splashScreen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+94wYp1mkizbtO9uk2rueaT+C99qGoFn7/6iLBHinbDiKjo9NQtcSn95TMmWUdYO5TmqIAkL/UvjZztiYGA+fw==",
+  "dgSpecHash": "8qQOuzHnsGawhY24z2cZGntyxdgWPRjuS5xb7pOTnIaeg4kJFWBLiQCDXrzI+s7ftdrycp8YInUQMMyy5ts0GA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\xamlanimatedgif\\2.0.2\\xamlanimatedgif.2.0.2.nupkg.sha512"
   ],
   "logs": []
 }

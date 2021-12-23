@@ -55,10 +55,23 @@
             </Label>
         </Viewbox>
         <Border Grid.Column="8" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.RowSpan="4">
-            <ListBox x:Name="tagsBox">
-
+            <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="30" Focusable="False">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Margin" Value="10,0,0,0"/>
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
             </ListBox>
         </Border>
+
         <Border Grid.Column="9" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="2" Grid.RowSpan="4">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">
                 <Label.Content>
@@ -69,6 +82,15 @@
         <Border Grid.Column="8" Grid.Row="3" BorderBrush="White" BorderThickness="4">
             <Viewbox>
                 <Label Name="title" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Content="Titre"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="9" Grid.Row="3">
+            <Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
+                    <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Native"/>
+                </StackPanel>
             </Viewbox>
         </Border>
 

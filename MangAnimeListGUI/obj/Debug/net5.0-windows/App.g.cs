@@ -62,6 +62,8 @@ namespace MangAnimeListGUI {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.9.0")]
         public static void Main() {
+            SplashScreen splashScreen = new SplashScreen("splashscreen.gif");
+            splashScreen.Show(true);
             MangAnimeListGUI.App app = new MangAnimeListGUI.App();
             app.InitializeComponent();
             app.Run();

@@ -20,6 +20,8 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class AnimeDetails : Window
     {
+        string _animeTitleRomaji;
+        string _animeTitleNative;
         public AnimeDetails(int animeIndex, Controller controller)
         {
             InitializeComponent();
@@ -28,7 +30,16 @@ namespace MangAnimeListGUI
 
             var animeCoverURL = animes[animeIndex].Cover;
             var mangaBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";
-            string animeTitle = animes[animeIndex].Title[0];
+            _animeTitleRomaji = animes[animeIndex].Title[0];
+            if(animes[animeIndex].Title.ElementAtOrDefault(2) != null)
+            {
+                _animeTitleNative = animes[animeIndex].Title[1];
+            }
+            else
+            {
+                NativeButton.Visibility = Visibility.Hidden;
+            }
+            
             var animeEpisodes = animes[animeIndex].episodes;
             var animeType = animes[animeIndex].type;
             var animeStatus = animes[animeIndex].Status;
@@ -51,11 +62,19 @@ namespace MangAnimeListGUI
 
             cover.ImageSource = mangaCoverSet;
             Banner.ImageSource = MangaBannerSet;
-            title.Content = animeTitle;
+            title.Content = _animeTitleRomaji;
             episodes.Content = animeEpisodes;
             type.Content = animeType;
             status.Content = animeStatus;
             note.Content = animeNote;
+        }
+        private void DisplayRomajiTitle(object sender, MouseEventArgs e)
+        {
+            title.Content = _animeTitleRomaji;
+        }
+        private void DisplayNativeTitle(object sender, MouseEventArgs e)
+        {
+            title.Content = _animeTitleNative;
         }
     }
 }

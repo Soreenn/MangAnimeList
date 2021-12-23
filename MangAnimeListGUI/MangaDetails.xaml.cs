@@ -31,7 +31,14 @@ namespace MangAnimeListGUI
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
             _mangaTitleRomaji = mangas[mangaIndex].Title[1];
-            _mangaTitleNative = mangas[mangaIndex].Title[2];
+            if (mangas[mangaIndex].Title[2] != null)
+            {
+                _mangaTitleNative = mangas[mangaIndex].Title[2];
+            }
+            else
+            {
+                NativeButton.Visibility = Visibility.Hidden;
+            }
             var mangaTags = mangas[mangaIndex].Tags;
             var mangaVolumes = mangas[mangaIndex].volumes;
             var mangaChapters = mangas[mangaIndex].chapters;
