@@ -142,7 +142,7 @@ namespace MangAnimeListGUI
         }
         private void Login(object sender, MouseEventArgs e)
         {
-                Login window = new Login();
+                Login window = new Login(controller);
                 window.ShowDialog();
         }
     }

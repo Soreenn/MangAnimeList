@@ -149,7 +149,7 @@ namespace MangAnimeList
         {
             if ((username != null) && (password != null))
             {
-                int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ({username}, {password})");
+                int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
                 if (result == 0)
                 {
                     MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
