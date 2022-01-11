@@ -40,7 +40,7 @@
 
         <Viewbox Grid.Column="0" Grid.Row="2">
             <StackPanel Orientation="Vertical">
-                <Label FontSize="7" Foreground="White" Content="Accueil"/>
+                <Label MouseDown="Login" FontSize="7" Foreground="White" Content="Accueil"/>
                 <Label FontSize="7" Foreground="White" Content="Watchlist"/>
                 <Label FontSize="7" Foreground="White" Content="Readlist"/>
             </StackPanel>

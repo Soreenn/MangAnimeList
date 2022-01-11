@@ -1,0 +1,48 @@
+﻿<Window x:Class="MangAnimeListGUI.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MangAnimeListGUI"
+        mc:Ignorable="d"
+               Title="Window1" Height="450" Width="800"
+        WindowStyle="SingleBorderWindow"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#282538">
+            </SolidColorBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.20*"/>
+        </Grid.RowDefinitions>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Username" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox  Grid.Row="3" Grid.Column="1"/>
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="5" Grid.Column="1"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login"/>
+            <Label FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Don't own an account?"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

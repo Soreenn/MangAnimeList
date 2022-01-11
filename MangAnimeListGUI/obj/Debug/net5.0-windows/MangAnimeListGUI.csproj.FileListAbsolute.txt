@@ -94,3 +94,5 @@ C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\ob
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\WpfAnimatedGif.dll
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\SplashScreen.g.cs
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\SplashScreen.baml
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\Login.g.cs
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\Login.baml

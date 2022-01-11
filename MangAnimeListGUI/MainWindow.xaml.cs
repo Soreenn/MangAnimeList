@@ -140,5 +140,10 @@ namespace MangAnimeListGUI
                 window.ShowDialog();
             }
         }
+        private void Login(object sender, MouseEventArgs e)
+        {
+                Login window = new Login();
+                window.ShowDialog();
+        }
     }
 }
