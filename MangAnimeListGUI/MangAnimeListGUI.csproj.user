@@ -12,7 +12,13 @@
     <Compile Update="AnimeDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="EasterEgg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MangaDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SplashScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -20,10 +26,16 @@
     <Page Update="AnimeDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EasterEgg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MangaDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SplashScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

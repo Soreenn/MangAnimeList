@@ -90,7 +90,7 @@
         </Border>
 
         <Viewbox Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
+            <Label MouseDown="EasterEgg" FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
                     MangAnimeList
                 </Label.Content>

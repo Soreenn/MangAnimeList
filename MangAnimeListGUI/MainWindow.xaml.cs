@@ -26,6 +26,7 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        int easterIndex = 0;
         Controller controller = new Controller();
         public MainWindow()
         {
@@ -128,6 +129,16 @@ namespace MangAnimeListGUI
 
             AnimeDetails window = new AnimeDetails(index, controller);
             window.ShowDialog();
+        }
+
+        private void EasterEgg(object sender, MouseEventArgs e)
+        {
+            easterIndex += 1;
+            if(easterIndex >= 5)
+            {
+                EasterEgg window = new EasterEgg();
+                window.ShowDialog();
+            }
         }
     }
 }
