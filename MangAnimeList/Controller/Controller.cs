@@ -121,7 +121,7 @@ namespace MangAnimeList
 
 
             randomMangaList.Add(mangaShown1);
-            randomMangaList.Add(mangaShown2);
+            randomMangaList.Add(mangaShown2); //gros consultant
             randomMangaList.Add(mangaShown3);
             randomMangaList.Add(mangaShown4);
 
@@ -139,6 +139,32 @@ namespace MangAnimeList
         {
             set { _animeHomeList = value; }
             get { return _animeHomeList; }
+        }
+
+        public void ConnectToDatabase() { 
+            
+        }
+
+        public void RegisterUser(string username, string password)
+        {
+            if ((username != null) && (password != null))
+            {
+                int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ({username}, {password})");
+                if (result == 0)
+                {
+                    MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
+                    MangAnimeList.DBManager.DBManager.Session.SetValue(1, 1);
+                    //open menu while connected
+                }
+                else
+                {
+                    //refresh the register page with an error message : error when registering the user, please retry!
+                }
+            }
+            else
+            {
+                //refresh the register page with an error message : please fill the textboxes !
+            }
         }
     }
 }
