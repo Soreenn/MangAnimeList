@@ -90,6 +90,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
                     <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Native"/>
+                    <Label MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Add to my list"/>
                 </StackPanel>
             </Viewbox>
         </Border>

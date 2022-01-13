@@ -20,12 +20,14 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class AnimeDetails : Window
     {
+        Controller _controller;
         string _animeTitleRomaji;
         string _animeTitleNative;
         public AnimeDetails(int animeIndex, Controller controller)
         {
             InitializeComponent();
 
+            _controller = controller;
             List<Anime> animes = controller.GetAnimeHomeList;
 
             var animeCoverURL = animes[animeIndex].Cover;
@@ -75,6 +77,11 @@ namespace MangAnimeListGUI
         private void DisplayNativeTitle(object sender, MouseEventArgs e)
         {
             title.Content = _animeTitleNative;
+        }
+
+        private void AddToList(object sender, MouseEventArgs e)
+        {
+            _controller.AddMedia(_animeTitleRomaji, "animes");
         }
     }
 }
