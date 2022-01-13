@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using Dapper;
+using MySql.Data.MySqlClient;
 using System.Collections;
 
 namespace MangAnimeList.DBManager
@@ -12,7 +12,7 @@ namespace MangAnimeList.DBManager
     public class DBManager
     {
         //This may not work beacause of the static methods(May need an object to end a connection)
-        private static MySqlConnection _connection = new("Database=MangAnimeList;Server=localhost;user=root;password=root;");
+        private static MySqlConnection _connection = new("Database=MangAnimeList;Server=localhost;user=root;password=;");
 
         /// <summary>
         /// Opens the connection to the database using the static connection instance

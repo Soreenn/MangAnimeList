@@ -22,6 +22,7 @@ namespace MangAnimeListGUI
     {
         Controller _controller;
 
+
         public Login(Controller controller)
         {
             InitializeComponent();
@@ -30,7 +31,11 @@ namespace MangAnimeListGUI
         private void LoginUser(object sender, MouseEventArgs e)
         {
             _controller.Login(usernameLabel.Text, passwordLabel.Text);
-            this.Close();
+            _controller.IsConnected = true;
+            MainWindow window = new MainWindow(_controller);
+            Close();
+            window.ShowDialog();
+            
         }
     }
 }

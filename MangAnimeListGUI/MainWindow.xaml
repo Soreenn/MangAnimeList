@@ -43,6 +43,7 @@
                 <Label MouseDown="Login" FontSize="7" Foreground="White" Content="Accueil"/>
                 <Label FontSize="7" Foreground="White" Content="Watchlist"/>
                 <Label FontSize="7" Foreground="White" Content="Readlist"/>
+                <Label Name="username" FontSize="7" Foreground="White" Content="Guest"/>
             </StackPanel>
         </Viewbox>
 

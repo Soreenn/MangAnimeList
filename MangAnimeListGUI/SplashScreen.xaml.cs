@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using MangAnimeList;
 
 namespace MangAnimeListGUI
 {
@@ -37,7 +38,8 @@ namespace MangAnimeListGUI
 
         private void dt_Tick(object sender, EventArgs e)
         {
-            MainWindow MangAnimeList = new MainWindow();
+            Controller controller = new Controller();
+            MainWindow MangAnimeList = new MainWindow(controller);
             MangAnimeList.Show();
 
             dT.Stop();

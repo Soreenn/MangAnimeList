@@ -12,6 +12,7 @@ namespace MangAnimeList
 {
     public class Controller
     {
+        bool _loginState = false;
         List<Manga> _mangaHomeList;
         List<Anime> _animeHomeList;
 
@@ -87,47 +88,47 @@ namespace MangAnimeList
 
         public void GenerateRandomHomeList()
         {
-            List<Anime> randomAnimeList = new List<Anime>();
-            List<Manga> randomMangaList = new List<Manga>();
+                List<Anime> randomAnimeList = new List<Anime>();
+                List<Manga> randomMangaList = new List<Manga>();
 
-            Anime animeShown1;
-            Anime animeShown2;
-            Anime animeShown3;
-            Anime animeShown4;
+                Anime animeShown1;
+                Anime animeShown2;
+                Anime animeShown3;
+                Anime animeShown4;
 
-            Manga mangaShown1;
-            Manga mangaShown2;
-            Manga mangaShown3;
-            Manga mangaShown4;
+                Manga mangaShown1;
+                Manga mangaShown2;
+                Manga mangaShown3;
+                Manga mangaShown4;
 
-            Controller controller = new Controller();
-            List<Manga> mangas = controller.InitializeMangaList();
-            List<Anime> animes = controller.InitializeAnimeList();
+                Controller controller = new Controller();
+                List<Manga> mangas = controller.InitializeMangaList();
+                List<Anime> animes = controller.InitializeAnimeList();
 
-            animeShown1 = animes[random.Next(animes.Count)];
-            animeShown2 = animes[random.Next(animes.Count)];
-            animeShown3 = animes[random.Next(animes.Count)];
-            animeShown4 = animes[random.Next(animes.Count)];
+                animeShown1 = animes[random.Next(animes.Count)];
+                animeShown2 = animes[random.Next(animes.Count)];
+                animeShown3 = animes[random.Next(animes.Count)];
+                animeShown4 = animes[random.Next(animes.Count)];
 
-            randomAnimeList.Add(animeShown1);
-            randomAnimeList.Add(animeShown2);
-            randomAnimeList.Add(animeShown3);
-            randomAnimeList.Add(animeShown4);
+                randomAnimeList.Add(animeShown1);
+                randomAnimeList.Add(animeShown2);
+                randomAnimeList.Add(animeShown3);
+                randomAnimeList.Add(animeShown4);
 
-            mangaShown1 = mangas[random.Next(mangas.Count)];
-            mangaShown2 = mangas[random.Next(mangas.Count)];
-            mangaShown3 = mangas[random.Next(mangas.Count)];
-            mangaShown4 = mangas[random.Next(mangas.Count)];
-
-
-            randomMangaList.Add(mangaShown1);
-            randomMangaList.Add(mangaShown2); //gros consultant
-            randomMangaList.Add(mangaShown3);
-            randomMangaList.Add(mangaShown4);
+                mangaShown1 = mangas[random.Next(mangas.Count)];
+                mangaShown2 = mangas[random.Next(mangas.Count)];
+                mangaShown3 = mangas[random.Next(mangas.Count)];
+                mangaShown4 = mangas[random.Next(mangas.Count)];
 
 
-            GetAnimeHomeList = randomAnimeList;
-            GetMangaHomeList = randomMangaList;
+                randomMangaList.Add(mangaShown1);
+                randomMangaList.Add(mangaShown2); //gros consultant
+                randomMangaList.Add(mangaShown3);
+                randomMangaList.Add(mangaShown4);
+
+
+                GetAnimeHomeList = randomAnimeList;
+                GetMangaHomeList = randomMangaList;
         }
 
         public List<Manga> GetMangaHomeList {
@@ -141,8 +142,19 @@ namespace MangAnimeList
             get { return _animeHomeList; }
         }
 
-        public void ConnectToDatabase() { 
-            
+        public bool IsConnected
+        {
+            get { return _loginState; }
+            set { _loginState = value; }
+        }
+
+        public string GetUsername
+        {
+            get { return (string)DBManager.DBManager.Session.GetValue(0); }
+        }
+        public string GetUserType
+        {
+            get { return (string)DBManager.DBManager.Session.GetValue(1); }
         }
 
         public void RegisterUser(string username, string password)

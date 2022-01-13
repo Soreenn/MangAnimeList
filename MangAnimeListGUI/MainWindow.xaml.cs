@@ -27,13 +27,23 @@ namespace MangAnimeListGUI
     public partial class MainWindow : Window
     {
         int easterIndex = 0;
-        Controller controller = new Controller();
-        public MainWindow()
+        Controller _controller;
+        public MainWindow(Controller controller)
         {
             InitializeComponent();
-            controller.GenerateRandomHomeList();
-            List<Manga> mangas = controller.GetMangaHomeList;
-            List<Anime> animes = controller.GetAnimeHomeList;
+            _controller = controller;
+            _controller.GenerateRandomHomeList();
+            List<Manga> mangas = _controller.GetMangaHomeList;
+            List<Anime> animes = _controller.GetAnimeHomeList;
+
+            if(_controller.IsConnected == false)
+            {
+                username.Content = "Guest";
+            }
+            else
+            {
+                username.Content = _controller.GetUsername;
+            }
 
             int loopManga = 1;
             int loopAnime = 1;
@@ -117,7 +127,7 @@ namespace MangAnimeListGUI
             string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
             int index = Int32.Parse(numbers[2]) - 1;
 
-            MangaDetails window = new MangaDetails(index, controller);
+            MangaDetails window = new MangaDetails(index, _controller);
             window.ShowDialog();
         }
 
@@ -127,7 +137,7 @@ namespace MangAnimeListGUI
             string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
             int index = Int32.Parse(numbers[2]) - 5;
 
-            AnimeDetails window = new AnimeDetails(index, controller);
+            AnimeDetails window = new AnimeDetails(index, _controller);
             window.ShowDialog();
         }
 
@@ -142,8 +152,9 @@ namespace MangAnimeListGUI
         }
         private void Login(object sender, MouseEventArgs e)
         {
-                Login window = new Login(controller);
-                window.ShowDialog();
+            Login window = new Login(_controller);
+            Close();
+            window.ShowDialog();
         }
     }
 }

@@ -117,3 +117,12 @@ C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\n
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\Dapper.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\bin\Debug\net5.0-windows\ZstdNet.dll
