@@ -30,7 +30,7 @@ namespace MangAnimeListGUI
 
             dT.Tick += new EventHandler(dt_Tick);
             dL.Tick += new EventHandler(dL_Tick);
-            dT.Interval = new TimeSpan(0, 0, 5);
+            dT.Interval = new TimeSpan(0, 0, 3);
             dL.Interval = TimeSpan.FromMilliseconds(72.5);
             dL.Start();
             dT.Start();
@@ -39,7 +39,7 @@ namespace MangAnimeListGUI
         private void dt_Tick(object sender, EventArgs e)
         {
             Controller controller = new Controller();
-            MainWindow MangAnimeList = new MainWindow(controller);
+            Login MangAnimeList = new Login(controller);
             MangAnimeList.Show();
 
             dT.Stop();
@@ -54,7 +54,7 @@ namespace MangAnimeListGUI
             }
             else
             {
-                loadingBar.Value += 2.5;
+                loadingBar.Value += 5;
             }
         }
     }

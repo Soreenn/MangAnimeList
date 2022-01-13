@@ -28,7 +28,8 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.20*"/>
             <RowDefinition Height="0.20*"/>
-            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.05*"/>
         </Grid.RowDefinitions>
 
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
@@ -43,6 +44,7 @@
             <Label MouseDown="LoginUser" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login"/>
             <Label FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Don't own an account?"/>
         </StackPanel>
-        
+
+        <ProgressBar Visibility="Hidden" IsIndeterminate="True" Name="loadingBar" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
