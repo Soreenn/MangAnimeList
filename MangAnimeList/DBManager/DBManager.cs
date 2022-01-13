@@ -12,7 +12,7 @@ namespace MangAnimeList.DBManager
     public class DBManager
     {
         //This may not work beacause of the static methods(May need an object to end a connection)
-        private static MySqlConnection _connection = new("Database=MangAnimeList;Server=localhost;user=root;password=;");
+        private static MySqlConnection _connection = new("Database=MangAnimeList;Server=localhost;user=root;password=root;");
 
         /// <summary>
         /// Opens the connection to the database using the static connection instance
@@ -68,10 +68,11 @@ namespace MangAnimeList.DBManager
             return result;
         }
 
-        //Session {username, userType}
+        //Session {username, userType, userId}
+        //userType = 0 = guest
         //userType = 1 = user
         //userType = 2 = admin
-        public static string[] Session = new string[2] { null, "1" };
+        public static string[] Session = new string[3] { null, "0", null };
 
         public static bool IsLoginCorrect(string query, string password)
         {
@@ -101,6 +102,26 @@ namespace MangAnimeList.DBManager
                 userType = singleResult.userType;
             }
             return userType;
+        }
+
+        public static int AddMediaToList(string query)
+        {
+            int result = _connection.Execute(query);
+
+            return result;
+        }
+
+        public static int GetUserId(string query)
+        {
+            int userId = 0;
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                userId = singleResult.id;
+            }
+            return userId;
         }
 
     }

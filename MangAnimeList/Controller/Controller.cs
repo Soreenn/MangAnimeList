@@ -157,17 +157,24 @@ namespace MangAnimeList
             get { return (string)DBManager.DBManager.Session.GetValue(1); }
         }
 
+        public string GetUserId
+        {
+            get { return (string)DBManager.DBManager.Session.GetValue(2); }
+        }
+
         public void RegisterUser(string username, string password)
         {
             if ((username != null) && (password != null))
             {
                 if (DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
                 {
-                    int result = DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
-                    if (result == 0)
+                    if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 0)
                     {
+                        int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
+
                         DBManager.DBManager.Session.SetValue(username, 0);
                         DBManager.DBManager.Session.SetValue(1, 1);
+                        DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
                         //open menu while connected
                     }
                     else
@@ -192,9 +199,11 @@ namespace MangAnimeList
                 if (DBManager.DBManager.IsLoginCorrect($"SELECT * FROM users WHERE username = '{username}'", password) == true)
                 {
                     int userType = DBManager.DBManager.GetUserType($"SELECT userType FROM users WHERE username = '{username}' AND password = '{password}'");
-                    
+                    int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
+
                     DBManager.DBManager.Session.SetValue(username, 0);
                     DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
+                    DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
                 }
                 else
                 {
@@ -206,15 +215,10 @@ namespace MangAnimeList
                 //refresh the register page with an error message : please fill the textboxes !
             }
         }
-
-        public string GetSessionUsername
+        
+        public void AddMedia(string mediaName, string mediaType)
         {
-            get { return (string)DBManager.DBManager.Session.GetValue(0); }
-        }
-
-        public string GetSessionUserType
-        {
-            get { return (string)DBManager.DBManager.Session.GetValue(1); }
+            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (name, user_id) VALUES ('{mediaName}', '{GetUserId}')");
         }
 
     }    

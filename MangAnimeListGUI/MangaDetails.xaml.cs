@@ -20,13 +20,16 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class MangaDetails : Window
     {
+        Controller _controller;
         private string _mangaTitleRomaji;
         private string _mangaTitleNative;
 
         public MangaDetails(int mangaIndex, Controller controller)
         {
             InitializeComponent();
-            List<Manga> mangas = controller.GetMangaHomeList;
+
+            _controller = controller;
+            List<Manga> mangas = _controller.GetMangaHomeList;
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
@@ -76,6 +79,10 @@ namespace MangAnimeListGUI
         private void DisplayNativeTitle(object sender, MouseEventArgs e)
         {
             title.Content = _mangaTitleNative;
+        }
+        private void AddToList(object sender, MouseEventArgs e)
+        {
+            _controller.AddMedia(_mangaTitleRomaji, "mangas");
         }
     }
 }
