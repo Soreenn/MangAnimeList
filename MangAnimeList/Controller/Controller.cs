@@ -149,13 +149,13 @@ namespace MangAnimeList
         {
             if ((username != null) && (password != null))
             {
-                if (MangAnimeList.DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
+                if (DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
                 {
-                    int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
+                    int result = DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
                     if (result == 0)
                     {
-                        MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
-                        MangAnimeList.DBManager.DBManager.Session.SetValue(1, 1);
+                        DBManager.DBManager.Session.SetValue(username, 0);
+                        DBManager.DBManager.Session.SetValue(1, 1);
                         //open menu while connected
                     }
                     else
@@ -177,12 +177,12 @@ namespace MangAnimeList
         {
             if ((username != null) && (password != null))
             {
-                if (MangAnimeList.DBManager.DBManager.IsLoginCorrect($"SELECT * FROM users WHERE username = '{username}'", password) == true)
+                if (DBManager.DBManager.IsLoginCorrect($"SELECT * FROM users WHERE username = '{username}'", password) == true)
                 {
-                    int userType = MangAnimeList.DBManager.DBManager.GetUserType($"SELECT userType FROM users WHERE username = '{username}' AND password = '{password}'");
+                    int userType = DBManager.DBManager.GetUserType($"SELECT userType FROM users WHERE username = '{username}' AND password = '{password}'");
                     
-                    MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
-                    MangAnimeList.DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
+                    DBManager.DBManager.Session.SetValue(username, 0);
+                    DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
                 }
                 else
                 {
@@ -195,7 +195,15 @@ namespace MangAnimeList
             }
         }
 
+        public string GetSessionUsername
+        {
+            get { return (string)DBManager.DBManager.Session.GetValue(0); }
+        }
 
+        public string GetSessionUserType
+        {
+            get { return (string)DBManager.DBManager.Session.GetValue(1); }
+        }
 
     }    
 }
