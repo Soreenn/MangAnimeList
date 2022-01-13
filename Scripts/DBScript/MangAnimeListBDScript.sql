@@ -60,8 +60,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `userType`) VALUES
-	(1, 'test', '123', 1),
-	(2, 'coucou', 'kiki', 1);
+	(1, 'admin', '1234', 2),
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
