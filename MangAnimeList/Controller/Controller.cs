@@ -149,16 +149,22 @@ namespace MangAnimeList
         {
             if ((username != null) && (password != null))
             {
-                int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
-                if (result == 0)
+                if (MangAnimeList.DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
                 {
-                    MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
-                    MangAnimeList.DBManager.DBManager.Session.SetValue(1, 1);
-                    //open menu while connected
-                }
-                else
+                    int result = MangAnimeList.DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')");
+                    if (result == 0)
+                    {
+                        MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
+                        MangAnimeList.DBManager.DBManager.Session.SetValue(1, 1);
+                        //open menu while connected
+                    }
+                    else
+                    {
+                        //refresh the register page with an error message : error when registering the user, please retry !
+                    }
+                } else
                 {
-                    //refresh the register page with an error message : error when registering the user, please retry!
+                    //refresh the register page with an error message : the username is already taken please change !
                 }
             }
             else
@@ -166,5 +172,30 @@ namespace MangAnimeList
                 //refresh the register page with an error message : please fill the textboxes !
             }
         }
-    }
+
+        public void Login(string username, string password)
+        {
+            if ((username != null) && (password != null))
+            {
+                if (MangAnimeList.DBManager.DBManager.IsLoginCorrect($"SELECT * FROM users WHERE username = '{username}'", password) == true)
+                {
+                    int userType = MangAnimeList.DBManager.DBManager.GetUserType($"SELECT userType FROM users WHERE username = '{username}' AND password = '{password}'");
+                    
+                    MangAnimeList.DBManager.DBManager.Session.SetValue(username, 0);
+                    MangAnimeList.DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
+                }
+                else
+                {
+                    //refresh the login page wit an error message : The username and / or the password are false please retry !
+                }
+            }
+            else
+            {
+                //refresh the register page with an error message : please fill the textboxes !
+            }
+        }
+
+
+
+    }    
 }

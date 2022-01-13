@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Dapper;
+using System.Collections;
 
 namespace MangAnimeList.DBManager
 {
@@ -50,9 +51,57 @@ namespace MangAnimeList.DBManager
             return result;
         }
 
+        public static bool IsUsernameUnique(string query, string username)
+        {
+            bool result = true;
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                if(username == singleResult.username)
+                {
+                    result = false;
+                }
+            }
+
+            return result;
+        }
+
         //Session {username, userType}
         //userType = 1 = user
         //userType = 2 = admin
-        public static string[] Session = new string[2] { null, null };
+        public static string[] Session = new string[2] { null, "1" };
+
+        public static bool IsLoginCorrect(string query, string password)
+        {
+            bool result = false;
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                if (singleResult.password == password)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        public static int GetUserType (string query)
+        {
+            int userType = 1;
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                userType = singleResult.userType;
+            }
+            return userType;
+        }
+
     }
 }

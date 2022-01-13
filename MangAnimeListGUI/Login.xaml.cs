@@ -27,9 +27,9 @@ namespace MangAnimeListGUI
             InitializeComponent();
             _controller = controller;
         }
-        private void Register(object sender, MouseEventArgs e)
+        private void LoginUser(object sender, MouseEventArgs e)
         {
-            _controller.RegisterUser(usernameLabel.Text, passwordLabel.Text);
+            _controller.Login(usernameLabel.Text, passwordLabel.Text);
             this.Close();
         }
     }
