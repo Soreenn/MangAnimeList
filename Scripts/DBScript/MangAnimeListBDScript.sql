@@ -22,7 +22,11 @@ USE `manganimelist`;
 DROP TABLE IF EXISTS `animes`;
 CREATE TABLE IF NOT EXISTS `animes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `state` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'In progress',
+  `season` int DEFAULT NULL,
+  `episode` int DEFAULT NULL,
+  `note` int DEFAULT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -36,12 +40,16 @@ DELETE FROM `animes`;
 DROP TABLE IF EXISTS `mangas`;
 CREATE TABLE IF NOT EXISTS `mangas` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `user_id` int NOT NULL DEFAULT '0',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `state` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'In progress',
+  `volume` int DEFAULT NULL,
+  `chapter` int DEFAULT NULL,
+  `note` int DEFAULT NULL,
+  `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table manganimelist.mangas : ~0 rows (environ)
+-- Listage des données de la table manganimelist.mangas : ~1 rows (environ)
 DELETE FROM `mangas`;
 /*!40000 ALTER TABLE `mangas` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mangas` ENABLE KEYS */;
@@ -56,11 +64,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table manganimelist.users : ~2 rows (environ)
+-- Listage des données de la table manganimelist.users : ~1 rows (environ)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `userType`) VALUES
-	(1, 'admin', '1234', 2),
+	(1, 'admin', '1234', 2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
