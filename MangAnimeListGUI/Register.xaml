@@ -44,8 +44,8 @@
         <TextBox Name="confirmPasswordLabel" Grid.Row="7" Grid.Column="1"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label MouseDown="LoginUser" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Register&#xD;&#xA;"/>
-            <Label FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="You have an account ?"/>
+            <Label MouseDown="RegisterUser" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Register"/>
+            <Label MouseDown="LoginPage" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="You have an account ?"/>
         </StackPanel>
 
     </Grid>

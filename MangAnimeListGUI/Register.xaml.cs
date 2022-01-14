@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MangAnimeList;
 
 namespace MangAnimeListGUI
 {
@@ -19,9 +20,35 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class Register : Window
     {
-        public Register()
+        Controller _controller;
+
+        public Register(Controller controller)
         {
             InitializeComponent();
+            _controller = controller;
         }
+
+        private void RegisterUser(object sender, MouseEventArgs e)
+        {
+            string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Text, confirmPasswordLabel.Text);
+            if (_controller.IsConnected == true)
+            {
+                MainWindow window = new MainWindow(_controller);
+                Close();
+                window.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Error !");
+            }
+        }
+
+        private void LoginPage(object sender, MouseEventArgs e)
+        {
+            Login window = new Login(_controller);
+            Close();
+            window.ShowDialog();
+        }
+
     }
 }

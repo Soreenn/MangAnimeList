@@ -21,6 +21,12 @@
     <Compile Update="MangaDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Search.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SplashScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +45,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MangaDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Search.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SplashScreen.xaml">

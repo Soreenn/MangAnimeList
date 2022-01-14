@@ -162,39 +162,56 @@ namespace MangAnimeList
             get { return (string)DBManager.DBManager.Session.GetValue(2); }
         }
 
-        public void RegisterUser(string username, string password)
+        public string RegisterUser(string username, string password, string confirmPassword)
         {
-            if ((username != null) && (password != null))
-            {
-                if (DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
-                {
-                    if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 0)
-                    {
-                        int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
+            string errorMessage = null;
 
-                        DBManager.DBManager.Session.SetValue(username, 0);
-                        DBManager.DBManager.Session.SetValue(1, 1);
-                        DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
-                        //open menu while connected
+            if ((username != string.Empty) && (password != string.Empty) && (password != string.Empty))
+            {
+                if (password == confirmPassword)
+                {
+                    if (DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
+                    {
+                        if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 0)
+                        {
+                            int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
+
+                            DBManager.DBManager.Session.SetValue(username, 0);
+                            DBManager.DBManager.Session.SetValue(1, 1);
+                            DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
+                            IsConnected = true;
+                        }
+                        else
+                        {
+                            IsConnected = false;
+                            errorMessage = "Error while registering the user. Please retry !";
+                        }
                     }
                     else
                     {
-                        //refresh the register page with an error message : error when registering the user, please retry !
+                        IsConnected = false;
+                        errorMessage = "The username is already taken please change !";
                     }
-                } else
+                }
+                else
                 {
-                    //refresh the register page with an error message : the username is already taken please change !
+                    IsConnected = false;
+                    errorMessage = "The passwords are not matching !";
                 }
             }
             else
             {
-                //refresh the register page with an error message : please fill the textboxes !
+                IsConnected = false;
+                errorMessage = "Please fill all the textboxes !";
             }
+            return errorMessage;
         }
 
-        public void Login(string username, string password)
+        public string Login(string username, string password)
         {
-            if ((username != null) && (password != null))
+            string errorMessage = null;
+
+            if ((username != string.Empty) && (password != string.Empty))
             {
                 if (DBManager.DBManager.IsLoginCorrect($"SELECT * FROM users WHERE username = '{username}'", password) == true)
                 {
@@ -204,18 +221,23 @@ namespace MangAnimeList
                     DBManager.DBManager.Session.SetValue(username, 0);
                     DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
                     DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
+                    IsConnected = true;
                 }
                 else
                 {
-                    //refresh the login page wit an error message : The username and / or the password are false please retry !
+                    IsConnected = false;
+                    errorMessage = "The username and / or the password are not correct. Please retry !";
                 }
             }
             else
             {
-                //refresh the register page with an error message : please fill the textboxes !
+                IsConnected = false;
+                errorMessage = "Please fill all the textboxes !";
             }
+            return errorMessage;
         }
-        
+
+
         public void AddMedia(string mediaName, string mediaType)
         {
             int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (name, user_id) VALUES ('{mediaName}', '{GetUserId}')");
