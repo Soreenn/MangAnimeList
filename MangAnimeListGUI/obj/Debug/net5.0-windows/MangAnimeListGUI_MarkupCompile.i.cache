@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\App.xaml
-71008697563
+8-1279753360
 
-11444139029
+12-429719660
 206-2136917254
-AnimeDetails.xaml;EasterEgg.xaml;List.xaml;Login.xaml;MainWindow.xaml;MangaDetails.xaml;SplashScreen.xaml;
+AnimeDetails.xaml;EasterEgg.xaml;List.xaml;Login.xaml;MainWindow.xaml;MangaDetails.xaml;Register.xaml;SplashScreen.xaml;
 
-True
+False
 
