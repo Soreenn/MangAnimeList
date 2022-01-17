@@ -29,7 +29,7 @@ namespace MangAnimeListGUI
             InitializeComponent();
 
             _controller = controller;
-            List<Manga> mangas = _controller.GetMangaHomeList;
+            List<Manga> mangas = _controller.InitializeMangaList();
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;

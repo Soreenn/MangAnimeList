@@ -28,7 +28,7 @@ namespace MangAnimeListGUI
             InitializeComponent();
 
             _controller = controller;
-            List<Anime> animes = controller.GetAnimeHomeList;
+            List<Anime> animes = controller.InitializeAnimeList();
 
             var animeCoverURL = animes[animeIndex].Cover;
             var mangaBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";

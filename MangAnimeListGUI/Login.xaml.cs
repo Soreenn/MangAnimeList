@@ -45,7 +45,7 @@ namespace MangAnimeListGUI
         }
 
 
-        private async void LoginUser(object sender, MouseEventArgs e)
+        private void LoginUser(object sender, MouseEventArgs e)
         {
             ProgressBarVisibility = Visibility.Visible;
 
@@ -69,7 +69,7 @@ namespace MangAnimeListGUI
         private void dt_Tick(object sender, EventArgs e)
         {
             Controller controller = new Controller();
-            MainWindow MangAnimeList = new MainWindow(controller);
+            MainWindow MangAnimeList = new MainWindow(_controller);
             MangAnimeList.Show();
 
             dT.Stop();

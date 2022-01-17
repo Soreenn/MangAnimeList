@@ -82,9 +82,7 @@ C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\n
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\MangaDetails.g.cs
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\List.baml
 C:\Users\luke.cornaz\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\MangaDetails.baml
-C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\List.g.cs
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\MangaDetails.g.cs
-C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\List.baml
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\MangaDetails.baml
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\AnimeDetails.g.cs
 C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\AnimeDetails.baml

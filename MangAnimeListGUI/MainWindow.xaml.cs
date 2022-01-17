@@ -125,7 +125,11 @@ namespace MangAnimeListGUI
         {
             string name = (((Border)e.Source)).Name;
             string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
-            int index = Int32.Parse(numbers[2]) - 1;
+            int homeIndex = Int32.Parse(numbers[2]) - 1;
+
+            List<Manga> mangas = _controller.GetMangaHomeList;
+
+            int index = _controller.GetMangaIndex(mangas[homeIndex].Title[1]);
 
             MangaDetails window = new MangaDetails(index, _controller);
             window.ShowDialog();
@@ -135,8 +139,11 @@ namespace MangAnimeListGUI
         {
             string name = (((Border)e.Source)).Name;
             string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
-            int index = Int32.Parse(numbers[2]) - 5;
+            int homeIndex = Int32.Parse(numbers[2]) - 5;
 
+            List<Anime> animes = _controller.GetAnimeHomeList;
+
+            int index = _controller.GetAnimeIndex(animes[homeIndex].Title[0]);
             AnimeDetails window = new AnimeDetails(index, _controller);
             window.ShowDialog();
         }
@@ -150,9 +157,9 @@ namespace MangAnimeListGUI
                 window.ShowDialog();
             }
         }
-        private void Login(object sender, MouseEventArgs e)
+        private void Search(object sender, MouseEventArgs e)
         {
-            Login window = new Login(_controller);
+            Search window = new Search(_controller);
             Close();
             window.ShowDialog();
         }

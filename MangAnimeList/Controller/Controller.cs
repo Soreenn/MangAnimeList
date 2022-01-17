@@ -243,5 +243,46 @@ namespace MangAnimeList
             int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (name, user_id) VALUES ('{mediaName}', '{GetUserId}')");
         }
 
+        public int GetAnimeIndex(string title)
+        {
+            int _index = 0;
+            int _realIndex = 0;
+            List<Anime> _animes = InitializeAnimeList();
+
+            foreach(Anime _anime in _animes)
+            {
+                if (_anime.Title[0] != title)
+                {
+                    _index++;
+
+                } else
+                {
+                    _realIndex = _index;
+                    break;
+                }
+            }
+            return _realIndex;
+        }
+
+        public int GetMangaIndex(string title)
+        {
+            int _index = 0;
+            int _realIndex = 0;
+            List<Manga> _mangas = InitializeMangaList();
+
+            foreach (Manga _manga in _mangas)
+            {
+                if (_manga.Title[1] != title)
+                {
+                    _index++;
+                }
+                else
+                {
+                    _realIndex = _index;
+                    break;
+                }
+            }
+            return _realIndex;
+        }
     }    
 }

@@ -24,6 +24,7 @@ namespace MangAnimeList
             get;
             set;
         }
+
     }
 
 }
