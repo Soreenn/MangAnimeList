@@ -59,15 +59,15 @@ namespace MangAnimeListGUI
         }
         private void ShowMedia(object sender, MouseEventArgs e)
         {
-            if(sender is Grid ctrl)
+            if (sender is Grid ctrl)
             {
-                if(ctrl.DataContext is Anime anime)
+                if (ctrl.DataContext is Anime anime)
                 {
                     int animeIndex = _controller.GetAnimeIndex(anime.Title[0]);
                     AnimeDetails window = new AnimeDetails(animeIndex, _controller);
                     window.ShowDialog();
                 }
-                else if(ctrl.DataContext is Manga manga)
+                else if (ctrl.DataContext is Manga manga)
                 {
                     int mangaIndex = _controller.GetMangaIndex(manga.Title[0]);
                     MangaDetails window = new MangaDetails(mangaIndex, _controller);
@@ -75,6 +75,12 @@ namespace MangAnimeListGUI
                 }
 
             }
+        }
+        private void GoBack(object sender, MouseEventArgs e)
+        {
+            MainWindow window = new MainWindow(_controller);
+            Close();
+            window.ShowDialog();
         }
 
         public List<string> Tags

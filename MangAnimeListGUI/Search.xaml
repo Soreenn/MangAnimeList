@@ -23,8 +23,8 @@
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.10*"/>
             <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.10*"/>
             <RowDefinition Height="0.10*"/>
             <RowDefinition Height="0.15*"/>
             <RowDefinition Height="0.2*"/>
@@ -36,11 +36,14 @@
             <RowDefinition Height="0.20*"/>
             <RowDefinition Height="0.20*"/>
         </Grid.RowDefinitions>
-        
+
+        <Viewbox Grid.Column="0" Height="40" Width="40">
+            <Image MouseDown="GoBack" Source="https://static.thenounproject.com/png/3554040-200.png"/>
+        </Viewbox>
+
         <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox Name="type" Margin="0,0,100,0" Width="250"/>
             <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
             <Label MouseDown="SearchMedia" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Search"/>
         </StackPanel>
