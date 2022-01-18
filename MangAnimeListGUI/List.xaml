@@ -1,0 +1,131 @@
+﻿<Window x:Class="MangAnimeListGUI.List"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MangAnimeListGUI"
+        mc:Ignorable="d"
+        Title="List" Height="450" Width="800"
+          WindowStyle="SingleBorderWindow"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        d:DataContext="{d:DesignInstance local:Search, IsDesignTimeCreatable=True}"
+        x:Name="ListWindow">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#282538">
+            </SolidColorBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.20*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Column="0" Height="40" Width="40">
+            <Image MouseDown="GoBack" Source="https://static.thenounproject.com/png/3554040-200.png"/>
+        </Viewbox>
+
+        <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
+            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="listType" Width="250" Margin="0,0,50,0"/>
+            <Label MouseDown="SearchMedia" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Search"/>
+        </StackPanel>
+
+        <ListBox x:Name="animeBox" ItemsSource="{Binding ElementName=SearchWindow, Path=Animes}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid MouseDown="ShowMedia">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0" Height="40" Width="40">
+                            <Image Source="{Binding Cover}"/>
+                        </Viewbox>
+                        <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <!--<DataTemplate>
+                -->
+            <!--<StackPanel Margin="3">
+                    <DockPanel>
+                        <TextBlock FontWeight="Bold" Text="Name:" DockPanel.Dock="Left" Margin="5,0,10,0" />
+                        <TextBlock Text="" />
+                        <TextBlock Text="{Binding ElementName=SearchWindow, Path=MediaName}" Foreground="Green" FontWeight="Bold" />
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock FontWeight="Bold" Text="Address:" Foreground="DarkOrange" DockPanel.Dock="Left" Margin="5,0,5,0" />
+                        <TextBlock Text="{Binding SeasonOrVolume}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding EpisodeOrChapter}" />
+                    </DockPanel>
+                </StackPanel>-->
+            <!--
+            </DataTemplate>-->
+        </ListBox>
+
+        <ListBox ItemsSource="{Binding ElementName=SearchWindow, Path=Mangas}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid MouseDown="ShowMedia">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0" Height="40" Width="40">
+                            <Image Source="{Binding Cover}"/>
+                        </Viewbox>
+                        <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <!--<DataTemplate>
+                -->
+            <!--<StackPanel Margin="3">
+                    <DockPanel>
+                        <TextBlock FontWeight="Bold" Text="Name:" DockPanel.Dock="Left" Margin="5,0,10,0" />
+                        <TextBlock Text="" />
+                        <TextBlock Text="{Binding ElementName=SearchWindow, Path=MediaName}" Foreground="Green" FontWeight="Bold" />
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock FontWeight="Bold" Text="Address:" Foreground="DarkOrange" DockPanel.Dock="Left" Margin="5,0,5,0" />
+                        <TextBlock Text="{Binding SeasonOrVolume}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding EpisodeOrChapter}" />
+                    </DockPanel>
+                </StackPanel>-->
+            <!--
+            </DataTemplate>-->
+        </ListBox>
+
+    </Grid>
+</Window>

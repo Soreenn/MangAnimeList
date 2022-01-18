@@ -163,5 +163,12 @@ namespace MangAnimeListGUI
             Close();
             window.ShowDialog();
         }
+
+        private void List(object sender, MouseEventArgs e)
+        {
+            List window = new List(_controller);
+            Close();
+            window.ShowDialog();
+        }
     }
 }

@@ -136,6 +136,7 @@ namespace MangAnimeList
             get { return _mangaHomeList; }
         }
 
+
         public List<Anime> GetAnimeHomeList
         {
             set { _animeHomeList = value; }
@@ -175,9 +176,10 @@ namespace MangAnimeList
                         if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 1)
                         {
                             int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
+                            int userType = DBManager.DBManager.GetUserType($"SELECT userType FROM users WHERE username = '{username}' AND password = '{password}'");
 
                             DBManager.DBManager.Session.SetValue(username, 0);
-                            DBManager.DBManager.Session.SetValue("1", 1);
+                            DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
                             DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
                             IsConnected = true;
                         }
@@ -283,6 +285,16 @@ namespace MangAnimeList
                 }
             }
             return _realIndex;
+        }
+
+        public string[] InitializeAnimeListOfUser()
+        {
+            int index = DBManager.DBManager.GetNumberOfAnimeInUserList($"SELECT * FROM animes WHERE user_id = {GetUserId}");
+
+            string[] AnimeListOfUser = new string[index];
+            AnimeListOfUser = DBManager.DBManager.GetAnimeListOfUser($"SELECT * FROM animes WHERE user_id = {GetUserId}", index);
+
+            return AnimeListOfUser;
         }
     }    
 }

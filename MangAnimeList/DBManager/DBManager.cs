@@ -124,5 +124,35 @@ namespace MangAnimeList.DBManager
             return userId;
         }
 
+        public static int GetNumberOfAnimeInUserList(string query)
+        {
+            int index = 0;
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                index++;
+            }
+
+            return index;
+        }
+
+        public static string[] GetAnimeListOfUser(string query, int index)
+        {
+            string[] AnimeListOfUser = new string[index];
+            int foreachIndex = 0;
+            
+            IEnumerable queryResult = _connection.Query(query);
+
+            foreach (dynamic singleResult in queryResult)
+            {
+                AnimeListOfUser.SetValue(singleResult.name, foreachIndex);
+                foreachIndex++;
+            }
+
+            return AnimeListOfUser;
+        }
+
     }
 }
