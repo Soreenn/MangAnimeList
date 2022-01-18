@@ -33,7 +33,7 @@ namespace MangAnimeListGUI
             string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Text, confirmPasswordLabel.Text);
             if (_controller.IsConnected == true)
             {
-                MainWindow window = new MainWindow(_controller);
+                Login window = new Login(_controller);
                 Close();
                 window.ShowDialog();
             }
