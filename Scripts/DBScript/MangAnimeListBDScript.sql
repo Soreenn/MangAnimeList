@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Hôte:                         127.0.0.1
--- Version du serveur:           8.0.27 - MySQL Community Server - GPL
+-- Version du serveur:           8.0.26 - MySQL Community Server - GPL
 -- SE du serveur:                Win64
 -- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
@@ -29,11 +29,25 @@ CREATE TABLE IF NOT EXISTS `animes` (
   `note` int DEFAULT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table manganimelist.animes : ~0 rows (environ)
-DELETE FROM `animes`;
+-- Listage des données de la table manganimelist.animes : ~1 rows (environ)
 /*!40000 ALTER TABLE `animes` DISABLE KEYS */;
+INSERT INTO `animes` (`id`, `name`, `state`, `season`, `episode`, `note`, `user_id`) VALUES
+	(1, 'Oni Chichi: Refresh♥', 'In progress', NULL, NULL, NULL, 1),
+	(2, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(3, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(4, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(5, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(6, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(7, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(8, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(9, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(10, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(11, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(12, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(13, 'Huyao Xiao Hongniang: Wangquan Pian', 'In progress', NULL, NULL, NULL, 1),
+	(14, 'Baka na Imouto wo Rikou ni Suru no wa Ore no xx dake na Ken ni Tsuite', 'In progress', NULL, NULL, NULL, 1);
 /*!40000 ALTER TABLE `animes` ENABLE KEYS */;
 
 -- Listage de la structure de la table manganimelist. mangas
@@ -47,12 +61,35 @@ CREATE TABLE IF NOT EXISTS `mangas` (
   `note` int DEFAULT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table manganimelist.mangas : ~1 rows (environ)
-DELETE FROM `mangas`;
+-- Listage des données de la table manganimelist.mangas : ~0 rows (environ)
 /*!40000 ALTER TABLE `mangas` DISABLE KEYS */;
+INSERT INTO `mangas` (`id`, `name`, `state`, `volume`, `chapter`, `note`, `user_id`) VALUES
+	(4, 'Retsujou no Meikyuu', 'In progress', NULL, NULL, NULL, 1);
 /*!40000 ALTER TABLE `mangas` ENABLE KEYS */;
+
+-- Listage de la structure de la table manganimelist. media
+DROP TABLE IF EXISTS `media`;
+CREATE TABLE IF NOT EXISTS `media` (
+  `id` int NOT NULL,
+  `title_romaji` varchar(255) NOT NULL,
+  `title_native` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `tags` varchar(255) DEFAULT NULL,
+  `status` varchar(50) NOT NULL,
+  `release_year` int NOT NULL,
+  `cover` varchar(400) NOT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `episodes` int DEFAULT NULL,
+  `average_score` int NOT NULL,
+  `volumes` int DEFAULT NULL,
+  `chapters` int DEFAULT NULL,
+  `bannerImage` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Listage des données de la table manganimelist.media : ~0 rows (environ)
+/*!40000 ALTER TABLE `media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `media` ENABLE KEYS */;
 
 -- Listage de la structure de la table manganimelist. users
 DROP TABLE IF EXISTS `users`;
@@ -62,13 +99,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(30) NOT NULL,
   `userType` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table manganimelist.users : ~1 rows (environ)
-DELETE FROM `users`;
+-- Listage des données de la table manganimelist.users : ~0 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `userType`) VALUES
-	(1, 'admin', '1234', 2);
+	(1, 'admin', '1234', 2),
+	(3, 'Luke', '12', 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
