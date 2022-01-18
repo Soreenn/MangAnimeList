@@ -172,12 +172,12 @@ namespace MangAnimeList
                 {
                     if (DBManager.DBManager.IsUsernameUnique($"SELECT * FROM users", username) == true)
                     {
-                        if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 0)
+                        if (DBManager.DBManager.RegisterUserDB($"INSERT INTO users (username, password) VALUES ('{username}', '{password}')") == 1)
                         {
                             int userId = DBManager.DBManager.GetUserId($"SELECT * FROM users WHERE username = '{username}'");
 
                             DBManager.DBManager.Session.SetValue(username, 0);
-                            DBManager.DBManager.Session.SetValue(1, 1);
+                            DBManager.DBManager.Session.SetValue("1", 1);
                             DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
                             IsConnected = true;
                         }
