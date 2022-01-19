@@ -59,7 +59,7 @@ namespace MangAnimeList.DBManager
 
             foreach (dynamic singleResult in queryResult)
             {
-                if(username == singleResult.username)
+                if (username == singleResult.username)
                 {
                     result = false;
                 }
@@ -91,7 +91,7 @@ namespace MangAnimeList.DBManager
             return result;
         }
 
-        public static int GetUserType (string query)
+        public static int GetUserType(string query)
         {
             int userType = 1;
 
@@ -124,5 +124,12 @@ namespace MangAnimeList.DBManager
             return userId;
         }
 
+        public static IEnumerable Select(string query)
+        {
+
+            IEnumerable queryResult = _connection.Query(query);
+
+            return queryResult;
+        }
     }
 }

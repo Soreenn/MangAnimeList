@@ -8,7 +8,7 @@ namespace MangAnimeList
 {
     public class Anime : Media
     {
-        public Anime(List<string> title, string status, int releaseYear, List<string> tags, string cover) : base(title, status, releaseYear, tags, cover)
+        public Anime(List<string> title, string status, int releaseYear, List<string> tags, string cover, int id) : base(title, status, releaseYear, tags, cover, id)
         {
 
         }

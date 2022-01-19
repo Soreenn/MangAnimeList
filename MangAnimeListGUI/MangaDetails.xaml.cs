@@ -21,6 +21,7 @@ namespace MangAnimeListGUI
     public partial class MangaDetails : Window
     {
         Controller _controller;
+        int _mangaIndex;
         private string _mangaTitleRomaji;
         private string _mangaTitleNative;
 
@@ -28,15 +29,16 @@ namespace MangAnimeListGUI
         {
             InitializeComponent();
 
+            _mangaIndex = mangaIndex;
             _controller = controller;
             List<Manga> mangas = _controller.InitializeMangaList();
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
-            _mangaTitleRomaji = mangas[mangaIndex].Title[1];
-            if (mangas[mangaIndex].Title[2] != null)
+            _mangaTitleRomaji = mangas[mangaIndex].Title[0];
+            if (mangas[mangaIndex].Title[1] != "")
             {
-                _mangaTitleNative = mangas[mangaIndex].Title[2];
+                _mangaTitleNative = mangas[mangaIndex].Title[1];
             }
             else
             {
@@ -82,7 +84,8 @@ namespace MangAnimeListGUI
         }
         private void AddToList(object sender, MouseEventArgs e)
         {
-            _controller.AddMedia(_mangaTitleRomaji, "mangas");
+            List<Manga> mangas = _controller.InitializeMangaList();
+            _controller.AddMedia("mangas", mangas[_mangaIndex].id);
         }
     }
 }

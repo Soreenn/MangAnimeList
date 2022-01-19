@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MangAnimeList;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace MangAnimeList
 {
@@ -25,28 +26,18 @@ namespace MangAnimeList
 
         public List<Anime> InitializeAnimeList()
         {
-            var pathAnime = @"..\..\..\..\Data\anime-offline-database.json";
-            string jsonFileAnime = File.ReadAllText(pathAnime);
-            dynamic fileAnime = JsonConvert.DeserializeObject(jsonFileAnime);
+
+            IEnumerable animesQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'anime'");
             List<Anime> animes = new List<Anime>();
-            foreach (dynamic media in fileAnime.data)
+            foreach (dynamic media in animesQuery)
             {
                 List<string> titles = new List<string>();
-                titles.Add(media.title.Value);
+                titles.Add(media.title_romaji);
+                titles.Add(media.title_native);
 
-                foreach (string title in media.synonyms)
-                {
-                    titles.Add(title);
-                }
+                List<string> tags = new List<string>(media.tags.Split(','));
 
-                List<string> tags = new List<string>();
-                foreach (var tag in media.tags)
-                {
-                    tags.Add(tag.Value);
-                }
-
-
-                Anime anime = new Anime(titles, media.status.Value, (int)media.animeSeason.year.Value, tags, media.picture.Value);
+                Anime anime = new Anime(titles, media.status, (int)media.release_year, tags, media.cover, media.id);
                 anime.episodes = media.episodes;
                 anime.type = media.type;
                 animes.Add(anime);
@@ -56,31 +47,22 @@ namespace MangAnimeList
 
         public List<Manga> InitializeMangaList()
         {
-            var pathManga = @"..\..\..\..\Data\manga-offline-database.json";
-            string jsonFileManga = File.ReadAllText(pathManga);
-            dynamic fileManga = JsonConvert.DeserializeObject(jsonFileManga);
+            IEnumerable mangasQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'manga'");
             List<Manga> mangas = new List<Manga>();
-            foreach (dynamic media in fileManga)
+            foreach (dynamic media in mangasQuery)
             {
+                List<string> tags = new List<string>(media.tags.Split(','));
+
                 List<string> titles = new List<string>();
-                foreach (string title in media.data.Media.title)
-                {
-                    titles.Add(title);
-                }
+                titles.Add(media.title_romaji);
+                titles.Add(media.title_native);
 
-                List<string> tags = new List<string>();
-                foreach (var tag in media.data.Media.tags)
-                {
-                    tags.Add(tag.name.Value);
-                }
+                Manga manga = new Manga(titles, media.status, (int)media.release_year, tags, media.cover, media.id);
 
-                
-                Manga manga = new Manga(titles, media.data.Media.status.Value, (int)media.data.Media.startDate.year.Value, tags, media.data.Media.coverImage.extraLarge.Value);
-                manga.id = media.data.Media.id;
-                manga.averageScore = media.data.Media.averageScore;
-                manga.volumes = media.data.Media.volumes;
-                manga.chapters = media.data.Media.chapters;
-                manga.bannerImage = media.data.Media.bannerImage;
+                manga.averageScore = media.averageScore;
+                manga.volumes = media.volumes;
+                manga.chapters = media.chapters;
+                manga.bannerImage = media.bannerImage;
                 mangas.Add(manga);
             }
             return mangas;
@@ -88,50 +70,51 @@ namespace MangAnimeList
 
         public void GenerateRandomHomeList()
         {
-                List<Anime> randomAnimeList = new List<Anime>();
-                List<Manga> randomMangaList = new List<Manga>();
+            List<Anime> randomAnimeList = new List<Anime>();
+            List<Manga> randomMangaList = new List<Manga>();
 
-                Anime animeShown1;
-                Anime animeShown2;
-                Anime animeShown3;
-                Anime animeShown4;
+            Anime animeShown1;
+            Anime animeShown2;
+            Anime animeShown3;
+            Anime animeShown4;
 
-                Manga mangaShown1;
-                Manga mangaShown2;
-                Manga mangaShown3;
-                Manga mangaShown4;
+            Manga mangaShown1;
+            Manga mangaShown2;
+            Manga mangaShown3;
+            Manga mangaShown4;
 
-                Controller controller = new Controller();
-                List<Manga> mangas = controller.InitializeMangaList();
-                List<Anime> animes = controller.InitializeAnimeList();
+            Controller controller = new Controller();
+            List<Manga> mangas = controller.InitializeMangaList();
+            List<Anime> animes = controller.InitializeAnimeList();
 
-                animeShown1 = animes[random.Next(animes.Count)];
-                animeShown2 = animes[random.Next(animes.Count)];
-                animeShown3 = animes[random.Next(animes.Count)];
-                animeShown4 = animes[random.Next(animes.Count)];
+            animeShown1 = animes[random.Next(animes.Count)];
+            animeShown2 = animes[random.Next(animes.Count)];
+            animeShown3 = animes[random.Next(animes.Count)];
+            animeShown4 = animes[random.Next(animes.Count)];
 
-                randomAnimeList.Add(animeShown1);
-                randomAnimeList.Add(animeShown2);
-                randomAnimeList.Add(animeShown3);
-                randomAnimeList.Add(animeShown4);
+            randomAnimeList.Add(animeShown1);
+            randomAnimeList.Add(animeShown2);
+            randomAnimeList.Add(animeShown3);
+            randomAnimeList.Add(animeShown4);
 
-                mangaShown1 = mangas[random.Next(mangas.Count)];
-                mangaShown2 = mangas[random.Next(mangas.Count)];
-                mangaShown3 = mangas[random.Next(mangas.Count)];
-                mangaShown4 = mangas[random.Next(mangas.Count)];
-
-
-                randomMangaList.Add(mangaShown1);
-                randomMangaList.Add(mangaShown2); //gros consultant
-                randomMangaList.Add(mangaShown3);
-                randomMangaList.Add(mangaShown4);
+            mangaShown1 = mangas[random.Next(mangas.Count)];
+            mangaShown2 = mangas[random.Next(mangas.Count)];
+            mangaShown3 = mangas[random.Next(mangas.Count)];
+            mangaShown4 = mangas[random.Next(mangas.Count)];
 
 
-                GetAnimeHomeList = randomAnimeList;
-                GetMangaHomeList = randomMangaList;
+            randomMangaList.Add(mangaShown1);
+            randomMangaList.Add(mangaShown2); //gros consultant
+            randomMangaList.Add(mangaShown3);
+            randomMangaList.Add(mangaShown4);
+
+
+            GetAnimeHomeList = randomAnimeList;
+            GetMangaHomeList = randomMangaList;
         }
 
-        public List<Manga> GetMangaHomeList {
+        public List<Manga> GetMangaHomeList
+        {
             set { _mangaHomeList = value; }
             get { return _mangaHomeList; }
         }
@@ -238,51 +221,29 @@ namespace MangAnimeList
         }
 
 
-        public void AddMedia(string mediaName, string mediaType)
+        public void AddMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (name, user_id) VALUES ('{mediaName}', '{GetUserId}')");
+            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")})");
         }
 
-        public int GetAnimeIndex(string title)
+        public int GetMangaIndex(int id)
         {
-            int _index = 0;
-            int _realIndex = 0;
-            List<Anime> _animes = InitializeAnimeList();
-
-            foreach(Anime _anime in _animes)
-            {
-                if (_anime.Title[0] != title)
-                {
-                    _index++;
-
-                } else
-                {
-                    _realIndex = _index;
-                    break;
-                }
-            }
-            return _realIndex;
-        }
-
-        public int GetMangaIndex(string title)
-        {
-            int _index = 0;
-            int _realIndex = 0;
             List<Manga> _mangas = InitializeMangaList();
+            int _index = id - _mangas[0].id;
 
-            foreach (Manga _manga in _mangas)
-            {
-                if (_manga.Title[1] != title)
-                {
-                    _index++;
-                }
-                else
-                {
-                    _realIndex = _index;
-                    break;
-                }
-            }
-            return _realIndex;
+            return _index;
         }
-    }    
+
+        public List<Anime> GetAnimeWatchlist()
+        {
+            List<Anime> _animes = InitializeAnimeList();
+            IEnumerable animeIds = DBManager.DBManager.Select($"SELECT anime_id FROM animes WHERE user_id LIKE '{GetUserId}'");
+            List<Anime> _watchlist = new List<Anime>();
+            foreach(int animeId in animeIds)
+            {
+                _watchlist.Add(_animes[animeId]);
+            }
+            return _watchlist;
+        }
+    }
 }

@@ -21,17 +21,19 @@ namespace MangAnimeListGUI
     public partial class AnimeDetails : Window
     {
         Controller _controller;
+        int _animeIndex;
         string _animeTitleRomaji;
         string _animeTitleNative;
         public AnimeDetails(int animeIndex, Controller controller)
         {
             InitializeComponent();
 
+            _animeIndex = animeIndex;
             _controller = controller;
             List<Anime> animes = controller.InitializeAnimeList();
 
-            var animeCoverURL = animes[animeIndex].Cover;
-            var mangaBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";
+            string animeCoverURL = animes[animeIndex].Cover;
+            string mangaBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";
             _animeTitleRomaji = animes[animeIndex].Title[0];
             if(animes[animeIndex].Title.ElementAtOrDefault(2) != null)
             {
@@ -81,7 +83,8 @@ namespace MangAnimeListGUI
 
         private void AddToList(object sender, MouseEventArgs e)
         {
-            _controller.AddMedia(_animeTitleRomaji, "animes");
+            List<Anime> animes = _controller.InitializeAnimeList();
+            _controller.AddMedia("animes", animes[_animeIndex].id);
         }
     }
 }

@@ -63,13 +63,13 @@ namespace MangAnimeListGUI
             {
                 if (ctrl.DataContext is Anime anime)
                 {
-                    int animeIndex = _controller.GetAnimeIndex(anime.Title[0]);
+                    int animeIndex = anime.id;
                     AnimeDetails window = new AnimeDetails(animeIndex, _controller);
                     window.ShowDialog();
                 }
                 else if (ctrl.DataContext is Manga manga)
                 {
-                    int mangaIndex = _controller.GetMangaIndex(manga.Title[0]);
+                    int mangaIndex = _controller.GetMangaIndex(manga.id);
                     MangaDetails window = new MangaDetails(mangaIndex, _controller);
                     window.ShowDialog();
                 }
@@ -99,7 +99,7 @@ namespace MangAnimeListGUI
                 {
                     if (tag.SelectedItem == tag.Items[0])
                     {
-                        return _controller.GetAnimeHomeList;
+                        return _controller.InitializeAnimeList();
                     }
                     else {
                         return _animes.Where(anime => anime.Tags.Contains(tag.SelectedItem)).ToList();

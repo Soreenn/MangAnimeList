@@ -45,4 +45,3 @@ C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\ref\MangAnimeList.dll
 C:\Users\Axel.PITTET\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.pdb
-C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeList\obj\Debug\net5.0\MangAnimeList.csproj.AssemblyReference.cache

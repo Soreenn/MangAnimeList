@@ -8,17 +8,10 @@ namespace MangAnimeList
 {
     public class Manga : Media
     {
-        public Manga(List<string> title, string status, int releaseYear, List<string> tags, string cover) : base(title, status, releaseYear, tags, cover)
+        public Manga(List<string> title, string status, int releaseYear, List<string> tags, string cover, int id) : base(title, status, releaseYear, tags, cover, id)
         {
 
         }
-
-        public int id
-        {
-            get;
-            set;
-        }
-
         public int? averageScore
         {
             get;
