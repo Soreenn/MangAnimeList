@@ -15,6 +15,9 @@
     <Compile Update="EasterEgg.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="List.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -36,6 +39,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EasterEgg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="List.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Login.xaml">
