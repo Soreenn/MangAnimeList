@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gabriel.MACHADO-PERE\source\repos\MangAnimeListGUI\obj\Debug\net5.0-windows\
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\obj\Debug\net5.0-windows\
 MangAnimeListGUI
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Gabriel.MACHADO-PERE\source\repos\MangAnimeListGUI\App.xaml
-91673305475
+C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\App.xaml
+9771069040
 
-111028618022
-206200467816
-AnimeDetails.xaml;EasterEgg.xaml;List.xaml;Login.xaml;MainWindow.xaml;MangaDetails.xaml;Register.xaml;Search.xaml;SplashScreen.xaml;
+11-2014943482
+206-2136917254
+AnimeDetails.xaml;EasterEgg.xaml;Login.xaml;MainWindow.xaml;MangaDetails.xaml;Register.xaml;Search.xaml;SplashScreen.xaml;TrackList.xaml;
 
 False
 

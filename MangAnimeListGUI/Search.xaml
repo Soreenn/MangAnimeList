@@ -9,7 +9,7 @@
           WindowStyle="SingleBorderWindow"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignInstance local:Search, IsDesignTimeCreatable=True}"
+        
         x:Name="SearchWindow">
     <Grid>
         <Grid.Background>
@@ -44,7 +44,7 @@
         <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
+            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
             <Label MouseDown="SearchMedia" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Search"/>
         </StackPanel>
 
@@ -62,7 +62,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Viewbox Grid.Column="0" Height="40" Width="40">
-                            <Image Source="{Binding Cover}"/>
+                            <Image Source="{Binding thumbnail}"/>
                         </Viewbox>
                         <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
                     </Grid>
@@ -99,7 +99,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Viewbox Grid.Column="0" Height="40" Width="40">
-                            <Image Source="{Binding Cover}"/>
+                            <Image Source="{Binding thumbnail}"/>
                         </Viewbox>
                         <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
                     </Grid>

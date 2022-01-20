@@ -224,7 +224,7 @@ namespace MangAnimeList
 
         public void AddMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")})");
+            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}, state) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")}, 'UNFINISHED')");
         }
 
         public int GetMangaIndex(int id)
@@ -235,16 +235,45 @@ namespace MangAnimeList
             return _index;
         }
 
-        public List<Anime> GetAnimeWatchlist()
+        public List<AnimeWatchList> GetAnimeWatchlist()
         {
             List<Anime> _animes = InitializeAnimeList();
-            IEnumerable animeIds = DBManager.DBManager.Select($"SELECT anime_id FROM animes WHERE user_id LIKE '{GetUserId}'");
-            List<Anime> _watchlist = new List<Anime>();
-            foreach(int animeId in animeIds)
+            IEnumerable animeIds = DBManager.DBManager.Select($"SELECT * FROM animes WHERE user_id LIKE '{GetUserId}'");
+            List<AnimeWatchList> _watchlist = new List<AnimeWatchList>();
+            foreach(dynamic media in animeIds)
             {
-                _watchlist.Add(_animes[animeId]);
+                AnimeWatchList _animeWatchlist = new AnimeWatchList(_animes[media.animes_id - 1], media.current_episode, media.state);
+                _watchlist.Add(_animeWatchlist);
             }
             return _watchlist;
+        }
+
+        public List<MangaWatchList> GetMangaWatchlist()
+        {
+            List<Manga> _mangas = InitializeMangaList();
+            IEnumerable mangaIds = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}'");
+            List<MangaWatchList> _watchlist = new List<MangaWatchList>();
+            foreach (dynamic media in mangaIds)
+            {
+                MangaWatchList _mangaWatchlist = new MangaWatchList(_mangas[GetMangaIndex(media.mangas_id)], media.current_volume, media.current_chapter, media.state);
+                _watchlist.Add(_mangaWatchlist);
+            }
+            return _watchlist;
+        }
+
+        public bool IsMangaInList(int mangaId)
+        {
+            List<Manga> _mangas = InitializeMangaList();
+            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}' AND mangas_id LIKE '{mangaId}'");
+            bool isMangaInList;
+            if (result.ToString() == null)
+            {
+                isMangaInList = false;
+            } else
+            {
+                isMangaInList = true;
+            }
+            return isMangaInList;
         }
     }
 }

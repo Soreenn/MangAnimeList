@@ -166,7 +166,7 @@ namespace MangAnimeListGUI
 
         private void List(object sender, MouseEventArgs e)
         {
-            List window = new List(_controller);
+            TrackList window = new TrackList(_controller);
             Close();
             window.ShowDialog();
         }

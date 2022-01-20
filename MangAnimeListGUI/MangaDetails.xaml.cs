@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,24 +19,27 @@ namespace MangAnimeListGUI
     /// <summary>
     /// Logique d'interaction pour MangaDetails.xaml
     /// </summary>
-    public partial class MangaDetails : Window
+    public partial class MangaDetails : Window, INotifyPropertyChanged
     {
         Controller _controller;
         int _mangaIndex;
         private string _mangaTitleRomaji;
         private string _mangaTitleNative;
+        private Visibility _addToListVisibility;
+        private bool _isMangaInList;
 
         public MangaDetails(int mangaIndex, Controller controller)
         {
             InitializeComponent();
-
             _mangaIndex = mangaIndex;
             _controller = controller;
             List<Manga> mangas = _controller.InitializeMangaList();
+            _isMangaInList = _controller.IsMangaInList(mangas[mangaIndex].id);
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
             _mangaTitleRomaji = mangas[mangaIndex].Title[0];
+
             if (mangas[mangaIndex].Title[1] != "")
             {
                 _mangaTitleNative = mangas[mangaIndex].Title[1];
@@ -44,6 +48,16 @@ namespace MangAnimeListGUI
             {
                 NativeButton.Visibility = Visibility.Hidden;
             }
+
+            if(_isMangaInList == true)
+            {
+                AddToListVisibility = Visibility.Visible;
+            }
+            else
+            {
+                AddToListVisibility = Visibility.Collapsed;
+            }
+
             var mangaTags = mangas[mangaIndex].Tags;
             var mangaVolumes = mangas[mangaIndex].volumes;
             var mangaChapters = mangas[mangaIndex].chapters;
@@ -86,6 +100,32 @@ namespace MangAnimeListGUI
         {
             List<Manga> mangas = _controller.InitializeMangaList();
             _controller.AddMedia("mangas", mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
+            if (_isMangaInList == true)
+            {
+                AddToListVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AddToListVisibility = Visibility.Visible;
+            }
+        }
+
+        public Visibility AddToListVisibility
+        {
+            get => _addToListVisibility;
+            set
+            {
+                _addToListVisibility = value;
+                NotifyPropertyChanged(nameof(AddToListVisibility));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
