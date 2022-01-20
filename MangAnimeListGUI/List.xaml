@@ -9,7 +9,7 @@
           WindowStyle="SingleBorderWindow"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignInstance local:Search, IsDesignTimeCreatable=True}"
+        d:DataContext="{d:DesignInstance local:List, IsDesignTimeCreatable=True}"
         x:Name="ListWindow">
     <Grid>
         <Grid.Background>
@@ -44,8 +44,8 @@
         <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="listType" Width="250" Margin="0,0,50,0"/>
+            <ComboBox ItemsSource="{Binding ElementName=ListWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
+            <ComboBox ItemsSource="{Binding ElementName=ListWindow, Path=Tags}" SelectedValue="{Binding Tags}"  Text="Tags" Name="listType" Width="250" Margin="0,0,50,0"/>
             <Label MouseDown="SearchMedia" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Search"/>
         </StackPanel>
 

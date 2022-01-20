@@ -10,12 +10,13 @@ namespace MangAnimeList
     {
         private List<string> _title;
         private string _status;
+        private string _thumbnail;
         private int _id;
         private int _releaseYear;
         private List<string> _tags;
         private string _cover;
 
-        public Media(List<string> title ,string status, int releaseYear, List<string> tags, string cover, int id)
+        public Media(List<string> title ,string status, int releaseYear, List<string> tags, string cover, int id, string thumbnail)
         {
             _title = title.ToList();
             _tags = tags.ToList();
@@ -53,6 +54,11 @@ namespace MangAnimeList
         public int id
         {
             get { return _id; }
+        }
+
+        public string thumbnail
+        {
+            get { return _thumbnail; }
         }
     }
 }

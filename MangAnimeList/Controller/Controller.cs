@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using MangAnimeList;
 using System.Runtime.InteropServices;
 using System.Collections;
@@ -37,7 +36,7 @@ namespace MangAnimeList
 
                 List<string> tags = new List<string>(media.tags.Split(','));
 
-                Anime anime = new Anime(titles, media.status, (int)media.release_year, tags, media.cover, media.id);
+                Anime anime = new Anime(titles, media.status, (int)media.release_year, tags, media.cover, media.id, media.thumbnail);
                 anime.episodes = media.episodes;
                 anime.type = media.type;
                 animes.Add(anime);
@@ -57,7 +56,7 @@ namespace MangAnimeList
                 titles.Add(media.title_romaji);
                 titles.Add(media.title_native);
 
-                Manga manga = new Manga(titles, media.status, (int)media.release_year, tags, media.cover, media.id);
+                Manga manga = new Manga(titles, media.status, (int)media.release_year, tags, media.cover, media.id, media.thumbnail);
 
                 manga.averageScore = media.averageScore;
                 manga.volumes = media.volumes;

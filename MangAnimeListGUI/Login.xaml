@@ -9,7 +9,6 @@
         WindowStyle="SingleBorderWindow"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignInstance local:Login, IsDesignTimeCreatable=True}"
         x:Name="LoginWindow">
     <Grid>
         <Grid.Background>

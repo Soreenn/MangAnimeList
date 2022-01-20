@@ -26,6 +26,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
     }
     coverImage{
       extraLarge
+      medium
     }
     bannerImage
   }
@@ -41,10 +42,12 @@ while id < 40000:
   variables['id'] = id
   response = requests.post(url, json={'query': query, 'variables': variables}).json
   datas = response()
+  virgule = ','
   if not "errors" in datas:
     print(id)
     with open('list.json', 'a') as f:
       json.dump(response(), f)
+      json.dump(virgule, f)
     time.sleep(0.5)
   id += 1
   

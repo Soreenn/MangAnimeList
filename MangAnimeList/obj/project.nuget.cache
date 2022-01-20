@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aBESWApgl1NwH0Wab+Zl6xDO+D+dfz970PFapX+cJGV5B7/7JzFiIOA4TvShm5pPX6lHrVS+TaK6aT7ZRh5apg==",
+  "dgSpecHash": "UiSgeYE6OwLGDm4gAAD6ox2RIso5V3o1HQI/1seGt0CA641WFaT+zzn12AwUkVWvSEUDU4NDdlcbeFRV9WLmIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gabriel.MACHADO-PERE\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,6 @@
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\mysql.data\\8.0.27\\mysql.data.8.0.27.nupkg.sha512",
-    "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Gabriel.MACHADO-PERE\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

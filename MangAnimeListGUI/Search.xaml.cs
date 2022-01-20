@@ -63,7 +63,7 @@ namespace MangAnimeListGUI
             {
                 if (ctrl.DataContext is Anime anime)
                 {
-                    int animeIndex = anime.id;
+                    int animeIndex = anime.id -1;
                     AnimeDetails window = new AnimeDetails(animeIndex, _controller);
                     window.ShowDialog();
                 }

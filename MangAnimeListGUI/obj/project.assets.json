@@ -322,8 +322,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Dapper": "2.0.123",
-          "MySql.Data": "8.0.27",
-          "Newtonsoft.Json": "13.0.1"
+          "MySql.Data": "8.0.27"
         },
         "compile": {
           "bin/placeholder/MangAnimeList.dll": {}
@@ -990,7 +989,6 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Dapper >= 2.0.123",
       "MangAnimeList >= 1.0.0",
       "MySql.Data >= 8.0.27",
       "Newtonsoft.Json >= 13.0.1",
@@ -1041,10 +1039,6 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
-          "Dapper": {
-            "target": "Package",
-            "version": "[2.0.123, )"
-          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.27, )"

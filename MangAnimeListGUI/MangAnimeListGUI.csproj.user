@@ -1,66 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\Gabriel.MACHADO-PERE\Documents\GitHub\MangAnimeList\MangAnimeListGUI\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="AnimeDetails.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="EasterEgg.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="List.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Login.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="MangaDetails.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Register.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Search.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="SplashScreen.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="AnimeDetails.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="EasterEgg.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="List.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Login.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MangaDetails.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Register.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Search.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="SplashScreen.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>

@@ -35,7 +35,6 @@ namespace MangAnimeListGUI
             _tags.Add("default");
             _controller = controller;
             _animes = _controller.InitializeAnimeList().ToList();
-            _animesListOfUser = _controller.InitializeAnimeListOfUser();
             _mangas = _controller.InitializeMangaList().ToList();
 
             for (int i = _animes.Count - 1; i >= 0; i--)
@@ -56,7 +55,6 @@ namespace MangAnimeListGUI
         private void SearchMedia(object sender, MouseEventArgs e)
         {
             _query = SearchQuery.Text;
-            NotifyPropertyChanged(nameof(Animes));
             NotifyPropertyChanged(nameof(Mangas));
         }
         private void ShowMedia(object sender, MouseEventArgs e)
@@ -65,13 +63,13 @@ namespace MangAnimeListGUI
             {
                 if (ctrl.DataContext is Anime anime)
                 {
-                    int animeIndex = _controller.GetAnimeIndex(anime.Title[0]);
+                    int animeIndex = anime.id;
                     AnimeDetails window = new AnimeDetails(animeIndex, _controller);
                     window.ShowDialog();
                 }
                 else if (ctrl.DataContext is Manga manga)
                 {
-                    int mangaIndex = _controller.GetMangaIndex(manga.Title[0]);
+                    int mangaIndex = _controller.GetMangaIndex(manga.id);
                     MangaDetails window = new MangaDetails(mangaIndex, _controller);
                     window.ShowDialog();
                 }
@@ -90,36 +88,6 @@ namespace MangAnimeListGUI
             get
             {
                 return _tags;
-            }
-        }
-
-        public string[] Animes
-        {
-            get
-            {
-                if (_query == "")
-                {
-                    if (tag.SelectedItem == tag.Items[0])
-                    {
-                        return return _animes.Where(anime => anime.Tags.Contains(tag.SelectedItem)).ToList();
-                    }
-                    else
-                    {
-                        return _animes.Where(anime => anime.Tags.Contains(tag.SelectedItem)).ToList();
-                    }
-                }
-                else
-                {
-                    if (tag.SelectedItem == tag.Items[0])
-                    {
-                        return _animes.Where(anime => anime.Title[0].ToLower().Contains(_query.ToLower())).ToList();
-                    }
-                    else
-                    {
-                        List<Anime> _animesFiltered = _animes.Where(anime => anime.Title[0].ToLower().Contains(_query.ToLower())).ToList();
-                        return _animesFiltered.Where(anime => anime.Tags.Contains(tag.SelectedItem)).ToList();
-                    }
-                }
             }
         }
 
