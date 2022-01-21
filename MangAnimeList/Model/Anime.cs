@@ -13,13 +13,13 @@ namespace MangAnimeList
 
         }
 
-        public string? type
+        public string type
         {
             get;
             set;
         }
 
-        public int? episodes
+        public int episodes
         {
             get;
             set;

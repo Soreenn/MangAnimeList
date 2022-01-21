@@ -48,7 +48,7 @@ namespace MangAnimeListGUI
             _query = "";
 
             InitializeComponent();
-
+            
         }
 
         private void SearchMedia(object sender, MouseEventArgs e)
@@ -57,6 +57,7 @@ namespace MangAnimeListGUI
             NotifyPropertyChanged(nameof(Animes));
             NotifyPropertyChanged(nameof(Mangas));
         }
+
         private void ShowMedia(object sender, MouseEventArgs e)
         {
             if (sender is Grid ctrl)
@@ -76,6 +77,7 @@ namespace MangAnimeListGUI
 
             }
         }
+
         private void GoBack(object sender, MouseEventArgs e)
         {
             MainWindow window = new MainWindow(_controller);
@@ -97,7 +99,7 @@ namespace MangAnimeListGUI
             {
                 if(_query == "")
                 {
-                    if (tag.SelectedItem == tag.Items[0])
+                    if (tag.SelectedItem.Equals(tag.Items[0]))
                     {
                         return _controller.InitializeAnimeList();
                     }
@@ -107,7 +109,7 @@ namespace MangAnimeListGUI
                 }
                 else
                 {
-                    if(tag.SelectedItem == tag.Items[0])
+                    if(tag.SelectedItem.Equals(tag.Items[0]))
                     {
                         return _animes.Where(anime => anime.Title[0].ToLower().Contains(_query.ToLower())).ToList();
                     }
@@ -159,6 +161,4 @@ namespace MangAnimeListGUI
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
-
 }

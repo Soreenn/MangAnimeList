@@ -160,14 +160,13 @@ namespace MangAnimeListGUI
         private void Search(object sender, MouseEventArgs e)
         {
             Search window = new Search(_controller);
+            window.Show();
             Close();
-            window.ShowDialog();
         }
 
         private void List(object sender, MouseEventArgs e)
         {
             TrackList window = new TrackList(_controller);
-            Close();
             window.ShowDialog();
         }
     }
