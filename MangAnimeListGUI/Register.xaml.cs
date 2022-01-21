@@ -35,7 +35,10 @@ namespace MangAnimeListGUI
 
         private void RegisterByPressingEnter(object sender, KeyEventArgs e)
         {
-            RegisterUser();
+            if (e.Key == Key.Enter)
+            {
+                RegisterUser();
+            }
         }
 
         private void RegisterUser()
@@ -43,7 +46,7 @@ namespace MangAnimeListGUI
             string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
             if (_controller.IsConnected == true)
             {
-                Login window = new Login(_controller);
+                MainWindow window = new MainWindow(_controller);
                 Close();
                 window.ShowDialog();
             }

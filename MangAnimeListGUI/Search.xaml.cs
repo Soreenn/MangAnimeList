@@ -141,7 +141,7 @@ namespace MangAnimeListGUI
                 {
                     if (tag.SelectedItem.Equals(tag.Items[0]))
                     {
-                        return _mangas.Where(manga => manga.Title[1].ToLower().Contains(_query.ToLower())).ToList();
+                        return _mangas.Where(manga => manga.Title[0].ToLower().Contains(_query.ToLower())).ToList();
                     }
                     else
                     {

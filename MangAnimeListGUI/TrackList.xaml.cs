@@ -80,9 +80,9 @@ namespace MangAnimeListGUI
                     MangaDetails window = new MangaDetails(mangaIndex, _controller);
                     window.ShowDialog();
                 }
-
             }
         }
+
         private void GoBack(object sender, MouseEventArgs e)
         {
             MainWindow window = new MainWindow(_controller);
