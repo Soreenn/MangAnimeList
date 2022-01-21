@@ -28,7 +28,17 @@ namespace MangAnimeListGUI
             _controller = controller;
         }
 
-        private void RegisterUser(object sender, MouseEventArgs e)
+        private void RegisterByLabel(object sender, MouseEventArgs e)
+        {
+            RegisterUser();
+        }
+
+        private void RegisterByPressingEnter(object sender, KeyEventArgs e)
+        {
+            RegisterUser();
+        }
+
+        private void RegisterUser()
         {
             string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
             if (_controller.IsConnected == true)
@@ -49,6 +59,5 @@ namespace MangAnimeListGUI
             Close();
             window.ShowDialog();
         }
-
     }
 }

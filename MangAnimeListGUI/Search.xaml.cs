@@ -51,7 +51,7 @@ namespace MangAnimeListGUI
             
         }
 
-        private void SearchMedia(object sender, MouseEventArgs e)
+        private void SearchMedia()
         {
             _query = SearchQuery.Text;
             NotifyPropertyChanged(nameof(Animes));
@@ -159,6 +159,16 @@ namespace MangAnimeListGUI
         private void NotifyPropertyChanged(String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void UpdateTag(object sender, SelectionChangedEventArgs e)
+        {
+            SearchMedia();
+        }
+
+        private void UpdateText(object sender, TextChangedEventArgs e)
+        {
+            SearchMedia();
         }
     }
 }

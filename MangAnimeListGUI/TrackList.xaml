@@ -47,7 +47,7 @@
         <ListBox x:Name="AnimeUnfinishedList" ItemsSource="{Binding ElementName=TrackListWindow, Path=AnimesUnfinished}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1" Visibility="{Binding ElementName=TrackListWindow, Path=AnimeVisibility}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel/>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
@@ -69,7 +69,7 @@
         <ListBox x:Name="AnimeFinishedList" ItemsSource="{Binding ElementName=TrackListWindow, Path=AnimesFinished}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="2" Visibility="{Binding ElementName=TrackListWindow, Path=AnimeVisibility}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel/>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
@@ -91,7 +91,7 @@
         <ListBox x:Name="MangaUnfinishedList" ItemsSource="{Binding ElementName=TrackListWindow, Path=MangasUnfinished}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1" Visibility="{Binding ElementName=TrackListWindow, Path=MangaVisibility}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel/>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
@@ -113,7 +113,7 @@
         <ListBox x:Name="MangaFinishedList" ItemsSource="{Binding ElementName=TrackListWindow, Path=MangasFinished}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="2" Visibility="{Binding ElementName=TrackListWindow, Path=MangaVisibility}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel/>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>

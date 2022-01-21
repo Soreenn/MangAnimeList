@@ -45,7 +45,20 @@ namespace MangAnimeListGUI
         }
 
 
-        private void LoginUser(object sender, MouseEventArgs e)
+        private void LoginByLabel(object sender, MouseEventArgs e)
+        {
+            LoginUser();
+        }
+
+        private void LoginByPressingEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                LoginUser();
+            }
+        }
+
+        private void LoginUser()
         {
             ProgressBarVisibility = Visibility.Visible;
 
@@ -63,7 +76,6 @@ namespace MangAnimeListGUI
             {
                 MessageBox.Show(errorMessage, "Error !");
             }
-
         }
 
         private void dt_Tick(object sender, EventArgs e)

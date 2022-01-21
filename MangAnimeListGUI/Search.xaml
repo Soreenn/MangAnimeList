@@ -4,7 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
-        mc:Ignorable="d"<*"/>
+        mc:Ignorable="d"
+        Title="Search" Height="450" Width="800"
+          WindowStyle="SingleBorderWindow"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        x:Name="SearchWindow">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#282538">
+            </SolidColorBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.20*"/>
             <RowDefinition Height="0.20*"/>
             <RowDefinition Height="0.20*"/>
@@ -17,11 +43,10 @@
             <Image MouseDown="GoBack" Source="https://i.ibb.co/ccWDtVq/3554040-200.png"/>
         </Viewbox>
 
-        <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="UpdateText"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Tags" Name="tag" Width="250" Margin="0,0,50,0"/>
-            <Label MouseDown="SearchMedia" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Search"/>
+            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Tags" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
         </StackPanel>
 
         <ListBox x:Name="animeBox" ItemsSource="{Binding ElementName=SearchWindow, Path=Animes}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1">
@@ -50,7 +75,7 @@
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>
-                    </ItemsPanelTemplate>
+                </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -67,6 +92,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
     </Grid>
 </Window>
