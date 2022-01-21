@@ -229,12 +229,12 @@ namespace MangAnimeList
 
         public void FinishMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.FinishMedia($"UPDATE {mediaType} SET state = 'FINISHED' WHERE mangas_id LIKE '{mediaId}'");
+            int result = DBManager.DBManager.FinishMedia($"UPDATE {mediaType} SET state = 'FINISHED' WHERE {mediaType}_id LIKE '{mediaId}'");
         }
 
         public void RemoveMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.FinishMedia($"DELETE FROM {mediaType} WHERE mangas_id LIKE '{mediaId}'");
+            int result = DBManager.DBManager.FinishMedia($"DELETE FROM {mediaType} WHERE {mediaType}_id LIKE '{mediaId}'");
         }
 
         public int GetMangaIndex(int id)
@@ -271,35 +271,33 @@ namespace MangAnimeList
             return _watchlist;
         }
 
-        public bool IsMangaInList(int mangaId)
+        public bool IsMediaInList(string mediaType, int mediaId)
         {
-            List<Manga> _mangas = InitializeMangaList();
-            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}' AND mangas_id LIKE '{mangaId}'");
-            bool isMangaInList;
+            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}'");
+            bool isMediaInList;
             if (result.Cast<object>().Any())
             {
-                isMangaInList = true;
+                isMediaInList = true;
             } else
             {
-                isMangaInList = false;
+                isMediaInList = false;
             }
-            return isMangaInList;
+            return isMediaInList;
         }
 
-        public bool IsMangaFinished(int mangaId)
+        public bool IsMediaFinished(string mediaType, int mediaId)
         {
-            List<Manga> _mangas = InitializeMangaList();
-            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}' AND mangas_id LIKE '{mangaId}' AND state LIKE 'FINISHED'");
-            bool isMangaFinished;
+            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}' AND state LIKE 'FINISHED'");
+            bool isMediaFinished;
             if (result.Cast<object>().Any())
             {
-                isMangaFinished = true;
+                isMediaFinished = true;
             }
             else
             {
-                isMangaFinished = false;
+                isMediaFinished = false;
             }
-            return isMangaFinished;
+            return isMediaFinished;
         }
     }
 }

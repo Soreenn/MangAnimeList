@@ -37,8 +37,8 @@ namespace MangAnimeListGUI
             _mangaIndex = mangaIndex;
             _controller = controller;
             List<Manga> mangas = _controller.InitializeMangaList();
-            _isMangaInList = _controller.IsMangaInList(mangas[mangaIndex].id);
-            _isMangaFinished = _controller.IsMangaFinished(mangas[mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", mangas[mangaIndex].id);
+            _isMangaFinished = _controller.IsMediaFinished("mangas", mangas[mangaIndex].id);
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
@@ -76,7 +76,6 @@ namespace MangAnimeListGUI
             else
             {
                 FinishMangaVisibility = Visibility.Collapsed;
-
             }
 
             if (_isMangaInList == true)
@@ -86,7 +85,6 @@ namespace MangAnimeListGUI
             else
             {
                 RemoveFromListVisibility = Visibility.Collapsed;
-
             }
 
             var mangaTags = mangas[mangaIndex].Tags;
@@ -131,7 +129,8 @@ namespace MangAnimeListGUI
         {
             List<Manga> mangas = _controller.InitializeMangaList();
             _controller.AddMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
+
             if (_isMangaInList == true)
             {
                 AddToListVisibility = Visibility.Collapsed;
@@ -150,8 +149,8 @@ namespace MangAnimeListGUI
         {
             List<Manga> mangas = _controller.InitializeMangaList();
             _controller.FinishMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
-            _isMangaFinished = _controller.IsMangaFinished(mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
+            _isMangaFinished = _controller.IsMediaFinished("mangas", mangas[_mangaIndex].id);
 
             if (_isMangaInList == true)
             {
@@ -168,15 +167,14 @@ namespace MangAnimeListGUI
             {
                 FinishMangaVisibility = Visibility.Collapsed;
             }
-
-
         }
 
         private void RemoveFromList(object sender, MouseEventArgs e)
         {
             List<Manga> mangas = _controller.InitializeMangaList();
             _controller.RemoveMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
+
             if (_isMangaInList == true)
             {
                 AddToListVisibility = Visibility.Collapsed;
@@ -189,8 +187,6 @@ namespace MangAnimeListGUI
                 FinishMangaVisibility = Visibility.Collapsed;
                 RemoveFromListVisibility = Visibility.Collapsed;
             }
-
-
         }
 
         public Visibility AddToListVisibility
