@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Détail de l'oeuvre" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+        Title="Détail de l'oeuvre" Height="1080" Width="1920" WindowStartupLocation="CenterScreen"
+        x:Name="AnimeDetailsWindow">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">
@@ -90,7 +91,9 @@
                 <StackPanel Orientation="Horizontal">
                     <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
                     <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Native"/>
-                    <Label MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Add to my list"/>
+                    <Label Visibility="{Binding ElementName=AnimeDetailsWindow, Path=AddToListVisibility}" MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Add to my list"/>
+                    <Label Visibility="{Binding ElementName=AnimeDetailsWindow, Path=FinishAnimeVisibility}" MouseDown="FinishAnime" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Finish anime"/>
+                    <Label Visibility="{Binding ElementName=AnimeDetailsWindow, Path=RemoveFromListVisibility}" MouseDown="RemoveFromList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Remove anime from list"/>
                 </StackPanel>
             </Viewbox>
         </Border>

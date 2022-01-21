@@ -38,10 +38,10 @@
         <TextBox Name="usernameLabel" Grid.Row="3" Grid.Column="1"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox Name="passwordLabel" Grid.Row="5" Grid.Column="1"/>
+        <PasswordBox Name="passwordLabel" Grid.Row="5" Grid.Column="1"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Confirm Password" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox Name="confirmPasswordLabel" Grid.Row="7" Grid.Column="1"/>
+        <PasswordBox Name="confirmPasswordLabel" Grid.Row="7" Grid.Column="1"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label MouseDown="RegisterUser" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Register"/>

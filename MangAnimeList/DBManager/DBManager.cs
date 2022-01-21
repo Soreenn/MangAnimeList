@@ -111,6 +111,13 @@ namespace MangAnimeList.DBManager
             return result;
         }
 
+        public static int FinishMedia(string query)
+        {
+            int result = _connection.Execute(query);
+
+            return result;
+        }
+
         public static int GetUserId(string query)
         {
             int userId = 0;

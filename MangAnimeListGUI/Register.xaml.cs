@@ -30,7 +30,7 @@ namespace MangAnimeListGUI
 
         private void RegisterUser(object sender, MouseEventArgs e)
         {
-            string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Text, confirmPasswordLabel.Text);
+            string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
             if (_controller.IsConnected == true)
             {
                 Login window = new Login(_controller);
