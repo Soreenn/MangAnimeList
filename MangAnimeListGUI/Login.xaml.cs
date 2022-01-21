@@ -49,7 +49,7 @@ namespace MangAnimeListGUI
         {
             ProgressBarVisibility = Visibility.Visible;
 
-            string errorMessage = _controller.Login(usernameLabel.Text, passwordLabel.Text);
+            string errorMessage = _controller.Login(usernameLabel.Text, passwordLabel.Password);
             if (_controller.IsConnected == true)
             {
                 dT.Tick += new EventHandler(dt_Tick);
