@@ -227,6 +227,16 @@ namespace MangAnimeList
             int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}, state) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")}, 'UNFINISHED')");
         }
 
+        public void FinishMedia(string mediaType, int mediaId)
+        {
+            int result = DBManager.DBManager.FinishMedia($"UPDATE {mediaType} SET state = 'FINISHED' WHERE mangas_id LIKE '{mediaId}'");
+        }
+
+        public void RemoveMedia(string mediaType, int mediaId)
+        {
+            int result = DBManager.DBManager.FinishMedia($"DELETE FROM {mediaType} WHERE mangas_id LIKE '{mediaId}'");
+        }
+
         public int GetMangaIndex(int id)
         {
             List<Manga> _mangas = InitializeMangaList();
@@ -274,6 +284,22 @@ namespace MangAnimeList
                 isMangaInList = false;
             }
             return isMangaInList;
+        }
+
+        public bool IsMangaFinished(int mangaId)
+        {
+            List<Manga> _mangas = InitializeMangaList();
+            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}' AND mangas_id LIKE '{mangaId}' AND state LIKE 'FINISHED'");
+            bool isMangaFinished;
+            if (result.Cast<object>().Any())
+            {
+                isMangaFinished = true;
+            }
+            else
+            {
+                isMangaFinished = false;
+            }
+            return isMangaFinished;
         }
     }
 }

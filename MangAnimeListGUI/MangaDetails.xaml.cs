@@ -26,7 +26,10 @@ namespace MangAnimeListGUI
         private string _mangaTitleRomaji;
         private string _mangaTitleNative;
         private Visibility _addToListVisibility;
+        private Visibility _finishMangaVisibility;
+        private Visibility _removeFromListVisibility;
         private bool _isMangaInList;
+        private bool _isMangaFinished;
 
         public MangaDetails(int mangaIndex, Controller controller)
         {
@@ -35,6 +38,7 @@ namespace MangAnimeListGUI
             _controller = controller;
             List<Manga> mangas = _controller.InitializeMangaList();
             _isMangaInList = _controller.IsMangaInList(mangas[mangaIndex].id);
+            _isMangaFinished = _controller.IsMangaFinished(mangas[mangaIndex].id);
 
             var mangaCoverURL = mangas[mangaIndex].Cover;
             var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
@@ -56,6 +60,33 @@ namespace MangAnimeListGUI
             else
             {
                 AddToListVisibility = Visibility.Visible;
+            }
+
+            if(_isMangaInList == true)
+            {
+                if (_isMangaFinished == true)
+                {
+                    FinishMangaVisibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    FinishMangaVisibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                FinishMangaVisibility = Visibility.Collapsed;
+
+            }
+
+            if (_isMangaInList == true)
+            {
+                RemoveFromListVisibility = Visibility.Visible;
+            }
+            else
+            {
+                RemoveFromListVisibility = Visibility.Collapsed;
+
             }
 
             var mangaTags = mangas[mangaIndex].Tags;
@@ -104,11 +135,62 @@ namespace MangAnimeListGUI
             if (_isMangaInList == true)
             {
                 AddToListVisibility = Visibility.Collapsed;
+                FinishMangaVisibility = Visibility.Visible;
+                RemoveFromListVisibility = Visibility.Visible;
             }
             else
             {
                 AddToListVisibility = Visibility.Visible;
+                FinishMangaVisibility = Visibility.Collapsed;
+                RemoveFromListVisibility = Visibility.Collapsed;
             }
+        }
+
+        private void FinishManga(object sender, MouseEventArgs e)
+        {
+            List<Manga> mangas = _controller.InitializeMangaList();
+            _controller.FinishMedia("mangas", mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
+            _isMangaFinished = _controller.IsMangaFinished(mangas[_mangaIndex].id);
+
+            if (_isMangaInList == true)
+            {
+                if (_isMangaFinished == true)
+                {
+                    FinishMangaVisibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    FinishMangaVisibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                FinishMangaVisibility = Visibility.Collapsed;
+            }
+
+
+        }
+
+        private void RemoveFromList(object sender, MouseEventArgs e)
+        {
+            List<Manga> mangas = _controller.InitializeMangaList();
+            _controller.RemoveMedia("mangas", mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMangaInList(mangas[_mangaIndex].id);
+            if (_isMangaInList == true)
+            {
+                AddToListVisibility = Visibility.Collapsed;
+                FinishMangaVisibility = Visibility.Visible;
+                RemoveFromListVisibility = Visibility.Visible;
+            }
+            else
+            {
+                AddToListVisibility = Visibility.Visible;
+                FinishMangaVisibility = Visibility.Collapsed;
+                RemoveFromListVisibility = Visibility.Collapsed;
+            }
+
+
         }
 
         public Visibility AddToListVisibility
@@ -118,6 +200,26 @@ namespace MangAnimeListGUI
             {
                 _addToListVisibility = value;
                 NotifyPropertyChanged(nameof(AddToListVisibility));
+            }
+        }
+
+        public Visibility FinishMangaVisibility
+        {
+            get => _finishMangaVisibility;
+            set
+            {
+                _finishMangaVisibility = value;
+                NotifyPropertyChanged(nameof(FinishMangaVisibility));
+            }
+        }
+
+        public Visibility RemoveFromListVisibility
+        {
+            get => _removeFromListVisibility;
+            set
+            {
+                _removeFromListVisibility = value;
+                NotifyPropertyChanged(nameof(RemoveFromListVisibility));
             }
         }
 

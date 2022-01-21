@@ -92,6 +92,8 @@
                     <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
                     <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Native"/>
                     <Label Visibility="{Binding ElementName=MangaDetailsWindow, Path=AddToListVisibility}" MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Add to my list"/>
+                    <Label Visibility="{Binding ElementName=MangaDetailsWindow, Path=FinishMangaVisibility}" MouseDown="FinishManga" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Finish manga"/>
+                    <Label Visibility="{Binding ElementName=MangaDetailsWindow, Path=RemoveFromListVisibility}" MouseDown="RemoveFromList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Remove manga from list"/>
                 </StackPanel>
             </Viewbox>
         </Border>
