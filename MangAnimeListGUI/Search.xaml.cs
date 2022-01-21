@@ -128,9 +128,9 @@ namespace MangAnimeListGUI
             {
                 if (_query == "")
                 {
-                    if (tag.SelectedItem == tag.Items[0])
+                    if (tag.SelectedItem.Equals(tag.Items[0]))
                     {
-                        return _controller.GetMangaHomeList;
+                        return _controller.InitializeMangaList();
                     }
                     else
                     {
@@ -139,7 +139,7 @@ namespace MangAnimeListGUI
                 }
                 else
                 {
-                    if (tag.SelectedItem == tag.Items[0])
+                    if (tag.SelectedItem.Equals(tag.Items[0]))
                     {
                         return _mangas.Where(manga => manga.Title[1].ToLower().Contains(_query.ToLower())).ToList();
                     }
