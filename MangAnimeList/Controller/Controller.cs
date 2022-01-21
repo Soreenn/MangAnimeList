@@ -266,12 +266,12 @@ namespace MangAnimeList
             List<Manga> _mangas = InitializeMangaList();
             IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}' AND mangas_id LIKE '{mangaId}'");
             bool isMangaInList;
-            if (result.ToString() == null)
-            {
-                isMangaInList = false;
-            } else
+            if (result.Cast<object>().Any())
             {
                 isMangaInList = true;
+            } else
+            {
+                isMangaInList = false;
             }
             return isMangaInList;
         }

@@ -51,11 +51,11 @@ namespace MangAnimeListGUI
 
             if(_isMangaInList == true)
             {
-                AddToListVisibility = Visibility.Visible;
+                AddToListVisibility = Visibility.Collapsed;
             }
             else
             {
-                AddToListVisibility = Visibility.Collapsed;
+                AddToListVisibility = Visibility.Visible;
             }
 
             var mangaTags = mangas[mangaIndex].Tags;
