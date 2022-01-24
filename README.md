@@ -12,4 +12,7 @@ Nous avons codé la majorité du projet mais ils nous manquent quelques options 
 
 ## Comment lancer notre projet :
 
-Pour lancer notre projet, il faut disposer d’un ordinateur ayant Visual Studio Code 2019 ainsi que GitHub afin de cloner notre projet en local qui est déposer sur un repository, nous somme sous net frame work 5.0.
+Pour lancer notre projet, il faut disposer d’un ordinateur ayant Visual Studio Code 2019 ainsi que GitHub afin de cloner notre projet en local qui est déposer sur un repository, nous somme sous .net 5.0.
+
+Packages NuGet : Dapper, MySql.Data
+Script SQL (MYSQL)
