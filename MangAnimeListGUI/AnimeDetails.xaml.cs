@@ -27,19 +27,19 @@ namespace MangAnimeListGUI
         public AnimeDetails(int animeIndex, Controller controller)
         {
             InitializeComponent();
-             
-            _animeIndex = animeIndex;
-            _controller = controller;
-            List<Anime> animes = controller.InitializeAnimeList();
-            _isAnimeInList = _controller.IsMediaInList("animes", animes[animeIndex].id);
-            _isAnimeFinished = _controller.IsMediaFinished("animes", animes[animeIndex].id);
 
-            string animeCoverURL = animes[animeIndex].Cover;
-            string animeBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";
-            _animeTitleRomaji = animes[animeIndex].Title[0];
-            if(animes[animeIndex].Title.ElementAtOrDefault(2) != null)
+            this._animeIndex = animeIndex;
+            this._controller = controller;
+            List<Anime> _animes = controller.InitializeAnimeList();
+            _isAnimeInList = this._controller.IsMediaInList("animes", _animes[animeIndex].id);
+            _isAnimeFinished = this._controller.IsMediaFinished("animes", _animes[animeIndex].id);
+
+            string _animeCoverURL = _animes[animeIndex].Cover;
+            string _animeBannerURL = "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131565-JBlm0IItFlUV.jpg";
+            _animeTitleRomaji = _animes[animeIndex].Title[0];
+            if(_animes[animeIndex].Title.ElementAtOrDefault(2) != null)
             {
-                _animeTitleNative = animes[animeIndex].Title[1];
+                _animeTitleNative = _animes[animeIndex].Title[1];
             }
             else
             {
@@ -80,33 +80,33 @@ namespace MangAnimeListGUI
                 RemoveFromListVisibility = Visibility.Collapsed;
             }
 
-            var animeEpisodes = animes[animeIndex].episodes;
-            var animeType = animes[animeIndex].type;
-            var animeStatus = animes[animeIndex].Status;
-            var animeNote = "100";
+            var _animeEpisodes = _animes[animeIndex].episodes;
+            var _animeType = _animes[animeIndex].type;
+            var _animeStatus = _animes[animeIndex].Status;
+            var _animeNote = "100";
 
-            BitmapImage animeCoverSet = new BitmapImage();
-            animeCoverSet.BeginInit();
-            animeCoverSet.UriSource = new Uri(animeCoverURL, UriKind.Absolute);
-            animeCoverSet.EndInit();
+            BitmapImage _animeCoverSet = new BitmapImage();
+            _animeCoverSet.BeginInit();
+            _animeCoverSet.UriSource = new Uri(_animeCoverURL, UriKind.Absolute);
+            _animeCoverSet.EndInit();
 
-            BitmapImage animeBannerSet = new BitmapImage();
-            animeBannerSet.BeginInit();
-            animeBannerSet.UriSource = new Uri(animeBannerURL, UriKind.Absolute);
-            animeBannerSet.EndInit();
+            BitmapImage _animeBannerSet = new BitmapImage();
+            _animeBannerSet.BeginInit();
+            _animeBannerSet.UriSource = new Uri(_animeBannerURL, UriKind.Absolute);
+            _animeBannerSet.EndInit();
 
-            foreach (string tag in animes[animeIndex].Tags)
+            foreach (string _tag in _animes[animeIndex].Tags)
             {
-                tagsBox.Items.Add(tag);
+                tagsBox.Items.Add(_tag);
             }
 
-            cover.ImageSource = animeCoverSet;
-            Banner.ImageSource = animeBannerSet;
+            cover.ImageSource = _animeCoverSet;
+            Banner.ImageSource = _animeBannerSet;
             title.Content = _animeTitleRomaji;
-            episodes.Content = animeEpisodes;
-            type.Content = animeType;
-            status.Content = animeStatus;
-            note.Content = animeNote;
+            episodes.Content = _animeEpisodes;
+            type.Content = _animeType;
+            status.Content = _animeStatus;
+            note.Content = _animeNote;
         }
         private void DisplayRomajiTitle(object sender, MouseEventArgs e)
         {
@@ -119,9 +119,9 @@ namespace MangAnimeListGUI
 
         private void AddToList(object sender, MouseEventArgs e)
         {
-            List<Anime> animes = _controller.InitializeAnimeList();
-            _controller.AddMedia("animes", animes[_animeIndex].id);
-            _isAnimeInList = _controller.IsMediaInList("animes", animes[_animeIndex].id);
+            List<Anime> _animes = _controller.InitializeAnimeList();
+            _controller.AddMedia("animes", _animes[_animeIndex].id);
+            _isAnimeInList = _controller.IsMediaInList("animes", _animes[_animeIndex].id);
 
             if (_isAnimeInList == true)
             {
@@ -139,10 +139,10 @@ namespace MangAnimeListGUI
 
         private void FinishAnime(object sender, MouseEventArgs e)
         {
-            List<Anime> animes = _controller.InitializeAnimeList();
-            _controller.FinishMedia("animes", animes[_animeIndex].id);
-            _isAnimeInList = _controller.IsMediaInList("animes", animes[_animeIndex].id);
-            _isAnimeFinished = _controller.IsMediaFinished("animes", animes[_animeIndex].id);
+            List<Anime> _animes = _controller.InitializeAnimeList();
+            _controller.FinishMedia("animes", _animes[_animeIndex].id);
+            _isAnimeInList = _controller.IsMediaInList("animes", _animes[_animeIndex].id);
+            _isAnimeFinished = _controller.IsMediaFinished("animes", _animes[_animeIndex].id);
 
             if (_isAnimeInList == true)
             {
@@ -163,9 +163,9 @@ namespace MangAnimeListGUI
 
         private void RemoveFromList(object sender, MouseEventArgs e)
         {
-            List<Anime> animes = _controller.InitializeAnimeList();
-            _controller.RemoveMedia("animes", animes[_animeIndex].id);
-            _isAnimeInList = _controller.IsMediaInList("animes", animes[_animeIndex].id);
+            List<Anime> _animes = _controller.InitializeAnimeList();
+            _controller.RemoveMedia("animes", _animes[_animeIndex].id);
+            _isAnimeInList = _controller.IsMediaInList("animes", _animes[_animeIndex].id);
 
             if (_isAnimeInList == true)
             {

@@ -55,19 +55,18 @@ namespace MangAnimeListGUI
         {
             if (sender is Grid ctrl)
             {
-                if (ctrl.DataContext is Anime anime)
+                if (ctrl.DataContext is Anime _anime)
                 {
-                    int animeIndex = anime.id -1;
-                    AnimeDetails window = new AnimeDetails(animeIndex, _controller);
-                    window.ShowDialog();
+                    int _animeIndex = _anime.id -1;
+                    AnimeDetails _window = new AnimeDetails(_animeIndex, _controller);
+                    _window.ShowDialog();
                 }
-                else if (ctrl.DataContext is Manga manga)
+                else if (ctrl.DataContext is Manga _manga)
                 {
-                    int mangaIndex = _controller.GetMangaIndex(manga.id);
-                    MangaDetails window = new MangaDetails(mangaIndex, _controller);
-                    window.ShowDialog();
+                    int _mangaIndex = _controller.GetMangaIndex(_manga.id);
+                    MangaDetails _window = new MangaDetails(_mangaIndex, _controller);
+                    _window.ShowDialog();
                 }
-
             }
         }
 

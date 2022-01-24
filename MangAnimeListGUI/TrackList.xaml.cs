@@ -30,10 +30,10 @@ namespace MangAnimeListGUI
             _mangas = _controller.InitializeMangaList().ToList();
             _animesWatchlist = controller.GetAnimeWatchlist().ToList();
             _mangasWatchlist = controller.GetMangaWatchlist().ToList();
-            string animesType = "Animes";
-            string mangasType = "Mangas";
-            _mediaType.Add(animesType);
-            _mediaType.Add(mangasType);
+            string _animesType = "Animes";
+            string _mangasType = "Mangas";
+            _mediaType.Add(_animesType);
+            _mediaType.Add(_mangasType);
             MangaVisibility = Visibility.Collapsed;
             AnimeVisibility = Visibility.Visible;
             InitializeComponent();
@@ -61,26 +61,26 @@ namespace MangAnimeListGUI
         {
             if (sender is Grid ctrl)
             {
-                if (ctrl.DataContext is Anime anime)
+                if (ctrl.DataContext is Anime _anime)
                 {
-                    int animeIndex = anime.id;
-                    AnimeDetails window = new AnimeDetails(animeIndex, _controller);
-                    window.ShowDialog();
+                    int _animeIndex = _anime.id;
+                    AnimeDetails _window = new AnimeDetails(_animeIndex, _controller);
+                    _window.ShowDialog();
                 }
-                else if (ctrl.DataContext is Manga manga)
+                else if (ctrl.DataContext is Manga _manga)
                 {
-                    int mangaIndex = _controller.GetMangaIndex(manga.id);
-                    MangaDetails window = new MangaDetails(mangaIndex, _controller);
-                    window.ShowDialog();
+                    int _mangaIndex = _controller.GetMangaIndex(_manga.id);
+                    MangaDetails _window = new MangaDetails(_mangaIndex, _controller);
+                    _window.ShowDialog();
                 }
             }
         }
 
         private void GoBack(object sender, MouseEventArgs e)
         {
-            MainWindow window = new MainWindow(_controller);
+            MainWindow _window = new MainWindow(_controller);
             Close();
-            window.ShowDialog();
+            _window.ShowDialog();
         }
 
         public List<string> MediaType
