@@ -41,7 +41,7 @@
         <Viewbox Grid.Column="0" Height="40" Width="40"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=TrackListWindow, Path=MediaType}" SelectedValue="Animes" Name="listType" Width="250" Margin="0,0,50,0" SelectionChanged="listType_SelectionChanged"/>
+            <ComboBox ItemsSource="{Binding ElementName=TrackListWindow, Path=MediaType}" FontSize="20" TextAlignment="Center" SelectedValue="Animes" Name="listType" Width="250" Margin="0,0,50,0" SelectionChanged="listType_SelectionChanged"/>
         </StackPanel>
 
         <Viewbox Grid.Column="0" Height="40" Width="30">
