@@ -41,9 +41,8 @@
         <Viewbox Grid.Column="0" Grid.Row="2">
             <StackPanel Orientation="Vertical">
                 <Label MouseDown="Search" FontSize="7" Foreground="White" Content="Recherche"/>
-                <Label MouseDown="List" FontSize="7" Foreground="White" Content="Watchlist"/>
-                <Label FontSize="7" Foreground="White" Content="Readlist"/>
-                <Label Name="username" FontSize="7" Foreground="White" Content="Guest"/>
+                <Label MouseDown="List" FontSize="7" Foreground="White" Content="Liste"/>
+                <Label Name="username" FontSize="7" Foreground="White" Content="Invité (non connecté)"/>
             </StackPanel>
         </Viewbox>
 
@@ -100,14 +99,14 @@
         <Viewbox Width="auto" Height="auto" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    Random Anime
+                    Animes aléatoires
                 </Label.Content>
             </Label>
         </Viewbox>
         <Viewbox Width="auto" Height="auto" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
             <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
                 <Label.Content>
-                    Random Manga
+                    Mangas aléatoires
                 </Label.Content>
             </Label>
         </Viewbox>

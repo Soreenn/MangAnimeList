@@ -33,17 +33,17 @@
             <RowDefinition Height="0.05*"/>
         </Grid.RowDefinitions>
 
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Authentification" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
 
-        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Username" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Nom d'utilisateur" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox Name="usernameLabel" Grid.Row="3" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
 
-        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Mot de passe" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
         <PasswordBox Name="passwordLabel" Grid.Row="5" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label MouseDown="LoginByLabel" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Login"/>
-            <Label MouseDown="RegisterPage" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Don't own an account?"/>
+            <Label MouseDown="LoginByLabel" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="S'authentifier"/>
+            <Label MouseDown="RegisterPage" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Je ne possède pas de compte"/>
         </StackPanel>
 
         <ProgressBar Visibility="{Binding ElementName=LoginWindow, Path=ProgressBarVisibility}" IsIndeterminate="false" Name="loadingBar" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"/>

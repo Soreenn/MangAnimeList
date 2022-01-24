@@ -32,20 +32,20 @@
             <RowDefinition Height="0.20*"/>
         </Grid.RowDefinitions>
 
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Register" Grid.Row="1" Grid.Column="1" Height="52" Width="124"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Inscription" Grid.Row="1" Grid.Column="1" Height="52" Width="124"/>
 
-        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Username" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Nom d'utilisateur" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox Name="usernameLabel" Grid.Row="3" Grid.Column="1" KeyDown="RegisterByPressingEnter"/>
 
-        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Mot de passe" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
         <PasswordBox Name="passwordLabel" Grid.Row="5" Grid.Column="1" KeyDown="RegisterByPressingEnter"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Confirm Password" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
         <PasswordBox Name="confirmPasswordLabel" Grid.Row="7" Grid.Column="1" KeyDown="RegisterByPressingEnter"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label MouseDown="RegisterByLabel" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Register"/>
-            <Label MouseDown="LoginPage" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="You have an account ?"/>
+            <Label MouseDown="RegisterByLabel" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="S'inscrire"/>
+            <Label MouseDown="LoginPage" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Je possède déjà un compte"/>
         </StackPanel>
 
     </Grid>
