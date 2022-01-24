@@ -121,7 +121,7 @@ namespace MangAnimeListGUI
             int _index = _controller.GetMangaIndex(_mangas[_homeIndex].id);
 
             Hide();
-            MangaDetails _window = new MangaDetails(index, _controller);
+            MangaDetails _window = new MangaDetails(_index, _controller);
             _window.ShowDialog();
             Show();
         }
