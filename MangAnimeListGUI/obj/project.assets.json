@@ -997,19 +997,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Axel.PITTET\\.nuget\\packages\\": {}
+    "C:\\Users\\Gabriel Pereira\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
       "projectName": "MangAnimeListGUI",
-      "projectPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
-      "packagesPath": "C:\\Users\\Axel.PITTET\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\obj\\",
+      "projectPath": "D:\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\MangAnimeListGUI.csproj",
+      "packagesPath": "C:\\Users\\Gabriel Pereira\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\GitHub\\MangAnimeList\\MangAnimeListGUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Axel.PITTET\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabriel Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1023,8 +1028,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
-              "projectPath": "C:\\Users\\Axel.PITTET\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj"
+            "D:\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj": {
+              "projectPath": "D:\\Documents\\GitHub\\MangAnimeList\\MangAnimeList\\MangAnimeList.csproj"
             }
           }
         }
@@ -1074,7 +1079,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

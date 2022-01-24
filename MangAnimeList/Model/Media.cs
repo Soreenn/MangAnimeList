@@ -24,6 +24,7 @@ namespace MangAnimeList
             _releaseYear = releaseYear;
             _cover = cover;
             _id = id;
+            _thumbnail = thumbnail;
         }
 
         public List<string> Title
