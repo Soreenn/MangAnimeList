@@ -27,7 +27,7 @@ namespace MangAnimeListGUI
         public AnimeDetails(int animeIndex, Controller controller)
         {
             InitializeComponent();
-
+             
             _animeIndex = animeIndex;
             _controller = controller;
             List<Anime> animes = controller.InitializeAnimeList();
@@ -180,6 +180,11 @@ namespace MangAnimeListGUI
                 RemoveFromListVisibility = Visibility.Collapsed;
             }
         }
+        private void GoBack(object sender, MouseEventArgs e)
+        {
+            Close();
+        }
+
 
         public Visibility AddToListVisibility
         {

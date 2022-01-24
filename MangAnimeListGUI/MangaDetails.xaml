@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Détail de l'oeuvre" Height="1080" Width="1920" WindowStartupLocation="CenterScreen"
+        Title="Détail de l'oeuvre" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
         x:Name="MangaDetailsWindow">
     <Grid>
         <Grid.Background>
@@ -38,23 +38,23 @@
             <RowDefinition Height="0.10*"/>
             <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
+        
+        <Viewbox Grid.Column="0" Height="40" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image MouseDown="GoBack" Source="https://i.ibb.co/ccWDtVq/3554040-200.png"/>
+        </Viewbox>
+        
         <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="3" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="2">
             <Border.Background>
                 <ImageBrush x:Name="Banner" />
             </Border.Background>
         </Border>
+        
         <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="4" Grid.RowSpan="6"  Grid.Row="1" Grid.ColumnSpan="3">
             <Border.Background>
                 <ImageBrush x:Name="cover"/>
             </Border.Background>
         </Border>
-        <Viewbox Height="auto" Width="auto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
-                <Label.Content>
-                    MangAnimeList
-                </Label.Content>
-            </Label>
-        </Viewbox>
+        
         <Border Grid.Column="8" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.RowSpan="4">
             <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="30" Focusable="False">
                 <ListBox.ItemContainerStyle>
@@ -98,13 +98,6 @@
             </Viewbox>
         </Border>
 
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="4" Grid.RowSpan="8">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
-                <Label.Content>
-                    Menu
-                </Label.Content>
-            </Label>
-        </Border>
         <Border Grid.Column="4" Grid.Row="7" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Viewbox>
             <StackPanel Orientation="Vertical">

@@ -73,9 +73,7 @@ namespace MangAnimeListGUI
 
         private void GoBack(object sender, MouseEventArgs e)
         {
-            MainWindow window = new MainWindow(_controller);
             Close();
-            window.ShowDialog();
         }
 
         public List<string> Tags

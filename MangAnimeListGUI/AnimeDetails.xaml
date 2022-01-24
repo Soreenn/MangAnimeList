@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Détail de l'oeuvre" Height="1080" Width="1920" WindowStartupLocation="CenterScreen"
+        Title="Détail de l'oeuvre" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
         x:Name="AnimeDetailsWindow">
     <Grid>
         <Grid.Background>
@@ -13,8 +12,8 @@
             </SolidColorBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition Width="2.3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width=".3*"/>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition Width="1*"/>
@@ -48,15 +47,13 @@
                 <ImageBrush x:Name="cover"/>
             </Border.Background>
         </Border>
-        <Viewbox Height="auto" Width="auto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White">
-                <Label.Content>
-                    MangAnimeList
-                </Label.Content>
-            </Label>
+
+        <Viewbox Grid.Column="0" Height="40" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image MouseDown="GoBack" Source="https://i.ibb.co/ccWDtVq/3554040-200.png"/>
         </Viewbox>
+
         <Border Grid.Column="8" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.RowSpan="4">
-            <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="30" Focusable="False">
+            <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="12" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Margin" Value="10,0,0,0"/>
@@ -72,23 +69,15 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>
         </Border>
-
-        <Border Grid.Column="9" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="2" Grid.RowSpan="4">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">
-                <Label.Content>
-                    Synopsis
-                </Label.Content>
-            </Label>
-        </Border>
         <Border Grid.Column="8" Grid.Row="3" BorderBrush="White" BorderThickness="4">
             <Viewbox>
                 <Label Name="title" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Content="Titre"/>
             </Viewbox>
         </Border>
 
-        <Border Grid.Column="9" Grid.Row="3">
+        <Border Grid.Column="9" Grid.Row="3" Grid.RowSpan="6">
             <Viewbox>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
                     <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Natif"/>
                     <Label Visibility="{Binding ElementName=AnimeDetailsWindow, Path=AddToListVisibility}" MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Ajouter à ma liste"/>
@@ -96,14 +85,6 @@
                     <Label Visibility="{Binding ElementName=AnimeDetailsWindow, Path=RemoveFromListVisibility}" MouseDown="RemoveFromList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Supprimer de la liste"/>
                 </StackPanel>
             </Viewbox>
-        </Border>
-
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="4" Grid.RowSpan="8">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
-                <Label.Content>
-                    Menu
-                </Label.Content>
-            </Label>
         </Border>
         <Border Grid.Column="4" Grid.Row="7" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Viewbox>

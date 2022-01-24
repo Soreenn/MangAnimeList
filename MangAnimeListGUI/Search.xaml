@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Search" Height="450" Width="800"
+        Title="Search" Height="720" Width="1280"
           WindowStyle="SingleBorderWindow"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
@@ -63,7 +63,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Viewbox Grid.Column="0" Height="40" Width="40">
-                            <Image Source="{Binding Cover}"/>
+                            <Image Source="{Binding thumbnail}"/>
                         </Viewbox>
                         <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
                     </Grid>
@@ -85,7 +85,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Viewbox Grid.Column="0" Height="40" Width="40">
-                            <Image Source="{Binding Cover}"/>
+                            <Image Source="{Binding thumbnail}"/>
                         </Viewbox>
                         <TextBlock Grid.Column="1" Foreground="Black" Text="{Binding Title[0]}"/>
                     </Grid>

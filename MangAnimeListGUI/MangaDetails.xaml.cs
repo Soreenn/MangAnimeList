@@ -211,6 +211,11 @@ namespace MangAnimeListGUI
             }
         }
 
+        private void GoBack(object sender, MouseEventArgs e)
+        {
+            Close();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged(String propertyName = "")
