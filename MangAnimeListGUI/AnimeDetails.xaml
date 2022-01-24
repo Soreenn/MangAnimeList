@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Détail de l'oeuvre" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
-        x:Name="AnimeDetailsWindow">
+        Title="Détail de l'oeuvre"
+        Height="720"
+        Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        x:Name="AnimeDetailsWindow"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">
@@ -39,7 +44,7 @@
         </Grid.RowDefinitions>
         <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="3" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="2">
             <Border.Background>
-                <ImageBrush x:Name="Banner" />
+                <ImageBrush Stretch="UniformToFill" x:Name="Banner" />
             </Border.Background>
         </Border>
         <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="4" Grid.RowSpan="6"  Grid.Row="1" Grid.ColumnSpan="3">

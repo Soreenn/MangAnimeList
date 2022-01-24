@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Search" Height="720" Width="1280"
-          WindowStyle="SingleBorderWindow"
+        Title="Recherche"
+        Height="720"
+        Width="1280"
+        WindowStyle="SingleBorderWindow"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen"
-        x:Name="SearchWindow">
+        ResizeMode="NoResize"
+        x:Name="SearchWindow"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">

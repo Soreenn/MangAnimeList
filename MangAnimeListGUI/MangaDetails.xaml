@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="Détail de l'oeuvre" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
-        x:Name="MangaDetailsWindow">
+        Title="Détail de l'oeuvre"
+        Height="720"
+        Width="1280"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        x:Name="MangaDetailsWindow"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">
@@ -45,7 +50,7 @@
         
         <Border Height="auto" Width="auto" CornerRadius="0,0,0,0" Grid.Column="3" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="2">
             <Border.Background>
-                <ImageBrush x:Name="Banner" />
+                <ImageBrush Stretch="UniformToFill" x:Name="Banner" />
             </Border.Background>
         </Border>
         
@@ -56,7 +61,7 @@
         </Border>
         
         <Border Grid.Column="8" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.RowSpan="4">
-            <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="30" Focusable="False">
+            <ListBox x:Name="tagsBox" Background="#282538" Foreground="White" FontSize="12" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Margin" Value="10,0,0,0"/>
@@ -72,23 +77,15 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>
         </Border>
-
-        <Border Grid.Column="9" Grid.Row="5" BorderBrush="White" BorderThickness="4" Grid.ColumnSpan="2" Grid.RowSpan="4">
-            <Label FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">
-                <Label.Content>
-                    Synopsis
-                </Label.Content>
-            </Label>
-        </Border>
         <Border Grid.Column="8" Grid.Row="3" BorderBrush="White" BorderThickness="4">
             <Viewbox>
             <Label Name="title" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Content="Titre"/>
             </Viewbox>
         </Border>
 
-        <Border Grid.Column="9" Grid.Row="3">
+        <Border Grid.Column="9" Grid.Row="3" Grid.RowSpan="6">
             <Viewbox>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <Label MouseDown="DisplayRomajiTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Romaji"/>
                     <Label x:Name="NativeButton" MouseDown="DisplayNativeTitle" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Natif"/>
                     <Label Visibility="{Binding ElementName=MangaDetailsWindow, Path=AddToListVisibility}" MouseDown="AddToList" FontFamily="Gotham" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="4" Content="Ajouter à ma liste"/>

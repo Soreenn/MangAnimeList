@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MangAnimeListGUI"
         mc:Ignorable="d"
-        Title="List" Height="720" Width="1280"
-          WindowStyle="SingleBorderWindow"
+        Title="List"
+        Height="720" Width="1280"
+        WindowStyle="SingleBorderWindow"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen"
-        x:Name="TrackListWindow">
+        ResizeMode="NoResize"
+        x:Name="TrackListWindow"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">

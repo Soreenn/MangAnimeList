@@ -120,9 +120,9 @@ namespace MangAnimeListGUI
 
             int _index = _controller.GetMangaIndex(_mangas[_homeIndex].id);
 
-            MangaDetails window = new MangaDetails(_controller);
+            MangaDetails _window = new MangaDetails(_index, _controller);
             Hide();
-            window.ShowDialog();
+            _window.ShowDialog();
             Show();
         }
 
@@ -136,9 +136,9 @@ namespace MangAnimeListGUI
 
             int _index = _animes[_homeIndex].id -1;
 
-            AnimeDetails window = new AnimeDetails(_controller);
+            AnimeDetails _window = new AnimeDetails(_index, _controller);
             Hide();
-            window.ShowDialog();
+            _window.ShowDialog();
             Show();
         }
 
@@ -147,7 +147,7 @@ namespace MangAnimeListGUI
             _easterIndex += 1;
             if(_easterIndex >= 5)
             {
-                EasterEgg window = new EasterEgg(_controller);
+                EasterEgg window = new EasterEgg();
                 Hide();
                 window.ShowDialog();
                 Show();
@@ -155,17 +155,17 @@ namespace MangAnimeListGUI
         }
         private void Search(object sender, MouseEventArgs e)
         {
-            Search window = new Search(_controller);
+            Search _window = new Search(_controller);
             Hide();
-            window.ShowDialog();
+            _window.ShowDialog();
             Show();
         }
 
         private void List(object sender, MouseEventArgs e)
         {
-            TrackList window = new TrackList(_controller);
+            TrackList _window = new TrackList(_controller);
             Hide();
-            window.ShowDialog();
+            _window.ShowDialog();
             Show();
         }
     }

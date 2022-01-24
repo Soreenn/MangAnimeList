@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Authentification" Height="720" Width="1280"
+        Title="Authentification"
+        Height="720"
+        Width="1280"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         Background="Transparent"
-        WindowStartupLocation="CenterScreen"
-        x:Name="LoginWindow">
+        x:Name="LoginWindow"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="#282538">
@@ -35,7 +38,7 @@
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Authentification" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Nom d'utilisateur" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox Name="usernameLabel" Grid.Row="3" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
+        <TextBox Name="usernameLabel" FontSize="20" TextAlignment="Center" Grid.Row="3" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Mot de passe" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
         <PasswordBox Name="passwordLabel" Grid.Row="5" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
