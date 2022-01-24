@@ -36,7 +36,7 @@
             <RowDefinition Height="0.20*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Anime" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium"/>
+        <Label Content="Animes" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium"/>
         <Label Content="Mangas" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium"/>
 
         <Viewbox Grid.Column="0" Height="40" Width="30">
@@ -46,7 +46,7 @@
         <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="UpdateText"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Tags" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
+            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Catégories" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
         </StackPanel>
 
         <ListBox x:Name="animeBox" ItemsSource="{Binding ElementName=SearchWindow, Path=Animes}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1">
