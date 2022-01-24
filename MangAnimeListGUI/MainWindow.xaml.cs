@@ -14,15 +14,16 @@ namespace MangAnimeListGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        int easterIndex = 0;
+        int _easterIndex = 0;
         Controller _controller;
+
         public MainWindow(Controller controller)
         {
             InitializeComponent();
             _controller = controller;
             _controller.GenerateRandomHomeList();
-            List<Manga> mangas = _controller.GetMangaHomeList;
-            List<Anime> animes = _controller.GetAnimeHomeList;
+            List<Manga> _mangas = _controller.GetMangaHomeList;
+            List<Anime> _animes = _controller.GetAnimeHomeList;
 
             if(_controller._IsConnected == false)
             {
@@ -33,138 +34,138 @@ namespace MangAnimeListGUI
                 username.Content = _controller.GetUsername;
             }
 
-            int loopManga = 1;
-            int loopAnime = 1;
-            foreach (Manga manga in mangas)
+            int _loopManga = 1;
+            int _loopAnime = 1;
+            foreach (Manga _manga in _mangas)
             {
-                if (loopManga == 1)
+                if (_loopManga == 1)
                 {
-                    BitmapImage MangaImage = new BitmapImage();
-                    MangaImage.BeginInit();
-                    MangaImage.UriSource = new Uri(manga.Cover, UriKind.Absolute);
-                    MangaImage.EndInit();
-                    rndManga1.ImageSource = MangaImage;
+                    BitmapImage _MangaImage = new BitmapImage();
+                    _MangaImage.BeginInit();
+                    _MangaImage.UriSource = new Uri(_manga.Cover, UriKind.Absolute);
+                    _MangaImage.EndInit();
+                    rndManga1.ImageSource = _MangaImage;
                 }
-                if (loopManga == 2)
+                if (_loopManga == 2)
                 {
-                    BitmapImage MangaImage = new BitmapImage();
-                    MangaImage.BeginInit();
-                    MangaImage.UriSource = new Uri(manga.Cover, UriKind.Absolute);
-                    MangaImage.EndInit();
-                    rndManga2.ImageSource = MangaImage;
+                    BitmapImage _MangaImage = new BitmapImage();
+                    _MangaImage.BeginInit();
+                    _MangaImage.UriSource = new Uri(_manga.Cover, UriKind.Absolute);
+                    _MangaImage.EndInit();
+                    rndManga2.ImageSource = _MangaImage;
                 }
-                if (loopManga == 3)
+                if (_loopManga == 3)
                 {
-                    BitmapImage MangaImage = new BitmapImage();
-                    MangaImage.BeginInit();
-                    MangaImage.UriSource = new Uri(manga.Cover, UriKind.Absolute);
-                    MangaImage.EndInit();
-                    rndManga3.ImageSource = MangaImage;
+                    BitmapImage _MangaImage = new BitmapImage();
+                    _MangaImage.BeginInit();
+                    _MangaImage.UriSource = new Uri(_manga.Cover, UriKind.Absolute);
+                    _MangaImage.EndInit();
+                    rndManga3.ImageSource = _MangaImage;
                 }
-                if (loopManga == 4)
+                if (_loopManga == 4)
                 {
-                    BitmapImage MangaImage = new BitmapImage();
-                    MangaImage.BeginInit();
-                    MangaImage.UriSource = new Uri(manga.Cover, UriKind.Absolute);
-                    MangaImage.EndInit();
-                    rndManga4.ImageSource = MangaImage;
+                    BitmapImage _MangaImage = new BitmapImage();
+                    _MangaImage.BeginInit();
+                    _MangaImage.UriSource = new Uri(_manga.Cover, UriKind.Absolute);
+                    _MangaImage.EndInit();
+                    rndManga4.ImageSource = _MangaImage;
                 }
-                loopManga++;
+                _loopManga++;
             }
 
-            foreach (Anime anime in animes)
+            foreach (Anime _anime in _animes)
             {
-                if (loopAnime == 1)
+                if (_loopAnime == 1)
                 {
-                    BitmapImage AnimeImage = new BitmapImage();
-                    AnimeImage.BeginInit();
-                    AnimeImage.UriSource = new Uri(anime.Cover, UriKind.Absolute);
-                    AnimeImage.EndInit();
-                    rndAnime1.ImageSource = AnimeImage;
+                    BitmapImage _AnimeImage = new BitmapImage();
+                    _AnimeImage.BeginInit();
+                    _AnimeImage.UriSource = new Uri(_anime.Cover, UriKind.Absolute);
+                    _AnimeImage.EndInit();
+                    rndAnime1.ImageSource = _AnimeImage;
                 }
-                if (loopAnime == 2)
+                if (_loopAnime == 2)
                 {
-                    BitmapImage AnimeImage = new BitmapImage();
-                    AnimeImage.BeginInit();
-                    AnimeImage.UriSource = new Uri(anime.Cover, UriKind.Absolute);
-                    AnimeImage.EndInit();
-                    rndAnime2.ImageSource = AnimeImage;
+                    BitmapImage _AnimeImage = new BitmapImage();
+                    _AnimeImage.BeginInit();
+                    _AnimeImage.UriSource = new Uri(_anime.Cover, UriKind.Absolute);
+                    _AnimeImage.EndInit();
+                    rndAnime2.ImageSource = _AnimeImage;
                 }
-                if (loopAnime == 3)
+                if (_loopAnime == 3)
                 {
-                    BitmapImage AnimeImage = new BitmapImage();
-                    AnimeImage.BeginInit();
-                    AnimeImage.UriSource = new Uri(anime.Cover, UriKind.Absolute);
-                    AnimeImage.EndInit();
-                    rndAnime3.ImageSource = AnimeImage;
+                    BitmapImage _AnimeImage = new BitmapImage();
+                    _AnimeImage.BeginInit();
+                    _AnimeImage.UriSource = new Uri(_anime.Cover, UriKind.Absolute);
+                    _AnimeImage.EndInit();
+                    rndAnime3.ImageSource = _AnimeImage;
                 }
-                if (loopAnime == 4)
+                if (_loopAnime == 4)
                 {
-                    BitmapImage AnimeImage = new BitmapImage();
-                    AnimeImage.BeginInit();
-                    AnimeImage.UriSource = new Uri(anime.Cover, UriKind.Absolute);
-                    AnimeImage.EndInit();
-                    rndAnime4.ImageSource = AnimeImage;
+                    BitmapImage _AnimeImage = new BitmapImage();
+                    _AnimeImage.BeginInit();
+                    _AnimeImage.UriSource = new Uri(_anime.Cover, UriKind.Absolute);
+                    _AnimeImage.EndInit();
+                    rndAnime4.ImageSource = _AnimeImage;
                 }
-                loopAnime++;
+                _loopAnime++;
             }
         }
         private void DisplayManga(object sender, MouseEventArgs e)
         {
-            string name = (((Border)e.Source)).Name;
-            string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
-            int homeIndex = Int32.Parse(numbers[2]) -1;
+            string _name = (((Border)e.Source)).Name;
+            string[] _numbers = Regex.Split(_name, @"(\D+)(\d{1})");
+            int _homeIndex = Int32.Parse(_numbers[2]) -1;
 
-            List<Manga> mangas = _controller.GetMangaHomeList;
+            List<Manga> _mangas = _controller.GetMangaHomeList;
 
-            int index = _controller.GetMangaIndex(mangas[homeIndex].id);
+            int _index = _controller.GetMangaIndex(_mangas[_homeIndex].id);
 
             Hide();
-            MainWindow windowParent = this;
-            MangaDetails window = new MangaDetails(index, _controller);
-            window.ShowDialog();
+            MainWindow _windowParent = this;
+            MangaDetails _window = new MangaDetails(_index, _controller);
+            _window.ShowDialog();
         }
 
         private void DisplayAnime(object sender, MouseEventArgs e)
         {
-            string name = (((Border)e.Source)).Name;
-            string[] numbers = Regex.Split(name, @"(\D+)(\d{1})");
-            int homeIndex = Int32.Parse(numbers[2]) - 5;
+            string _name = (((Border)e.Source)).Name;
+            string[] _numbers = Regex.Split(_name, @"(\D+)(\d{1})");
+            int _homeIndex = Int32.Parse(_numbers[2]) - 5;
 
-            List<Anime> animes = _controller.GetAnimeHomeList;
+            List<Anime> _animes = _controller.GetAnimeHomeList;
 
-            int index = animes[homeIndex].id -1;
+            int _index = _animes[_homeIndex].id -1;
             Hide();
-            MainWindow windowParent = this;
-            AnimeDetails window = new AnimeDetails(index, _controller);
-            window.ShowDialog();
+            MainWindow _windowParent = this;
+            AnimeDetails _window = new AnimeDetails(_index, _controller);
+            _window.ShowDialog();
         }
 
         private void EasterEgg(object sender, MouseEventArgs e)
         {
-            easterIndex += 1;
-            if(easterIndex >= 5)
+            _easterIndex += 1;
+            if(_easterIndex >= 5)
             {
                 Hide();
-                MainWindow windowParent = this;
-                EasterEgg window = new EasterEgg();
-                window.ShowDialog();
+                MainWindow _windowParent = this;
+                EasterEgg _window = new EasterEgg();
+                _window.ShowDialog();
             }
         }
         private void Search(object sender, MouseEventArgs e)
         {
             Hide();
-            MainWindow windowParent = this;
-            Search window = new Search(_controller);
-            window.Show();
+            MainWindow _windowParent = this;
+            Search _window = new Search(_controller);
+            _window.Show();
         }
 
         private void List(object sender, MouseEventArgs e)
         {
             Hide();
-            MainWindow windowParent = this;
-            TrackList window = new TrackList(_controller);
-            window.ShowDialog();
+            MainWindow _windowParent = this;
+            TrackList _window = new TrackList(_controller);
+            _window.ShowDialog();
         }
     }
 }

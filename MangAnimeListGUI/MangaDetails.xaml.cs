@@ -28,17 +28,17 @@ namespace MangAnimeListGUI
             InitializeComponent();
             _mangaIndex = mangaIndex;
             _controller = controller;
-            List<Manga> mangas = _controller.InitializeMangaList();
-            _isMangaInList = _controller.IsMediaInList("mangas", mangas[mangaIndex].id);
-            _isMangaFinished = _controller.IsMediaFinished("mangas", mangas[mangaIndex].id);
+            List<Manga> _mangas = _controller.InitializeMangaList();
+            _isMangaInList = _controller.IsMediaInList("mangas", _mangas[mangaIndex].id);
+            _isMangaFinished = _controller.IsMediaFinished("mangas", _mangas[mangaIndex].id);
 
-            var mangaCoverURL = mangas[mangaIndex].Cover;
-            var rndMangaBannerURL = mangas[mangaIndex].bannerImage;
-            _mangaTitleRomaji = mangas[mangaIndex].Title[0];
+            var _mangaCoverURL = _mangas[mangaIndex].Cover;
+            var _rndMangaBannerURL = _mangas[mangaIndex].bannerImage;
+            _mangaTitleRomaji = _mangas[mangaIndex].Title[0];
 
-            if (mangas[mangaIndex].Title[1] != "")
+            if (_mangas[mangaIndex].Title[1] != "")
             {
-                _mangaTitleNative = mangas[mangaIndex].Title[1];
+                _mangaTitleNative = _mangas[mangaIndex].Title[1];
             }
             else
             {
@@ -79,34 +79,34 @@ namespace MangAnimeListGUI
                 RemoveFromListVisibility = Visibility.Collapsed;
             }
 
-            var mangaTags = mangas[mangaIndex].Tags;
-            var mangaVolumes = mangas[mangaIndex].volumes;
-            var mangaChapters = mangas[mangaIndex].chapters;
-            var mangaStatus = mangas[mangaIndex].Status;
-            var mangaNote = mangas[mangaIndex].averageScore;
+            var _mangaTags = _mangas[mangaIndex].Tags;
+            var _mangaVolumes = _mangas[mangaIndex].volumes;
+            var _mangaChapters = _mangas[mangaIndex].chapters;
+            var _mangaStatus = _mangas[mangaIndex].Status;
+            var _mangaNote = _mangas[mangaIndex].averageScore;
 
-            BitmapImage mangaCoverSet = new BitmapImage();
-            mangaCoverSet.BeginInit();
-            mangaCoverSet.UriSource = new Uri(mangaCoverURL, UriKind.Absolute);
-            mangaCoverSet.EndInit();
+            BitmapImage _mangaCoverSet = new BitmapImage();
+            _mangaCoverSet.BeginInit();
+            _mangaCoverSet.UriSource = new Uri(_mangaCoverURL, UriKind.Absolute);
+            _mangaCoverSet.EndInit();
 
-            BitmapImage MangaBannerSet = new BitmapImage();
-            MangaBannerSet.BeginInit();
-            MangaBannerSet.UriSource = new Uri(rndMangaBannerURL, UriKind.Absolute);
-            MangaBannerSet.EndInit();
+            BitmapImage _MangaBannerSet = new BitmapImage();
+            _MangaBannerSet.BeginInit();
+            _MangaBannerSet.UriSource = new Uri(_rndMangaBannerURL, UriKind.Absolute);
+            _MangaBannerSet.EndInit();
 
-            foreach(string tag in mangas[mangaIndex].Tags)
+            foreach(string _tag in _mangas[mangaIndex].Tags)
             {
-                tagsBox.Items.Add(tag);
+                tagsBox.Items.Add(_tag);
             }
 
-            cover.ImageSource = mangaCoverSet;
-            Banner.ImageSource = MangaBannerSet;
+            cover.ImageSource = _mangaCoverSet;
+            Banner.ImageSource = _MangaBannerSet;
             title.Content = _mangaTitleRomaji;
-            volumes.Content = mangaVolumes;
-            chapters.Content = mangaChapters;
-            status.Content = mangaStatus;
-            note.Content = mangaNote;
+            volumes.Content = _mangaVolumes;
+            chapters.Content = _mangaChapters;
+            status.Content = _mangaStatus;
+            note.Content = _mangaNote;
         }
 
         private void DisplayRomajiTitle(object sender, MouseEventArgs e)
@@ -119,9 +119,9 @@ namespace MangAnimeListGUI
         }
         private void AddToList(object sender, MouseEventArgs e)
         {
-            List<Manga> mangas = _controller.InitializeMangaList();
-            _controller.AddMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
+            List<Manga> _mangas = _controller.InitializeMangaList();
+            _controller.AddMedia("mangas", _mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", _mangas[_mangaIndex].id);
 
             if (_isMangaInList == true)
             {
@@ -139,10 +139,10 @@ namespace MangAnimeListGUI
 
         private void FinishManga(object sender, MouseEventArgs e)
         {
-            List<Manga> mangas = _controller.InitializeMangaList();
-            _controller.FinishMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
-            _isMangaFinished = _controller.IsMediaFinished("mangas", mangas[_mangaIndex].id);
+            List<Manga> _mangas = _controller.InitializeMangaList();
+            _controller.FinishMedia("mangas", _mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", _mangas[_mangaIndex].id);
+            _isMangaFinished = _controller.IsMediaFinished("mangas", _mangas[_mangaIndex].id);
 
             if (_isMangaInList == true)
             {
@@ -163,9 +163,9 @@ namespace MangAnimeListGUI
 
         private void RemoveFromList(object sender, MouseEventArgs e)
         {
-            List<Manga> mangas = _controller.InitializeMangaList();
-            _controller.RemoveMedia("mangas", mangas[_mangaIndex].id);
-            _isMangaInList = _controller.IsMediaInList("mangas", mangas[_mangaIndex].id);
+            List<Manga> _mangas = _controller.InitializeMangaList();
+            _controller.RemoveMedia("mangas", _mangas[_mangaIndex].id);
+            _isMangaInList = _controller.IsMediaInList("mangas", _mangas[_mangaIndex].id);
 
             if (_isMangaInList == true)
             {

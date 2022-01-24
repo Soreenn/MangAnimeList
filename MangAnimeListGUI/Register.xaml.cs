@@ -32,24 +32,24 @@ namespace MangAnimeListGUI
 
         private void RegisterUser()
         {
-            string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
+            string _errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
             if (_controller._IsConnected == true)
             {
-                MainWindow window = new MainWindow(_controller);
+                MainWindow _window = new MainWindow(_controller);
                 Close();
-                window.ShowDialog();
+                _window.ShowDialog();
             }
             else
             {
-                MessageBox.Show(errorMessage, "Error !");
+                MessageBox.Show(_errorMessage, "Error !");
             }
         }
 
         private void LoginPage(object sender, MouseEventArgs e)
         {
-            Login window = new Login(_controller);
+            Login _window = new Login(_controller);
             Close();
-            window.ShowDialog();
+            _window.ShowDialog();
         }
     }
 }

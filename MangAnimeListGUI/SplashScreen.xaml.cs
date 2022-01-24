@@ -27,9 +27,9 @@ namespace MangAnimeListGUI
 
         private void dt_Tick(object sender, EventArgs e)
         {
-            Controller controller = new Controller();
-            Login MangAnimeList = new Login(controller);
-            MangAnimeList.Show();
+            Controller _controller = new Controller();
+            Login _MangAnimeList = new Login(_controller);
+            _MangAnimeList.Show();
 
             dT.Stop();
             this.Close();

@@ -52,7 +52,7 @@ namespace MangAnimeListGUI
         {
             ProgressBarVisibility = Visibility.Visible;
 
-            string errorMessage = _controller.Login(usernameLabel.Text, passwordLabel.Password);
+            string _errorMessage = _controller.Login(usernameLabel.Text, passwordLabel.Password);
             if (_controller._IsConnected == true)
             {
                 dT.Tick += new EventHandler(dt_Tick);
@@ -64,15 +64,15 @@ namespace MangAnimeListGUI
             }
             else
             {
-                MessageBox.Show(errorMessage, "Error !");
+                MessageBox.Show(_errorMessage, "Error !");
             }
         }
 
         private void dt_Tick(object sender, EventArgs e)
         {
-            Controller controller = new Controller();
-            MainWindow MangAnimeList = new MainWindow(_controller);
-            MangAnimeList.Show();
+            Controller _controller = new Controller();
+            MainWindow _MangAnimeList = new MainWindow(this._controller);
+            _MangAnimeList.Show();
 
             dT.Stop();
             this.Close();
@@ -99,9 +99,9 @@ namespace MangAnimeListGUI
 
         private void RegisterPage(object sender, MouseEventArgs e)
         {
-            Register window = new Register(_controller);
+            Register _window = new Register(_controller);
             Close();
-            window.ShowDialog();
+            _window.ShowDialog();
         }
     }
 }
