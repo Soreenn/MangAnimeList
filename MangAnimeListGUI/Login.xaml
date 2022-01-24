@@ -41,7 +41,7 @@
         <TextBox Name="usernameLabel" FontSize="20" TextAlignment="Center" Grid.Row="3" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="Mot de passe" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <PasswordBox Name="passwordLabel" Grid.Row="5" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
+        <PasswordBox Name="passwordLabel" FontSize="20" TextAlignment="Center" Grid.Row="5" Grid.Column="1" KeyDown="LoginByPressingEnter"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label MouseDown="LoginByLabel" FontSize="15" Foreground="White" FontFamily="Gotham" FontWeight="Medium" Content="S'authentifier" Margin="0,0,50,0"/>

@@ -46,7 +46,7 @@
             <Image MouseDown="GoBack" Source="https://i.ibb.co/ccWDtVq/3554040-200.png"/>
         </Viewbox>
 
-        <TextBox x:Name="SearchQuery" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="UpdateText"/>
+        <TextBox x:Name="SearchQuery" FontSize="20" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="UpdateText"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" SelectedValue="default" Text="Catégories" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
