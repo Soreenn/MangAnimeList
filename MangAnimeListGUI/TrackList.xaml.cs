@@ -78,9 +78,7 @@ namespace MangAnimeListGUI
 
         private void GoBack(object sender, MouseEventArgs e)
         {
-            MainWindow _window = new MainWindow(_controller);
             Close();
-            _window.ShowDialog();
         }
 
         public List<string> MediaType
