@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
+﻿using Dapper;
 using MySql.Data.MySqlClient;
 using System.Collections;
 
@@ -11,34 +6,18 @@ namespace MangAnimeList.DBManager
 {
     public class DBManager
     {
-        //This may not work beacause of the static methods(May need an object to end a connection)
         private static MySqlConnection _connection = new("Database=MangAnimeList;Server=localhost;user=root;password=root;");
 
-        /// <summary>
-        /// Opens the connection to the database using the static connection instance
-        /// </summary>
-        /// <exception cref="System.InvalidOperationException"></exception>
-        /// <exception cref="MySql.Data.MySqlClient.MySqlException"></exception>
         public static void OpenDBConnection()
         {
             _connection.Open();
         }
-        /// <summary>
-        /// Closes the connection to the database using the static connection instance
-        /// </summary>
+
         public static void CloseDBConnection()
         {
             _connection.Close();
         }
-        /// <summary>
-        /// Changes the static connection during runtime and open/closes it once to test it
-        /// </summary>
-        /// <param name="server">name/ip address of the sql server</param>
-        /// <param name="database">database name used for droxid</param>
-        /// <param name="user">database user with CRUD access to the database</param>
-        /// <param name="password">user's password</param>
-        /// <exception cref="System.InvalidOperationException"></exception>
-        /// <exception cref="MySql.Data.MySqlClient.MySqlException">Thrown when the connection failed to open</exception>
+
         public static void Connect(string server, string database, string user, string password)
         {
             _connection = new($"Database={database};Server={server};user={user};password={password};");
@@ -46,26 +25,26 @@ namespace MangAnimeList.DBManager
 
         public static int RegisterUserDB(string query)
         {
-            int result = _connection.Execute(query);
+            int _result = _connection.Execute(query);
 
-            return result;
+            return _result;
         }
 
         public static bool IsUsernameUnique(string query, string username)
         {
-            bool result = true;
+            bool _result = true;
 
-            IEnumerable queryResult = _connection.Query(query);
+            IEnumerable _queryResult = _connection.Query(query);
 
-            foreach (dynamic singleResult in queryResult)
+            foreach (dynamic _singleResult in _queryResult)
             {
-                if (username == singleResult.username)
+                if (username == _singleResult.username)
                 {
-                    result = false;
+                    _result = false;
                 }
             }
 
-            return result;
+            return _result;
         }
 
         //Session {username, userType, userId}
@@ -76,57 +55,57 @@ namespace MangAnimeList.DBManager
 
         public static bool IsLoginCorrect(string query, string password)
         {
-            bool result = false;
+            bool _result = false;
 
-            IEnumerable queryResult = _connection.Query(query);
+            IEnumerable query_result = _connection.Query(query);
 
-            foreach (dynamic singleResult in queryResult)
+            foreach (dynamic single_result in query_result)
             {
-                if (singleResult.password == password)
+                if (single_result.password == password)
                 {
-                    result = true;
+                    _result = true;
                 }
             }
 
-            return result;
+            return _result;
         }
 
         public static int GetUserType(string query)
         {
             int userType = 1;
 
-            IEnumerable queryResult = _connection.Query(query);
+            IEnumerable query_result = _connection.Query(query);
 
-            foreach (dynamic singleResult in queryResult)
+            foreach (dynamic single_result in query_result)
             {
-                userType = singleResult.userType;
+                userType = single_result.userType;
             }
             return userType;
         }
 
         public static int AddMediaToList(string query)
         {
-            int result = _connection.Execute(query);
+            int _result = _connection.Execute(query);
 
-            return result;
+            return _result;
         }
 
         public static int FinishMedia(string query)
         {
-            int result = _connection.Execute(query);
+            int _result = _connection.Execute(query);
 
-            return result;
+            return _result;
         }
 
         public static int GetUserId(string query)
         {
             int userId = 0;
 
-            IEnumerable queryResult = _connection.Query(query);
+            IEnumerable query_result = _connection.Query(query);
 
-            foreach (dynamic singleResult in queryResult)
+            foreach (dynamic single_result in query_result)
             {
-                userId = singleResult.id;
+                userId = single_result.id;
             }
             return userId;
         }
@@ -134,9 +113,9 @@ namespace MangAnimeList.DBManager
         public static IEnumerable Select(string query)
         {
 
-            IEnumerable queryResult = _connection.Query(query);
+            IEnumerable query_result = _connection.Query(query);
 
-            return queryResult;
+            return query_result;
         }
     }
 }

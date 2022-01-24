@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MangAnimeList;
-using System.Runtime.InteropServices;
 using System.Collections;
 
 namespace MangAnimeList
@@ -16,7 +11,7 @@ namespace MangAnimeList
         List<Manga> _mangaHomeList;
         List<Anime> _animeHomeList;
 
-        static Random random = new Random();
+        static Random _random = new Random();
 
         public Controller()
         {
@@ -26,90 +21,90 @@ namespace MangAnimeList
         public List<Anime> InitializeAnimeList()
         {
 
-            IEnumerable animesQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'anime'");
-            List<Anime> animes = new List<Anime>();
-            foreach (dynamic media in animesQuery)
+            IEnumerable _animesQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'anime'");
+            List<Anime> _animes = new List<Anime>();
+            foreach (dynamic _media in _animesQuery)
             {
-                List<string> titles = new List<string>();
-                titles.Add(media.title_romaji);
-                titles.Add(media.title_native);
+                List<string> _titles = new List<string>();
+                _titles.Add(_media.title_romaji);
+                _titles.Add(_media.title_native);
 
-                List<string> tags = new List<string>(media.tags.Split(','));
+                List<string> _tags = new List<string>(_media.tags.Split(','));
 
-                Anime anime = new Anime(titles, media.status, (int)media.release_year, tags, media.cover, media.id, media.thumbnail);
-                anime.episodes = media.episodes;
-                anime.type = media.type;
-                animes.Add(anime);
+                Anime _anime = new Anime(_titles, _media.status, (int)_media.release_year, _tags, _media.cover, _media.id, _media.thumbnail);
+                _anime.episodes = _media.episodes;
+                _anime.type = _media.type;
+                _animes.Add(_anime);
             }
-            return animes;
+            return _animes;
         }
 
         public List<Manga> InitializeMangaList()
         {
-            IEnumerable mangasQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'manga'");
-            List<Manga> mangas = new List<Manga>();
-            foreach (dynamic media in mangasQuery)
+            IEnumerable _mangasQuery = DBManager.DBManager.Select($"SELECT * FROM media WHERE mediaType = 'manga'");
+            List<Manga> _mangas = new List<Manga>();
+            foreach (dynamic _media in _mangasQuery)
             {
-                List<string> tags = new List<string>(media.tags.Split(','));
+                List<string> _tags = new List<string>(_media.tags.Split(','));
 
-                List<string> titles = new List<string>();
-                titles.Add(media.title_romaji);
-                titles.Add(media.title_native);
+                List<string> _titles = new List<string>();
+                _titles.Add(_media.title_romaji);
+                _titles.Add(_media.title_native);
 
-                Manga manga = new Manga(titles, media.status, (int)media.release_year, tags, media.cover, media.id, media.thumbnail);
+                Manga _manga = new Manga(_titles, _media.status, (int)_media.release_year, _tags, _media.cover, _media.id, _media.thumbnail);
 
-                manga.averageScore = media.averageScore;
-                manga.volumes = media.volumes;
-                manga.chapters = media.chapters;
-                manga.bannerImage = media.bannerImage;
-                mangas.Add(manga);
+                _manga.averageScore = _media.averageScore;
+                _manga.volumes = _media.volumes;
+                _manga.chapters = _media.chapters;
+                _manga.bannerImage = _media.bannerImage;
+                _mangas.Add(_manga);
             }
-            return mangas;
+            return _mangas;
         }
 
         public void GenerateRandomHomeList()
         {
-            List<Anime> randomAnimeList = new List<Anime>();
-            List<Manga> randomMangaList = new List<Manga>();
+            List<Anime> _randomAnimeList = new List<Anime>();
+            List<Manga> _randomMangaList = new List<Manga>();
 
-            Anime animeShown1;
-            Anime animeShown2;
-            Anime animeShown3;
-            Anime animeShown4;
+            Anime _animeShown1;
+            Anime _animeShown2;
+            Anime _animeShown3;
+            Anime _animeShown4;
 
-            Manga mangaShown1;
-            Manga mangaShown2;
-            Manga mangaShown3;
-            Manga mangaShown4;
+            Manga _mangaShown1;
+            Manga _mangaShown2;
+            Manga _mangaShown3;
+            Manga _mangaShown4;
 
-            Controller controller = new Controller();
-            List<Manga> mangas = controller.InitializeMangaList();
-            List<Anime> animes = controller.InitializeAnimeList();
+            Controller _controller = new Controller();
+            List<Manga> _mangas = _controller.InitializeMangaList();
+            List<Anime> _animes = _controller.InitializeAnimeList();
 
-            animeShown1 = animes[random.Next(animes.Count)];
-            animeShown2 = animes[random.Next(animes.Count)];
-            animeShown3 = animes[random.Next(animes.Count)];
-            animeShown4 = animes[random.Next(animes.Count)];
+            _animeShown1 = _animes[_random.Next(_animes.Count)];
+            _animeShown2 = _animes[_random.Next(_animes.Count)];
+            _animeShown3 = _animes[_random.Next(_animes.Count)];
+            _animeShown4 = _animes[_random.Next(_animes.Count)];
 
-            randomAnimeList.Add(animeShown1);
-            randomAnimeList.Add(animeShown2);
-            randomAnimeList.Add(animeShown3);
-            randomAnimeList.Add(animeShown4);
+            _randomAnimeList.Add(_animeShown1);
+            _randomAnimeList.Add(_animeShown2);
+            _randomAnimeList.Add(_animeShown3);
+            _randomAnimeList.Add(_animeShown4);
 
-            mangaShown1 = mangas[random.Next(mangas.Count)];
-            mangaShown2 = mangas[random.Next(mangas.Count)];
-            mangaShown3 = mangas[random.Next(mangas.Count)];
-            mangaShown4 = mangas[random.Next(mangas.Count)];
-
-
-            randomMangaList.Add(mangaShown1);
-            randomMangaList.Add(mangaShown2); //gros consultant
-            randomMangaList.Add(mangaShown3);
-            randomMangaList.Add(mangaShown4);
+            _mangaShown1 = _mangas[_random.Next(_mangas.Count)];
+            _mangaShown2 = _mangas[_random.Next(_mangas.Count)];
+            _mangaShown3 = _mangas[_random.Next(_mangas.Count)];
+            _mangaShown4 = _mangas[_random.Next(_mangas.Count)];
 
 
-            GetAnimeHomeList = randomAnimeList;
-            GetMangaHomeList = randomMangaList;
+            _randomMangaList.Add(_mangaShown1);
+            _randomMangaList.Add(_mangaShown2);
+            _randomMangaList.Add(_mangaShown3);
+            _randomMangaList.Add(_mangaShown4);
+
+
+            GetAnimeHomeList = _randomAnimeList;
+            GetMangaHomeList = _randomMangaList;
         }
 
         public List<Manga> GetMangaHomeList
@@ -125,7 +120,7 @@ namespace MangAnimeList
             get { return _animeHomeList; }
         }
 
-        public bool IsConnected
+        public bool _IsConnected
         {
             get { return _loginState; }
             set { _loginState = value; }
@@ -147,7 +142,7 @@ namespace MangAnimeList
 
         public string RegisterUser(string username, string password, string confirmPassword)
         {
-            string errorMessage = null;
+            string _errorMessage = null;
 
             if ((username != string.Empty) && (password != string.Empty) && (password != string.Empty))
             {
@@ -163,37 +158,37 @@ namespace MangAnimeList
                             DBManager.DBManager.Session.SetValue(username, 0);
                             DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
                             DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
-                            IsConnected = true;
+                            _IsConnected = true;
                         }
                         else
                         {
-                            IsConnected = false;
-                            errorMessage = "Error while registering the user. Please retry !";
+                            _IsConnected = false;
+                            _errorMessage = "Error while registering the user. Please retry !";
                         }
                     }
                     else
                     {
-                        IsConnected = false;
-                        errorMessage = "The username is already taken please change !";
+                        _IsConnected = false;
+                        _errorMessage = "The username is already taken please change !";
                     }
                 }
                 else
                 {
-                    IsConnected = false;
-                    errorMessage = "The passwords are not matching !";
+                    _IsConnected = false;
+                    _errorMessage = "The passwords are not matching !";
                 }
             }
             else
             {
-                IsConnected = false;
-                errorMessage = "Please fill all the textboxes !";
+                _IsConnected = false;
+                _errorMessage = "Please fill all the textboxes !";
             }
-            return errorMessage;
+            return _errorMessage;
         }
 
         public string Login(string username, string password)
         {
-            string errorMessage = null;
+            string _errorMessage = null;
 
             if ((username != string.Empty) && (password != string.Empty))
             {
@@ -205,36 +200,36 @@ namespace MangAnimeList
                     DBManager.DBManager.Session.SetValue(username, 0);
                     DBManager.DBManager.Session.SetValue(userType.ToString(), 1);
                     DBManager.DBManager.Session.SetValue(userId.ToString(), 2);
-                    IsConnected = true;
+                    _IsConnected = true;
                 }
                 else
                 {
-                    IsConnected = false;
-                    errorMessage = "The username and / or the password are not correct. Please retry !";
+                    _IsConnected = false;
+                    _errorMessage = "The username and / or the password are not correct. Please retry !";
                 }
             }
             else
             {
-                IsConnected = false;
-                errorMessage = "Please fill all the textboxes !";
+                _IsConnected = false;
+                _errorMessage = "Please fill all the textboxes !";
             }
-            return errorMessage;
+            return _errorMessage;
         }
 
 
         public void AddMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}, state) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")}, 'UNFINISHED')");
+            int _result = DBManager.DBManager.AddMediaToList($"INSERT INTO {mediaType} (user_id, {mediaType}_id, {(mediaType == "mangas" ? "current_chapter" : "current_episode" )}{(mediaType == "mangas" ? ", current_volume" : "")}, state) VALUES ('{GetUserId}', '{mediaId}', {(mediaType == "mangas" ? "1" : "1")}{(mediaType == "mangas" ? ", 1" : "")}, 'UNFINISHED')");
         }
 
         public void FinishMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.FinishMedia($"UPDATE {mediaType} SET state = 'FINISHED' WHERE {mediaType}_id LIKE '{mediaId}'");
+            int _result = DBManager.DBManager.FinishMedia($"UPDATE {mediaType} SET state = 'FINISHED' WHERE {mediaType}_id LIKE '{mediaId}'");
         }
 
         public void RemoveMedia(string mediaType, int mediaId)
         {
-            int result = DBManager.DBManager.FinishMedia($"DELETE FROM {mediaType} WHERE {mediaType}_id LIKE '{mediaId}'");
+            int _result = DBManager.DBManager.FinishMedia($"DELETE FROM {mediaType} WHERE {mediaType}_id LIKE '{mediaId}'");
         }
 
         public int GetMangaIndex(int id)
@@ -248,11 +243,11 @@ namespace MangAnimeList
         public List<AnimeWatchList> GetAnimeWatchlist()
         {
             List<Anime> _animes = InitializeAnimeList();
-            IEnumerable animeIds = DBManager.DBManager.Select($"SELECT * FROM animes WHERE user_id LIKE '{GetUserId}'");
+            IEnumerable _animeIds = DBManager.DBManager.Select($"SELECT * FROM animes WHERE user_id LIKE '{GetUserId}'");
             List<AnimeWatchList> _watchlist = new List<AnimeWatchList>();
-            foreach(dynamic media in animeIds)
+            foreach(dynamic _media in _animeIds)
             {
-                AnimeWatchList _animeWatchlist = new AnimeWatchList(_animes[media.animes_id - 1], media.current_episode, media.state);
+                AnimeWatchList _animeWatchlist = new AnimeWatchList(_animes[_media.animes_id - 1], _media.current_episode, _media.state);
                 _watchlist.Add(_animeWatchlist);
             }
             return _watchlist;
@@ -261,11 +256,11 @@ namespace MangAnimeList
         public List<MangaWatchList> GetMangaWatchlist()
         {
             List<Manga> _mangas = InitializeMangaList();
-            IEnumerable mangaIds = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}'");
+            IEnumerable _mangaIds = DBManager.DBManager.Select($"SELECT * FROM mangas WHERE user_id LIKE '{GetUserId}'");
             List<MangaWatchList> _watchlist = new List<MangaWatchList>();
-            foreach (dynamic media in mangaIds)
+            foreach (dynamic _media in _mangaIds)
             {
-                MangaWatchList _mangaWatchlist = new MangaWatchList(_mangas[GetMangaIndex(media.mangas_id)], media.current_volume, media.current_chapter, media.state);
+                MangaWatchList _mangaWatchlist = new MangaWatchList(_mangas[GetMangaIndex(_media.mangas_id)], _media.current_volume, _media.current_chapter, _media.state);
                 _watchlist.Add(_mangaWatchlist);
             }
             return _watchlist;
@@ -273,31 +268,31 @@ namespace MangAnimeList
 
         public bool IsMediaInList(string mediaType, int mediaId)
         {
-            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}'");
-            bool isMediaInList;
-            if (result.Cast<object>().Any())
+            IEnumerable _result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}'");
+            bool _isMediaInList;
+            if (_result.Cast<object>().Any())
             {
-                isMediaInList = true;
+                _isMediaInList = true;
             } else
             {
-                isMediaInList = false;
+                _isMediaInList = false;
             }
-            return isMediaInList;
+            return _isMediaInList;
         }
 
         public bool IsMediaFinished(string mediaType, int mediaId)
         {
-            IEnumerable result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}' AND state LIKE 'FINISHED'");
-            bool isMediaFinished;
-            if (result.Cast<object>().Any())
+            IEnumerable _result = DBManager.DBManager.Select($"SELECT * FROM {mediaType} WHERE user_id LIKE '{GetUserId}' AND {mediaType}_id LIKE '{mediaId}' AND state LIKE 'FINISHED'");
+            bool _isMediaFinished;
+            if (_result.Cast<object>().Any())
             {
-                isMediaFinished = true;
+                _isMediaFinished = true;
             }
             else
             {
-                isMediaFinished = false;
+                _isMediaFinished = false;
             }
-            return isMediaFinished;
+            return _isMediaFinished;
         }
     }
 }

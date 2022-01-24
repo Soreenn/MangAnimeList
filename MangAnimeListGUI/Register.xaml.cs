@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MangAnimeList;
 
 namespace MangAnimeListGUI
@@ -44,7 +33,7 @@ namespace MangAnimeListGUI
         private void RegisterUser()
         {
             string errorMessage = _controller.RegisterUser(usernameLabel.Text, passwordLabel.Password, confirmPasswordLabel.Password);
-            if (_controller.IsConnected == true)
+            if (_controller._IsConnected == true)
             {
                 MainWindow window = new MainWindow(_controller);
                 Close();

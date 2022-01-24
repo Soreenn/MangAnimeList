@@ -1,22 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
 using MangAnimeList;
-using Newtonsoft.Json;
-using System.Threading;
 using System.Text.RegularExpressions;
 
 namespace MangAnimeListGUI
@@ -36,7 +24,7 @@ namespace MangAnimeListGUI
             List<Manga> mangas = _controller.GetMangaHomeList;
             List<Anime> animes = _controller.GetAnimeHomeList;
 
-            if(_controller.IsConnected == false)
+            if(_controller._IsConnected == false)
             {
                 username.Content = "Guest";
             }
