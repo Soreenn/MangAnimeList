@@ -49,7 +49,7 @@
         <TextBox x:Name="SearchQuery" FontSize="20" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="UpdateText"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" FontSize="20" TextAlignment="Center" SelectedValue="default" Text="Catégories" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
+           <ComboBox ItemsSource="{Binding ElementName=SearchWindow, Path=Tags}" FontSize="20" SelectedValue="default" Text="Catégories" Name="tag" Width="250" Margin="0,0,50,0" SelectionChanged="UpdateTag"/>
         </StackPanel>
 
         <ListBox x:Name="animeBox" ItemsSource="{Binding ElementName=SearchWindow, Path=Animes}" Grid.Row="5" Grid.RowSpan="8" Grid.Column="1">
