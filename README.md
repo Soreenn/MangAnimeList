@@ -1,3 +1,11 @@
+## What's this project?
+
+My third year C# project with friends, we are so bad at UI that it looks absolutely terrible. Does  it works ? Hum, ye ? I think, if anyone want to use that awful application that makes every developper cry.
+
+You can use it freely, I don't really mind.
+
+Anime database is from a json file that if found here : https://github.com/manami-project/anime-offline-database
+
 ## Pourquoi ce thème :
 
 Nous sommes 3 développeurs passionné par les mangas et nous avons décider de partir sur ce thème pour notre projet de 3ème année. Nous avons fait une application permettant de suivre en temps réel nos manga préférait. C’est-à-dire, savoir on nous en sommes avec un système de liste, de choix entre les chapitres d’un manga ou les épisodes d’un anime. 
